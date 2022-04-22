@@ -1,6 +1,6 @@
 ﻿namespace TrungTamAnhVan
 {
-    partial class frmMain
+    partial class frmStudentMain
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStudentMain));
             this.ucNavbar = new System.Windows.Forms.Panel();
             this.btnFinace = new System.Windows.Forms.Button();
             this.btnCourse = new System.Windows.Forms.Button();
@@ -43,11 +43,9 @@
             this.btnLogout = new System.Windows.Forms.Button();
             this.ptbHomeLogo = new System.Windows.Forms.PictureBox();
             this.pnContainer = new System.Windows.Forms.Panel();
-            this.ucHome1 = new TrungTamAnhVan.ucHome();
             this.ucNavbar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbHomeLogo)).BeginInit();
-            this.pnContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // ucNavbar
@@ -69,7 +67,7 @@
             this.ucNavbar.Location = new System.Drawing.Point(0, 0);
             this.ucNavbar.Name = "ucNavbar";
             this.ucNavbar.Size = new System.Drawing.Size(273, 754);
-            this.ucNavbar.TabIndex = 0;
+            this.ucNavbar.TabIndex = 2;
             // 
             // btnFinace
             // 
@@ -175,9 +173,9 @@
             this.lbRole.ForeColor = System.Drawing.Color.White;
             this.lbRole.Location = new System.Drawing.Point(100, 589);
             this.lbRole.Name = "lbRole";
-            this.lbRole.Size = new System.Drawing.Size(87, 28);
+            this.lbRole.Size = new System.Drawing.Size(92, 28);
             this.lbRole.TabIndex = 4;
-            this.lbRole.Text = "Chức vụ";
+            this.lbRole.Text = "Học viên";
             // 
             // lbName
             // 
@@ -243,37 +241,26 @@
             // 
             // pnContainer
             // 
-            this.pnContainer.Controls.Add(this.ucHome1);
             this.pnContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnContainer.Location = new System.Drawing.Point(273, 0);
+            this.pnContainer.Location = new System.Drawing.Point(0, 0);
             this.pnContainer.Name = "pnContainer";
-            this.pnContainer.Size = new System.Drawing.Size(989, 754);
-            this.pnContainer.TabIndex = 1;
+            this.pnContainer.Size = new System.Drawing.Size(1262, 754);
+            this.pnContainer.TabIndex = 3;
             // 
-            // ucHome1
-            // 
-            this.ucHome1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucHome1.Location = new System.Drawing.Point(0, 0);
-            this.ucHome1.Name = "ucHome1";
-            this.ucHome1.Size = new System.Drawing.Size(989, 754);
-            this.ucHome1.TabIndex = 0;
-            // 
-            // frmMain
+            // frmStudentMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1262, 754);
-            this.Controls.Add(this.pnContainer);
             this.Controls.Add(this.ucNavbar);
+            this.Controls.Add(this.pnContainer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmMain";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Name = "frmStudentMain";
+            this.Text = "frmStudentMain";
             this.ucNavbar.ResumeLayout(false);
             this.ucNavbar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbHomeLogo)).EndInit();
-            this.pnContainer.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -281,20 +268,18 @@
         #endregion
 
         private System.Windows.Forms.Panel ucNavbar;
-        private System.Windows.Forms.PictureBox ptbHomeLogo;
-        private System.Windows.Forms.Button btnLogout;
-        private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Label lbRole;
-        private System.Windows.Forms.Label lbName;
-        private System.Windows.Forms.PictureBox ptbIcon;
-        private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Button btnFinace;
         private System.Windows.Forms.Button btnCourse;
         private System.Windows.Forms.Button btnClass;
         private System.Windows.Forms.Button btnTeacher;
         private System.Windows.Forms.Button btnStudent;
+        private System.Windows.Forms.Button btnHome;
+        private System.Windows.Forms.Label lbRole;
+        private System.Windows.Forms.Label lbName;
+        private System.Windows.Forms.PictureBox ptbIcon;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.PictureBox ptbHomeLogo;
         private System.Windows.Forms.Panel pnContainer;
-        private ucHome ucHome1;
     }
 }
-

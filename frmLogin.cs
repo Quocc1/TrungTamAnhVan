@@ -25,22 +25,54 @@ namespace TrungTamAnhVan
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            LoginBUS loginBUS = new LoginBUS();
             if (txtUsername.Text == "" || txtPassword.Text == "" || (rbtnStudent.Checked == false && rbtnTeacher.Checked == false && rbtnAdmin.Checked == false))
             {
                 MessageBox.Show("Vui lòng điền đủ thông tin!");
             }
             else
             {
-                LoginBUS loginBUS = new LoginBUS();
-                if (loginBUS.CheckLogin(txtUsername.Text, txtPassword.Text))
+                if (rbtnAdmin.Checked)
                 {
-                    frmMain fMain = new frmMain();
-                    fMain.Show();
-                    this.Hide();
+                    string name = loginBUS.CheckLoginAdmin(txtUsername.Text, txtPassword.Text);
+                    if (name != null)
+                    {
+                        frmAdminMain fMain = new frmAdminMain(name);
+                        fMain.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng");
+                    }
+                }
+                else if (rbtnTeacher.Checked)
+                {
+                    string name = loginBUS.CheckLoginTeacher(txtUsername.Text, txtPassword.Text);
+                    if (name != null)
+                    {
+                        frmTeacherMain fMain = new frmTeacherMain(name);
+                        fMain.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng");
+                    string name = loginBUS.CheckLoginStudent(txtUsername.Text, txtPassword.Text);
+                    if (name != null)
+                    {
+                        frmStudentMain fMain = new frmStudentMain(name);
+                        fMain.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng");
+                    }
                 }
             }
         }

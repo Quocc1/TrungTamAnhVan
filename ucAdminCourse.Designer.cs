@@ -1,6 +1,6 @@
 ﻿namespace TrungTamAnhVan
 {
-    partial class ucHome
+    partial class ucAdminCourse
     {
         /// <summary> 
         /// Required designer variable.
@@ -30,11 +30,11 @@
         {
             this.SuspendLayout();
             // 
-            // ucHome
+            // ucCourse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "ucHome";
+            this.Name = "ucCourse";
             this.Size = new System.Drawing.Size(989, 754);
             this.ResumeLayout(false);
 

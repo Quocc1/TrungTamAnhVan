@@ -10,12 +10,13 @@ using System.Windows.Forms;
 
 namespace TrungTamAnhVan
 {
-    public partial class frmMain : Form
+    public partial class frmAdminMain : Form
     {
-        public frmMain()
+        public frmAdminMain(string name)
         {
             InitializeComponent();
             Load += FrmMain_Load;
+            lbName.Text = name;
         }
 
         private void FrmMain_Load(object sender, EventArgs e)

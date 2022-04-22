@@ -62,32 +62,96 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMain.cs">
+    <Compile Include="frmAdminMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMain.Designer.cs">
-      <DependentUpon>frmMain.cs</DependentUpon>
+    <Compile Include="frmAdminMain.Designer.cs">
+      <DependentUpon>frmAdminMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStudentMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStudentMain.Designer.cs">
+      <DependentUpon>frmStudentMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTeacherMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTeacherMain.Designer.cs">
+      <DependentUpon>frmTeacherMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ucHome.cs">
+    <Compile Include="ucAdminClass.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucHome.Designer.cs">
-      <DependentUpon>ucHome.cs</DependentUpon>
+    <Compile Include="ucAdminClass.Designer.cs">
+      <DependentUpon>ucAdminClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucAdminCourse.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucAdminCourse.Designer.cs">
+      <DependentUpon>ucAdminCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucAdminFinace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucAdminFinace.Designer.cs">
+      <DependentUpon>ucAdminFinace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucAdminHome.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucAdminHome.Designer.cs">
+      <DependentUpon>ucAdminHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucAdminStudent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucAdminStudent.Designer.cs">
+      <DependentUpon>ucAdminStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucAdminTeacher.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucAdminTeacher.Designer.cs">
+      <DependentUpon>ucAdminTeacher.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMain.resx">
-      <DependentUpon>frmMain.cs</DependentUpon>
+    <EmbeddedResource Include="frmAdminMain.resx">
+      <DependentUpon>frmAdminMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStudentMain.resx">
+      <DependentUpon>frmStudentMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTeacherMain.resx">
+      <DependentUpon>frmTeacherMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucHome.resx">
-      <DependentUpon>ucHome.cs</DependentUpon>
+    <EmbeddedResource Include="ucAdminClass.resx">
+      <DependentUpon>ucAdminClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucAdminCourse.resx">
+      <DependentUpon>ucAdminCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucAdminFinace.resx">
+      <DependentUpon>ucAdminFinace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucAdminHome.resx">
+      <DependentUpon>ucAdminHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucAdminStudent.resx">
+      <DependentUpon>ucAdminStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucAdminTeacher.resx">
+      <DependentUpon>ucAdminTeacher.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />
