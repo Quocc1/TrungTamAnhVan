@@ -30,8 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdminMain));
             this.pnContainer = new System.Windows.Forms.Panel();
-            this.ucAdminHome1 = new TrungTamAnhVan.ucAdminHome();
             this.ucAdminStudent1 = new TrungTamAnhVan.ucAdminStudent();
+            this.ucAdminTeacher1 = new TrungTamAnhVan.ucAdminTeacher();
+            this.ucAdminCourse1 = new TrungTamAnhVan.ucAdminCourse();
+            this.ucAdminClass1 = new TrungTamAnhVan.ucAdminClass();
             this.ptbHomeLogo = new System.Windows.Forms.PictureBox();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
@@ -45,6 +47,7 @@
             this.btnCourse = new System.Windows.Forms.Button();
             this.btnFinance = new System.Windows.Forms.Button();
             this.pnNavbar = new System.Windows.Forms.Panel();
+            this.ucAdminHome1 = new TrungTamAnhVan.ucAdminHome();
             this.pnContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbHomeLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbIcon)).BeginInit();
@@ -55,19 +58,14 @@
             // 
             this.pnContainer.Controls.Add(this.ucAdminHome1);
             this.pnContainer.Controls.Add(this.ucAdminStudent1);
+            this.pnContainer.Controls.Add(this.ucAdminTeacher1);
+            this.pnContainer.Controls.Add(this.ucAdminCourse1);
+            this.pnContainer.Controls.Add(this.ucAdminClass1);
             this.pnContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnContainer.Location = new System.Drawing.Point(273, 0);
             this.pnContainer.Name = "pnContainer";
             this.pnContainer.Size = new System.Drawing.Size(989, 754);
             this.pnContainer.TabIndex = 1;
-            // 
-            // ucAdminHome1
-            // 
-            this.ucAdminHome1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucAdminHome1.Location = new System.Drawing.Point(0, 0);
-            this.ucAdminHome1.Name = "ucAdminHome1";
-            this.ucAdminHome1.Size = new System.Drawing.Size(989, 754);
-            this.ucAdminHome1.TabIndex = 1;
             // 
             // ucAdminStudent1
             // 
@@ -76,6 +74,30 @@
             this.ucAdminStudent1.Name = "ucAdminStudent1";
             this.ucAdminStudent1.Size = new System.Drawing.Size(989, 754);
             this.ucAdminStudent1.TabIndex = 0;
+            // 
+            // ucAdminTeacher1
+            // 
+            this.ucAdminTeacher1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucAdminTeacher1.Location = new System.Drawing.Point(0, 0);
+            this.ucAdminTeacher1.Name = "ucAdminTeacher1";
+            this.ucAdminTeacher1.Size = new System.Drawing.Size(989, 754);
+            this.ucAdminTeacher1.TabIndex = 4;
+            // 
+            // ucAdminCourse1
+            // 
+            this.ucAdminCourse1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucAdminCourse1.Location = new System.Drawing.Point(0, 0);
+            this.ucAdminCourse1.Name = "ucAdminCourse1";
+            this.ucAdminCourse1.Size = new System.Drawing.Size(989, 754);
+            this.ucAdminCourse1.TabIndex = 3;
+            // 
+            // ucAdminClass1
+            // 
+            this.ucAdminClass1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucAdminClass1.Location = new System.Drawing.Point(0, 0);
+            this.ucAdminClass1.Name = "ucAdminClass1";
+            this.ucAdminClass1.Size = new System.Drawing.Size(989, 754);
+            this.ucAdminClass1.TabIndex = 2;
             // 
             // ptbHomeLogo
             // 
@@ -274,6 +296,14 @@
             this.pnNavbar.Size = new System.Drawing.Size(273, 754);
             this.pnNavbar.TabIndex = 0;
             // 
+            // ucAdminHome1
+            // 
+            this.ucAdminHome1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucAdminHome1.Location = new System.Drawing.Point(0, 0);
+            this.ucAdminHome1.Name = "ucAdminHome1";
+            this.ucAdminHome1.Size = new System.Drawing.Size(989, 754);
+            this.ucAdminHome1.TabIndex = 5;
+            // 
             // frmAdminMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -311,6 +341,9 @@
         private System.Windows.Forms.Button btnFinance;
         private System.Windows.Forms.Panel pnNavbar;
         private ucAdminStudent ucAdminStudent1;
+        private ucAdminTeacher ucAdminTeacher1;
+        private ucAdminCourse ucAdminCourse1;
+        private ucAdminClass ucAdminClass1;
         private ucAdminHome ucAdminHome1;
     }
 }

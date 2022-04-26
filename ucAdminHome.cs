@@ -21,8 +21,11 @@ namespace TrungTamAnhVan
 
         private void ucAdminHome_Load(object sender, EventArgs e)
         {
-            lbStudentQuantity.Text = infoBUS.CountStudent();
-            lbTeacherQuantity.Text = infoBUS.CountTeacher();
+            if(!DesignMode)
+            {
+                lbStudentQuantity.Text = infoBUS.CountStudent();
+                lbTeacherQuantity.Text = infoBUS.CountTeacher();
+            }
         }
     }
 }

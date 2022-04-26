@@ -42,7 +42,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(45, 231);
+            this.dataGridView1.Location = new System.Drawing.Point(46, 236);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -55,7 +55,7 @@
             this.btnInsert.FlatAppearance.BorderSize = 0;
             this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInsert.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInsert.Location = new System.Drawing.Point(420, 98);
+            this.btnInsert.Location = new System.Drawing.Point(421, 103);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(156, 64);
             this.btnInsert.TabIndex = 1;
@@ -68,7 +68,7 @@
             this.btnEdit.FlatAppearance.BorderSize = 0;
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdit.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Location = new System.Drawing.Point(609, 98);
+            this.btnEdit.Location = new System.Drawing.Point(610, 103);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(156, 64);
             this.btnEdit.TabIndex = 2;
@@ -81,7 +81,7 @@
             this.btnDelete.FlatAppearance.BorderSize = 0;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(795, 98);
+            this.btnDelete.Location = new System.Drawing.Point(796, 103);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(156, 64);
             this.btnDelete.TabIndex = 3;
@@ -90,7 +90,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(45, 98);
+            this.textBox1.Location = new System.Drawing.Point(46, 103);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(342, 64);
@@ -100,11 +100,11 @@
             // 
             this.lbTitle.AutoSize = true;
             this.lbTitle.Font = new System.Drawing.Font("Open Sans", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitle.Location = new System.Drawing.Point(36, 28);
+            this.lbTitle.Location = new System.Drawing.Point(37, 33);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(318, 49);
+            this.lbTitle.Size = new System.Drawing.Size(300, 47);
             this.lbTitle.TabIndex = 5;
-            this.lbTitle.Text = "Dữ Liệu Sinh Viên";
+            this.lbTitle.Text = "Dữ Liệu Học Viên";
             // 
             // cboGender
             // 
@@ -113,7 +113,7 @@
             "Tất cả",
             "Nam",
             "Nữ"});
-            this.cboGender.Location = new System.Drawing.Point(45, 185);
+            this.cboGender.Location = new System.Drawing.Point(46, 190);
             this.cboGender.Name = "cboGender";
             this.cboGender.Size = new System.Drawing.Size(121, 24);
             this.cboGender.TabIndex = 6;
@@ -121,7 +121,7 @@
             // cboClass
             // 
             this.cboClass.FormattingEnabled = true;
-            this.cboClass.Location = new System.Drawing.Point(203, 185);
+            this.cboClass.Location = new System.Drawing.Point(202, 190);
             this.cboClass.Name = "cboClass";
             this.cboClass.Size = new System.Drawing.Size(121, 24);
             this.cboClass.TabIndex = 7;

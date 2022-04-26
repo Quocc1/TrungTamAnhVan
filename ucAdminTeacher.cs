@@ -16,5 +16,10 @@ namespace TrungTamAnhVan
         {
             InitializeComponent();
         }
+
+        private void ucAdminTeacher_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -28,9 +28,9 @@ namespace TrungTamAnhVan
         {
             ucAdminHome1.Visible = false;
             ucAdminStudent1.Visible = false;
-            //ucAdminTeacher1.Visible = false;
-            //ucAdminClass1.Visible = false;
-            //ucAdminCourse1.Visible = false;
+            ucAdminTeacher1.Visible = false;
+            ucAdminClass1.Visible = false;
+            ucAdminCourse1.Visible = false;
             //ucAdminFinace1.Visible = false;
 
             control.Visible = true;
@@ -60,17 +60,17 @@ namespace TrungTamAnhVan
 
         private void btnTeacher_Click(object sender, EventArgs e)
         {
-            //SetActivePanel(ucAdminTeacher1);
+            SetActivePanel(ucAdminTeacher1);
         }
 
         private void btnClass_Click(object sender, EventArgs e)
         {
-            //SetActivePanel(ucAdminClass1);
+            SetActivePanel(ucAdminClass1);
         }
 
         private void btnCourse_Click(object sender, EventArgs e)
         {
-            //SetActivePanel(ucAdminCourse1);
+            SetActivePanel(ucAdminCourse1);
         }
 
         private void btnFinance_Click(object sender, EventArgs e)

@@ -48,7 +48,7 @@
             // 
             this.lbTitle.AutoSize = true;
             this.lbTitle.Font = new System.Drawing.Font("Open Sans", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitle.Location = new System.Drawing.Point(36, 28);
+            this.lbTitle.Location = new System.Drawing.Point(37, 33);
             this.lbTitle.Name = "lbTitle";
             this.lbTitle.Size = new System.Drawing.Size(189, 47);
             this.lbTitle.TabIndex = 6;
@@ -111,6 +111,7 @@
             // lbTeacherDescription
             // 
             this.lbTeacherDescription.AutoSize = true;
+            this.lbTeacherDescription.BackColor = System.Drawing.Color.Transparent;
             this.lbTeacherDescription.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTeacherDescription.Location = new System.Drawing.Point(21, 69);
             this.lbTeacherDescription.Name = "lbTeacherDescription";
