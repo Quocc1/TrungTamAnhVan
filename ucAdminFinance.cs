@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TrungTamAnhVan
 {
-    public partial class ucAdminFinace : UserControl
+    public partial class ucAdminFinance : UserControl
     {
-        public ucAdminFinace()
+        public ucAdminFinance()
         {
             InitializeComponent();
         }

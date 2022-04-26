@@ -1,6 +1,6 @@
 ﻿namespace TrungTamAnhVan
 {
-    partial class ucAdminFinace
+    partial class ucAdminFinance
     {
         /// <summary> 
         /// Required designer variable.

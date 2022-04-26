@@ -45,6 +45,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -94,11 +95,11 @@
     <Compile Include="ucAdminCourse.Designer.cs">
       <DependentUpon>ucAdminCourse.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucAdminFinace.cs">
+    <Compile Include="ucAdminFinance.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucAdminFinace.Designer.cs">
-      <DependentUpon>ucAdminFinace.cs</DependentUpon>
+    <Compile Include="ucAdminFinance.Designer.cs">
+      <DependentUpon>ucAdminFinance.cs</DependentUpon>
     </Compile>
     <Compile Include="ucAdminHome.cs">
       <SubType>UserControl</SubType>
@@ -141,8 +142,8 @@
     <EmbeddedResource Include="ucAdminCourse.resx">
       <DependentUpon>ucAdminCourse.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucAdminFinace.resx">
-      <DependentUpon>ucAdminFinace.cs</DependentUpon>
+    <EmbeddedResource Include="ucAdminFinance.resx">
+      <DependentUpon>ucAdminFinance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucAdminHome.resx">
       <DependentUpon>ucAdminHome.cs</DependentUpon>
@@ -153,7 +154,7 @@
     <EmbeddedResource Include="ucAdminTeacher.resx">
       <DependentUpon>ucAdminTeacher.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="App.config" />
+    <None Include="App.Config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

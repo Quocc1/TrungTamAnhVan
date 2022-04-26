@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStudentMain));
-            this.ucNavbar = new System.Windows.Forms.Panel();
+            this.pnNavbar = new System.Windows.Forms.Panel();
             this.btnFinace = new System.Windows.Forms.Button();
             this.btnCourse = new System.Windows.Forms.Button();
             this.btnClass = new System.Windows.Forms.Button();
@@ -43,31 +43,31 @@
             this.btnLogout = new System.Windows.Forms.Button();
             this.ptbHomeLogo = new System.Windows.Forms.PictureBox();
             this.pnContainer = new System.Windows.Forms.Panel();
-            this.ucNavbar.SuspendLayout();
+            this.pnNavbar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbHomeLogo)).BeginInit();
             this.SuspendLayout();
             // 
-            // ucNavbar
+            // pnNavbar
             // 
-            this.ucNavbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(86)))), ((int)(((byte)(246)))));
-            this.ucNavbar.Controls.Add(this.btnFinace);
-            this.ucNavbar.Controls.Add(this.btnCourse);
-            this.ucNavbar.Controls.Add(this.btnClass);
-            this.ucNavbar.Controls.Add(this.btnTeacher);
-            this.ucNavbar.Controls.Add(this.btnStudent);
-            this.ucNavbar.Controls.Add(this.btnHome);
-            this.ucNavbar.Controls.Add(this.lbRole);
-            this.ucNavbar.Controls.Add(this.lbName);
-            this.ucNavbar.Controls.Add(this.ptbIcon);
-            this.ucNavbar.Controls.Add(this.btnExit);
-            this.ucNavbar.Controls.Add(this.btnLogout);
-            this.ucNavbar.Controls.Add(this.ptbHomeLogo);
-            this.ucNavbar.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ucNavbar.Location = new System.Drawing.Point(0, 0);
-            this.ucNavbar.Name = "ucNavbar";
-            this.ucNavbar.Size = new System.Drawing.Size(273, 754);
-            this.ucNavbar.TabIndex = 2;
+            this.pnNavbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(86)))), ((int)(((byte)(246)))));
+            this.pnNavbar.Controls.Add(this.btnFinace);
+            this.pnNavbar.Controls.Add(this.btnCourse);
+            this.pnNavbar.Controls.Add(this.btnClass);
+            this.pnNavbar.Controls.Add(this.btnTeacher);
+            this.pnNavbar.Controls.Add(this.btnStudent);
+            this.pnNavbar.Controls.Add(this.btnHome);
+            this.pnNavbar.Controls.Add(this.lbRole);
+            this.pnNavbar.Controls.Add(this.lbName);
+            this.pnNavbar.Controls.Add(this.ptbIcon);
+            this.pnNavbar.Controls.Add(this.btnExit);
+            this.pnNavbar.Controls.Add(this.btnLogout);
+            this.pnNavbar.Controls.Add(this.ptbHomeLogo);
+            this.pnNavbar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnNavbar.Location = new System.Drawing.Point(0, 0);
+            this.pnNavbar.Name = "pnNavbar";
+            this.pnNavbar.Size = new System.Drawing.Size(273, 754);
+            this.pnNavbar.TabIndex = 2;
             // 
             // btnFinace
             // 
@@ -252,13 +252,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1262, 754);
-            this.Controls.Add(this.ucNavbar);
+            this.Controls.Add(this.pnNavbar);
             this.Controls.Add(this.pnContainer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmStudentMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmStudentMain";
-            this.ucNavbar.ResumeLayout(false);
-            this.ucNavbar.PerformLayout();
+            this.pnNavbar.ResumeLayout(false);
+            this.pnNavbar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbHomeLogo)).EndInit();
             this.ResumeLayout(false);
@@ -267,7 +268,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel ucNavbar;
+        private System.Windows.Forms.Panel pnNavbar;
         private System.Windows.Forms.Button btnFinace;
         private System.Windows.Forms.Button btnCourse;
         private System.Windows.Forms.Button btnClass;

@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdminMain));
             this.pnContainer = new System.Windows.Forms.Panel();
+            this.ucAdminHome1 = new TrungTamAnhVan.ucAdminHome();
+            this.ucAdminStudent1 = new TrungTamAnhVan.ucAdminStudent();
             this.ptbHomeLogo = new System.Windows.Forms.PictureBox();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
@@ -41,23 +43,39 @@
             this.btnTeacher = new System.Windows.Forms.Button();
             this.btnClass = new System.Windows.Forms.Button();
             this.btnCourse = new System.Windows.Forms.Button();
-            this.btnFinace = new System.Windows.Forms.Button();
-            this.ucNavbar = new System.Windows.Forms.Panel();
-            this.ucAdminStudent1 = new TrungTamAnhVan.ucAdminStudent();
+            this.btnFinance = new System.Windows.Forms.Button();
+            this.pnNavbar = new System.Windows.Forms.Panel();
             this.pnContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbHomeLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbIcon)).BeginInit();
-            this.ucNavbar.SuspendLayout();
+            this.pnNavbar.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnContainer
             // 
+            this.pnContainer.Controls.Add(this.ucAdminHome1);
             this.pnContainer.Controls.Add(this.ucAdminStudent1);
             this.pnContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnContainer.Location = new System.Drawing.Point(273, 0);
             this.pnContainer.Name = "pnContainer";
             this.pnContainer.Size = new System.Drawing.Size(989, 754);
             this.pnContainer.TabIndex = 1;
+            // 
+            // ucAdminHome1
+            // 
+            this.ucAdminHome1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucAdminHome1.Location = new System.Drawing.Point(0, 0);
+            this.ucAdminHome1.Name = "ucAdminHome1";
+            this.ucAdminHome1.Size = new System.Drawing.Size(989, 754);
+            this.ucAdminHome1.TabIndex = 1;
+            // 
+            // ucAdminStudent1
+            // 
+            this.ucAdminStudent1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucAdminStudent1.Location = new System.Drawing.Point(0, 0);
+            this.ucAdminStudent1.Name = "ucAdminStudent1";
+            this.ucAdminStudent1.Size = new System.Drawing.Size(989, 754);
+            this.ucAdminStudent1.TabIndex = 0;
             // 
             // ptbHomeLogo
             // 
@@ -148,6 +166,7 @@
             this.btnHome.TabIndex = 5;
             this.btnHome.Text = "Trang chủ";
             this.btnHome.UseVisualStyleBackColor = true;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // btnStudent
             // 
@@ -164,6 +183,7 @@
             this.btnStudent.TabIndex = 6;
             this.btnStudent.Text = "Học viên";
             this.btnStudent.UseVisualStyleBackColor = true;
+            this.btnStudent.Click += new System.EventHandler(this.btnStudent_Click);
             // 
             // btnTeacher
             // 
@@ -180,6 +200,7 @@
             this.btnTeacher.TabIndex = 7;
             this.btnTeacher.Text = "Giáo viên";
             this.btnTeacher.UseVisualStyleBackColor = true;
+            this.btnTeacher.Click += new System.EventHandler(this.btnTeacher_Click);
             // 
             // btnClass
             // 
@@ -196,6 +217,7 @@
             this.btnClass.TabIndex = 8;
             this.btnClass.Text = "Lớp học";
             this.btnClass.UseVisualStyleBackColor = true;
+            this.btnClass.Click += new System.EventHandler(this.btnClass_Click);
             // 
             // btnCourse
             // 
@@ -212,51 +234,45 @@
             this.btnCourse.TabIndex = 9;
             this.btnCourse.Text = "Khóa học";
             this.btnCourse.UseVisualStyleBackColor = true;
+            this.btnCourse.Click += new System.EventHandler(this.btnCourse_Click);
             // 
-            // btnFinace
+            // btnFinance
             // 
-            this.btnFinace.FlatAppearance.BorderSize = 0;
-            this.btnFinace.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFinace.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFinace.ForeColor = System.Drawing.Color.White;
-            this.btnFinace.Image = ((System.Drawing.Image)(resources.GetObject("btnFinace.Image")));
-            this.btnFinace.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFinace.Location = new System.Drawing.Point(0, 471);
-            this.btnFinace.Name = "btnFinace";
-            this.btnFinace.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnFinace.Size = new System.Drawing.Size(273, 62);
-            this.btnFinace.TabIndex = 10;
-            this.btnFinace.Text = "Tài chính";
-            this.btnFinace.UseVisualStyleBackColor = true;
+            this.btnFinance.FlatAppearance.BorderSize = 0;
+            this.btnFinance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFinance.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinance.ForeColor = System.Drawing.Color.White;
+            this.btnFinance.Image = ((System.Drawing.Image)(resources.GetObject("btnFinance.Image")));
+            this.btnFinance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFinance.Location = new System.Drawing.Point(0, 471);
+            this.btnFinance.Name = "btnFinance";
+            this.btnFinance.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnFinance.Size = new System.Drawing.Size(273, 62);
+            this.btnFinance.TabIndex = 10;
+            this.btnFinance.Text = "Tài chính";
+            this.btnFinance.UseVisualStyleBackColor = true;
+            this.btnFinance.Click += new System.EventHandler(this.btnFinance_Click);
             // 
-            // ucNavbar
+            // pnNavbar
             // 
-            this.ucNavbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(86)))), ((int)(((byte)(246)))));
-            this.ucNavbar.Controls.Add(this.btnFinace);
-            this.ucNavbar.Controls.Add(this.btnCourse);
-            this.ucNavbar.Controls.Add(this.btnClass);
-            this.ucNavbar.Controls.Add(this.btnTeacher);
-            this.ucNavbar.Controls.Add(this.btnStudent);
-            this.ucNavbar.Controls.Add(this.btnHome);
-            this.ucNavbar.Controls.Add(this.lbRole);
-            this.ucNavbar.Controls.Add(this.lbName);
-            this.ucNavbar.Controls.Add(this.ptbIcon);
-            this.ucNavbar.Controls.Add(this.btnExit);
-            this.ucNavbar.Controls.Add(this.btnLogout);
-            this.ucNavbar.Controls.Add(this.ptbHomeLogo);
-            this.ucNavbar.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ucNavbar.Location = new System.Drawing.Point(0, 0);
-            this.ucNavbar.Name = "ucNavbar";
-            this.ucNavbar.Size = new System.Drawing.Size(273, 754);
-            this.ucNavbar.TabIndex = 0;
-            // 
-            // ucAdminStudent1
-            // 
-            this.ucAdminStudent1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucAdminStudent1.Location = new System.Drawing.Point(0, 0);
-            this.ucAdminStudent1.Name = "ucAdminStudent1";
-            this.ucAdminStudent1.Size = new System.Drawing.Size(989, 754);
-            this.ucAdminStudent1.TabIndex = 0;
+            this.pnNavbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(86)))), ((int)(((byte)(246)))));
+            this.pnNavbar.Controls.Add(this.btnFinance);
+            this.pnNavbar.Controls.Add(this.btnCourse);
+            this.pnNavbar.Controls.Add(this.btnClass);
+            this.pnNavbar.Controls.Add(this.btnTeacher);
+            this.pnNavbar.Controls.Add(this.btnStudent);
+            this.pnNavbar.Controls.Add(this.btnHome);
+            this.pnNavbar.Controls.Add(this.lbRole);
+            this.pnNavbar.Controls.Add(this.lbName);
+            this.pnNavbar.Controls.Add(this.ptbIcon);
+            this.pnNavbar.Controls.Add(this.btnExit);
+            this.pnNavbar.Controls.Add(this.btnLogout);
+            this.pnNavbar.Controls.Add(this.ptbHomeLogo);
+            this.pnNavbar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnNavbar.Location = new System.Drawing.Point(0, 0);
+            this.pnNavbar.Name = "pnNavbar";
+            this.pnNavbar.Size = new System.Drawing.Size(273, 754);
+            this.pnNavbar.TabIndex = 0;
             // 
             // frmAdminMain
             // 
@@ -264,7 +280,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1262, 754);
             this.Controls.Add(this.pnContainer);
-            this.Controls.Add(this.ucNavbar);
+            this.Controls.Add(this.pnNavbar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmAdminMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -272,8 +288,8 @@
             this.pnContainer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ptbHomeLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbIcon)).EndInit();
-            this.ucNavbar.ResumeLayout(false);
-            this.ucNavbar.PerformLayout();
+            this.pnNavbar.ResumeLayout(false);
+            this.pnNavbar.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -292,9 +308,10 @@
         private System.Windows.Forms.Button btnTeacher;
         private System.Windows.Forms.Button btnClass;
         private System.Windows.Forms.Button btnCourse;
-        private System.Windows.Forms.Button btnFinace;
-        private System.Windows.Forms.Panel ucNavbar;
+        private System.Windows.Forms.Button btnFinance;
+        private System.Windows.Forms.Panel pnNavbar;
         private ucAdminStudent ucAdminStudent1;
+        private ucAdminHome ucAdminHome1;
     }
 }
 
