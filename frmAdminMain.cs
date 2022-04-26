@@ -21,12 +21,14 @@ namespace TrungTamAnhVan
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            
+            SetActivePanel(ucAdminStudent1);
         }
 
         public void SetActivePanel(UserControl control)
         {
+            ucAdminStudent1.Visible = false;
 
+            control.Visible = true;
         }
 
         private void btnExit_Click(object sender, EventArgs e)

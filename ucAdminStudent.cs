@@ -15,6 +15,8 @@ namespace TrungTamAnhVan
         public ucAdminStudent()
         {
             InitializeComponent();
+
+            cboGender.SelectedIndex = 0;
         }
     }
 }

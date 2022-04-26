@@ -15,7 +15,7 @@ namespace DAL
     public partial class Teacher_account
     {
         public int id { get; set; }
-        public Nullable<int> Teacher_id { get; set; }
+        public Nullable<int> teacher_id { get; set; }
         public string login { get; set; }
         public string password { get; set; }
     

@@ -43,6 +43,8 @@
             this.btnCourse = new System.Windows.Forms.Button();
             this.btnFinace = new System.Windows.Forms.Button();
             this.ucNavbar = new System.Windows.Forms.Panel();
+            this.ucAdminStudent1 = new TrungTamAnhVan.ucAdminStudent();
+            this.pnContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbHomeLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbIcon)).BeginInit();
             this.ucNavbar.SuspendLayout();
@@ -50,6 +52,7 @@
             // 
             // pnContainer
             // 
+            this.pnContainer.Controls.Add(this.ucAdminStudent1);
             this.pnContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnContainer.Location = new System.Drawing.Point(273, 0);
             this.pnContainer.Name = "pnContainer";
@@ -247,6 +250,14 @@
             this.ucNavbar.Size = new System.Drawing.Size(273, 754);
             this.ucNavbar.TabIndex = 0;
             // 
+            // ucAdminStudent1
+            // 
+            this.ucAdminStudent1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucAdminStudent1.Location = new System.Drawing.Point(0, 0);
+            this.ucAdminStudent1.Name = "ucAdminStudent1";
+            this.ucAdminStudent1.Size = new System.Drawing.Size(989, 754);
+            this.ucAdminStudent1.TabIndex = 0;
+            // 
             // frmAdminMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -258,6 +269,7 @@
             this.Name = "frmAdminMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.pnContainer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ptbHomeLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbIcon)).EndInit();
             this.ucNavbar.ResumeLayout(false);
@@ -282,6 +294,7 @@
         private System.Windows.Forms.Button btnCourse;
         private System.Windows.Forms.Button btnFinace;
         private System.Windows.Forms.Panel ucNavbar;
+        private ucAdminStudent ucAdminStudent1;
     }
 }
 

@@ -34,7 +34,7 @@ namespace BUS
             {
                 if (account.login == username && account.password == password)
                 {
-                    return infoDAL.GetNameTeacher(instanceDAL.GetTeacherFromId((int)account.Teacher_id));
+                    return infoDAL.GetNameTeacher(instanceDAL.GetTeacherFromId((int)account.teacher_id));
                 }
             }
             return null;

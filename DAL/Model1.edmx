@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="TrungTamAnhVanDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="TrungTamAnhVanDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Admin">
           <Key>
             <PropertyRef Name="id" />
@@ -314,8 +314,7 @@
             <End Role="Teacher_account" EntitySet="Teacher_account" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="TrungTamAnhVanDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -446,7 +445,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Teacher_id" Type="Int32" />
+          <Property Name="teacher_id" Type="Int32" />
           <Property Name="login" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Teacher" Relationship="Self.FK__Teacher_a__Teach__32E0915F" FromRole="Teacher_account" ToRole="Teacher" />
@@ -587,7 +586,7 @@
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="Teacher_account">
-              <PropertyRef Name="Teacher_id" />
+              <PropertyRef Name="teacher_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -772,7 +771,7 @@
             <EntityTypeMapping TypeName="TrungTamAnhVanDBModel.Teacher_account">
               <MappingFragment StoreEntitySet="Teacher_account">
                 <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="Teacher_id" ColumnName="Teacher_id" />
+                <ScalarProperty Name="teacher_id" ColumnName="Teacher_id" />
                 <ScalarProperty Name="login" ColumnName="login" />
                 <ScalarProperty Name="password" ColumnName="password" />
               </MappingFragment>
