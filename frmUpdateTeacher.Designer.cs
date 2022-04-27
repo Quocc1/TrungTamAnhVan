@@ -1,6 +1,6 @@
 ﻿namespace TrungTamAnhVan
 {
-    partial class frmInsertStudent
+    partial class frmUpdateTeacher
     {
         /// <summary>
         /// Required designer variable.
@@ -58,10 +58,10 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(81, 43);
+            this.panel1.Location = new System.Drawing.Point(91, 65);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(619, 321);
-            this.panel1.TabIndex = 0;
+            this.panel1.TabIndex = 2;
             // 
             // button2
             // 
@@ -71,7 +71,6 @@
             this.button2.TabIndex = 11;
             this.button2.Text = "Hủy";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -79,7 +78,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 10;
-            this.button1.Text = "Thêm";
+            this.button1.Text = "Lưu";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // radioButton2
@@ -151,7 +150,6 @@
             this.label2.Size = new System.Drawing.Size(46, 16);
             this.label2.TabIndex = 2;
             this.label2.Text = "Số DT";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // textBox1
             // 
@@ -169,15 +167,14 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Họ và tên";
             // 
-            // frmInsertStudent
+            // frmUpdateTeacher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel1);
-            this.Name = "frmInsertStudent";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "InsertStudent";
+            this.Name = "frmUpdateTeacher";
+            this.Text = "frmUpdateTeacher";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -187,7 +184,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.RadioButton radioButton2;
@@ -199,5 +195,6 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
     }
 }

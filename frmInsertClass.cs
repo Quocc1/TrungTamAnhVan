@@ -10,20 +10,16 @@ using System.Windows.Forms;
 
 namespace TrungTamAnhVan
 {
-    public partial class frmInsertStudent : Form
+    public partial class frmInsertClass : Form
     {
-        public frmInsertStudent()
+        public frmInsertClass()
         {
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
+            this.Hide();
             this.Close();
         }
     }

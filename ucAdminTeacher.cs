@@ -21,5 +21,11 @@ namespace TrungTamAnhVan
         {
 
         }
+
+        private void btnInsert_Click(object sender, EventArgs e)
+        {
+            frmInsertStudent fInsertStudent = new frmInsertStudent();
+            fInsertStudent.Show();
+        }
     }
 }

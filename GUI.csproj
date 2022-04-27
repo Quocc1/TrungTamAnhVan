@@ -60,6 +60,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmInsertClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInsertClass.Designer.cs">
+      <DependentUpon>frmInsertClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInsertTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInsertTeacher.Designer.cs">
+      <DependentUpon>frmInsertTeacher.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +101,18 @@
     </Compile>
     <Compile Include="frmInsertStudent.Designer.cs">
       <DependentUpon>frmInsertStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUpdateStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUpdateStudent.Designer.cs">
+      <DependentUpon>frmUpdateStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUpdateTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUpdateTeacher.Designer.cs">
+      <DependentUpon>frmUpdateTeacher.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -128,6 +152,12 @@
     <Compile Include="ucAdminTeacher.Designer.cs">
       <DependentUpon>ucAdminTeacher.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmInsertClass.resx">
+      <DependentUpon>frmInsertClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInsertTeacher.resx">
+      <DependentUpon>frmInsertTeacher.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -143,6 +173,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmInsertStudent.resx">
       <DependentUpon>frmInsertStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUpdateStudent.resx">
+      <DependentUpon>frmUpdateStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUpdateTeacher.resx">
+      <DependentUpon>frmUpdateTeacher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

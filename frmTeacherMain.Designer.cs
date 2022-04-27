@@ -41,6 +41,7 @@
             this.btnLogout = new System.Windows.Forms.Button();
             this.ptbHomeLogo = new System.Windows.Forms.PictureBox();
             this.pnContainer = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.pnNavbar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbHomeLogo)).BeginInit();
@@ -49,6 +50,7 @@
             // pnNavbar
             // 
             this.pnNavbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(86)))), ((int)(((byte)(246)))));
+            this.pnNavbar.Controls.Add(this.button1);
             this.pnNavbar.Controls.Add(this.btnFinace);
             this.pnNavbar.Controls.Add(this.btnClass);
             this.pnNavbar.Controls.Add(this.btnStudent);
@@ -211,6 +213,22 @@
             this.pnContainer.Size = new System.Drawing.Size(1262, 754);
             this.pnContainer.TabIndex = 3;
             // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(0, 403);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.button1.Size = new System.Drawing.Size(273, 62);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Tài chính";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // frmTeacherMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -244,5 +262,6 @@
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.PictureBox ptbHomeLogo;
         private System.Windows.Forms.Panel pnContainer;
+        private System.Windows.Forms.Button button1;
     }
 }
