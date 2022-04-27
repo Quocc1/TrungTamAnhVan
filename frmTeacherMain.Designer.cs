@@ -30,9 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTeacherMain));
             this.pnNavbar = new System.Windows.Forms.Panel();
-            this.btnFinace = new System.Windows.Forms.Button();
+            this.btnSchedule = new System.Windows.Forms.Button();
             this.btnClass = new System.Windows.Forms.Button();
-            this.btnStudent = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.lbRole = new System.Windows.Forms.Label();
             this.lbName = new System.Windows.Forms.Label();
@@ -41,7 +40,8 @@
             this.btnLogout = new System.Windows.Forms.Button();
             this.ptbHomeLogo = new System.Windows.Forms.PictureBox();
             this.pnContainer = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnEvent = new System.Windows.Forms.Button();
+            this.btnSalary = new System.Windows.Forms.Button();
             this.pnNavbar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbHomeLogo)).BeginInit();
@@ -50,10 +50,10 @@
             // pnNavbar
             // 
             this.pnNavbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(86)))), ((int)(((byte)(246)))));
-            this.pnNavbar.Controls.Add(this.button1);
-            this.pnNavbar.Controls.Add(this.btnFinace);
+            this.pnNavbar.Controls.Add(this.btnSalary);
+            this.pnNavbar.Controls.Add(this.btnEvent);
+            this.pnNavbar.Controls.Add(this.btnSchedule);
             this.pnNavbar.Controls.Add(this.btnClass);
-            this.pnNavbar.Controls.Add(this.btnStudent);
             this.pnNavbar.Controls.Add(this.btnHome);
             this.pnNavbar.Controls.Add(this.lbRole);
             this.pnNavbar.Controls.Add(this.lbName);
@@ -67,21 +67,21 @@
             this.pnNavbar.Size = new System.Drawing.Size(273, 754);
             this.pnNavbar.TabIndex = 2;
             // 
-            // btnFinace
+            // btnSchedule
             // 
-            this.btnFinace.FlatAppearance.BorderSize = 0;
-            this.btnFinace.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFinace.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFinace.ForeColor = System.Drawing.Color.White;
-            this.btnFinace.Image = ((System.Drawing.Image)(resources.GetObject("btnFinace.Image")));
-            this.btnFinace.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFinace.Location = new System.Drawing.Point(0, 335);
-            this.btnFinace.Name = "btnFinace";
-            this.btnFinace.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnFinace.Size = new System.Drawing.Size(273, 62);
-            this.btnFinace.TabIndex = 10;
-            this.btnFinace.Text = "Tài chính";
-            this.btnFinace.UseVisualStyleBackColor = true;
+            this.btnSchedule.FlatAppearance.BorderSize = 0;
+            this.btnSchedule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSchedule.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSchedule.ForeColor = System.Drawing.Color.White;
+            this.btnSchedule.Image = ((System.Drawing.Image)(resources.GetObject("btnSchedule.Image")));
+            this.btnSchedule.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSchedule.Location = new System.Drawing.Point(0, 267);
+            this.btnSchedule.Name = "btnSchedule";
+            this.btnSchedule.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnSchedule.Size = new System.Drawing.Size(273, 62);
+            this.btnSchedule.TabIndex = 10;
+            this.btnSchedule.Text = "Lịch dạy";
+            this.btnSchedule.UseVisualStyleBackColor = true;
             // 
             // btnClass
             // 
@@ -91,29 +91,13 @@
             this.btnClass.ForeColor = System.Drawing.Color.White;
             this.btnClass.Image = ((System.Drawing.Image)(resources.GetObject("btnClass.Image")));
             this.btnClass.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClass.Location = new System.Drawing.Point(0, 267);
+            this.btnClass.Location = new System.Drawing.Point(0, 199);
             this.btnClass.Name = "btnClass";
             this.btnClass.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.btnClass.Size = new System.Drawing.Size(273, 62);
             this.btnClass.TabIndex = 8;
             this.btnClass.Text = "Lớp học";
             this.btnClass.UseVisualStyleBackColor = true;
-            // 
-            // btnStudent
-            // 
-            this.btnStudent.FlatAppearance.BorderSize = 0;
-            this.btnStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStudent.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStudent.ForeColor = System.Drawing.Color.White;
-            this.btnStudent.Image = ((System.Drawing.Image)(resources.GetObject("btnStudent.Image")));
-            this.btnStudent.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStudent.Location = new System.Drawing.Point(0, 199);
-            this.btnStudent.Name = "btnStudent";
-            this.btnStudent.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnStudent.Size = new System.Drawing.Size(273, 62);
-            this.btnStudent.TabIndex = 6;
-            this.btnStudent.Text = "Học viên";
-            this.btnStudent.UseVisualStyleBackColor = true;
             // 
             // btnHome
             // 
@@ -213,21 +197,37 @@
             this.pnContainer.Size = new System.Drawing.Size(1262, 754);
             this.pnContainer.TabIndex = 3;
             // 
-            // button1
+            // btnEvent
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 403);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(273, 62);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Tài chính";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnEvent.FlatAppearance.BorderSize = 0;
+            this.btnEvent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEvent.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEvent.ForeColor = System.Drawing.Color.White;
+            this.btnEvent.Image = ((System.Drawing.Image)(resources.GetObject("btnEvent.Image")));
+            this.btnEvent.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEvent.Location = new System.Drawing.Point(0, 335);
+            this.btnEvent.Name = "btnEvent";
+            this.btnEvent.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnEvent.Size = new System.Drawing.Size(273, 62);
+            this.btnEvent.TabIndex = 11;
+            this.btnEvent.Text = "Sự kiện";
+            this.btnEvent.UseVisualStyleBackColor = true;
+            // 
+            // btnSalary
+            // 
+            this.btnSalary.FlatAppearance.BorderSize = 0;
+            this.btnSalary.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalary.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalary.ForeColor = System.Drawing.Color.White;
+            this.btnSalary.Image = ((System.Drawing.Image)(resources.GetObject("btnSalary.Image")));
+            this.btnSalary.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSalary.Location = new System.Drawing.Point(0, 403);
+            this.btnSalary.Name = "btnSalary";
+            this.btnSalary.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnSalary.Size = new System.Drawing.Size(273, 62);
+            this.btnSalary.TabIndex = 12;
+            this.btnSalary.Text = "Lương";
+            this.btnSalary.UseVisualStyleBackColor = true;
             // 
             // frmTeacherMain
             // 
@@ -251,9 +251,8 @@
         #endregion
 
         private System.Windows.Forms.Panel pnNavbar;
-        private System.Windows.Forms.Button btnFinace;
+        private System.Windows.Forms.Button btnSchedule;
         private System.Windows.Forms.Button btnClass;
-        private System.Windows.Forms.Button btnStudent;
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Label lbRole;
         private System.Windows.Forms.Label lbName;
@@ -262,6 +261,7 @@
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.PictureBox ptbHomeLogo;
         private System.Windows.Forms.Panel pnContainer;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnEvent;
+        private System.Windows.Forms.Button btnSalary;
     }
 }
