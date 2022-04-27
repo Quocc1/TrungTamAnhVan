@@ -29,5 +29,10 @@ namespace TrungTamAnhVan
             fLogin.Show();
             this.Close();
         }
+
+        private void btnStudent_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

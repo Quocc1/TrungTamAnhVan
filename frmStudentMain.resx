@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnFinace.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnFee.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAALRJREFUSEtjGAVDA/z//98BiAPIwApQI/ADoML1QEwJwG8RUIEBRN3/fiAG+YYc
@@ -127,7 +127,7 @@
         CjpyMPZMOAoGEWBgAAAlGLAnMRNEQQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnCourse.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnAssignment.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAAPpJREFUSEvtlTEKwkAQRXOMkMpSAgEbUQiCR0hjlcYj5AjewN7GI9jb2Nh7BI+y
@@ -137,7 +137,7 @@
         UagJR1rQbI4rlN7jar6Mob5+ukb6iaIHCBmavvJDigkAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnClass.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnScore.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAAapJREFUSEvtla1Sw0AUhSsqKioqEEgEooJh+gCIagZRh6lAMINB9BH6BpUIBLIC
@@ -150,7 +150,7 @@
         7955iVc8AJj6yj7l2pm7/oFO5wvVbaoMN/xXHQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnTeacher.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnSchedule.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAAWVJREFUSEvtk6FOA0EURStJqKhA1BAqKpAlQUBS0U/gAxBIBKKiggRIIIgKBJ/A
@@ -162,7 +162,7 @@
         t8qml9TUTGk0/gCv2xQE9QYZPAAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnStudent.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnInfo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAATRJREFUSEvtkqFLQ1EUh19YGOhgdViNBsOCQTBsWRSsisFoMCwYRcE6xtYM02Q0
