@@ -106,7 +106,6 @@
             this.btnInsert.TabIndex = 9;
             this.btnInsert.Text = "Thêm";
             this.btnInsert.UseVisualStyleBackColor = false;
-            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // dataGridView1
             // 
@@ -131,7 +130,6 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "ucAdminTeacher";
             this.Size = new System.Drawing.Size(989, 754);
-            this.Load += new System.EventHandler(this.ucAdminTeacher_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

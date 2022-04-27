@@ -151,7 +151,6 @@
             this.Controls.Add(this.lbTitle);
             this.Name = "ucAdminHome";
             this.Size = new System.Drawing.Size(989, 754);
-            this.Load += new System.EventHandler(this.ucAdminHome_Load);
             this.pnStudents.ResumeLayout(false);
             this.pnStudents.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbStudents)).EndInit();

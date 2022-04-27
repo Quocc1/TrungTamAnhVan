@@ -16,16 +16,5 @@ namespace TrungTamAnhVan
         {
             InitializeComponent();
         }
-
-        private void ucAdminTeacher_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnInsert_Click(object sender, EventArgs e)
-        {
-            frmInsertStudent fInsertStudent = new frmInsertStudent();
-            fInsertStudent.Show();
-        }
     }
 }

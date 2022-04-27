@@ -15,21 +15,6 @@ namespace TrungTamAnhVan
         public ucAdminStudent()
         {
             InitializeComponent();
-
-            cboGender.SelectedIndex = 0;
-        }
-
-        private void btnInsert_Click(object sender, EventArgs e)
-        {
-            frmInsertStudent fInsertStudent = new frmInsertStudent();
-            fInsertStudent.Show();
-
-        }
-
-        private void btnEdit_Click(object sender, EventArgs e)
-        {
-            frmUpdateStudent fUpdateStudent = new frmUpdateStudent();
-            fUpdateStudent.Show();
         }
     }
 }
