@@ -31,9 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTeacherMain));
             this.pnNavbar = new System.Windows.Forms.Panel();
             this.btnFinace = new System.Windows.Forms.Button();
-            this.btnCourse = new System.Windows.Forms.Button();
             this.btnClass = new System.Windows.Forms.Button();
-            this.btnTeacher = new System.Windows.Forms.Button();
             this.btnStudent = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.lbRole = new System.Windows.Forms.Label();
@@ -52,9 +50,7 @@
             // 
             this.pnNavbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(86)))), ((int)(((byte)(246)))));
             this.pnNavbar.Controls.Add(this.btnFinace);
-            this.pnNavbar.Controls.Add(this.btnCourse);
             this.pnNavbar.Controls.Add(this.btnClass);
-            this.pnNavbar.Controls.Add(this.btnTeacher);
             this.pnNavbar.Controls.Add(this.btnStudent);
             this.pnNavbar.Controls.Add(this.btnHome);
             this.pnNavbar.Controls.Add(this.lbRole);
@@ -77,29 +73,13 @@
             this.btnFinace.ForeColor = System.Drawing.Color.White;
             this.btnFinace.Image = ((System.Drawing.Image)(resources.GetObject("btnFinace.Image")));
             this.btnFinace.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFinace.Location = new System.Drawing.Point(0, 471);
+            this.btnFinace.Location = new System.Drawing.Point(0, 335);
             this.btnFinace.Name = "btnFinace";
             this.btnFinace.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.btnFinace.Size = new System.Drawing.Size(273, 62);
             this.btnFinace.TabIndex = 10;
             this.btnFinace.Text = "Tài chính";
             this.btnFinace.UseVisualStyleBackColor = true;
-            // 
-            // btnCourse
-            // 
-            this.btnCourse.FlatAppearance.BorderSize = 0;
-            this.btnCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCourse.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCourse.ForeColor = System.Drawing.Color.White;
-            this.btnCourse.Image = ((System.Drawing.Image)(resources.GetObject("btnCourse.Image")));
-            this.btnCourse.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCourse.Location = new System.Drawing.Point(0, 403);
-            this.btnCourse.Name = "btnCourse";
-            this.btnCourse.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnCourse.Size = new System.Drawing.Size(273, 62);
-            this.btnCourse.TabIndex = 9;
-            this.btnCourse.Text = "Khóa học";
-            this.btnCourse.UseVisualStyleBackColor = true;
             // 
             // btnClass
             // 
@@ -109,29 +89,13 @@
             this.btnClass.ForeColor = System.Drawing.Color.White;
             this.btnClass.Image = ((System.Drawing.Image)(resources.GetObject("btnClass.Image")));
             this.btnClass.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClass.Location = new System.Drawing.Point(0, 335);
+            this.btnClass.Location = new System.Drawing.Point(0, 267);
             this.btnClass.Name = "btnClass";
             this.btnClass.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.btnClass.Size = new System.Drawing.Size(273, 62);
             this.btnClass.TabIndex = 8;
             this.btnClass.Text = "Lớp học";
             this.btnClass.UseVisualStyleBackColor = true;
-            // 
-            // btnTeacher
-            // 
-            this.btnTeacher.FlatAppearance.BorderSize = 0;
-            this.btnTeacher.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTeacher.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTeacher.ForeColor = System.Drawing.Color.White;
-            this.btnTeacher.Image = ((System.Drawing.Image)(resources.GetObject("btnTeacher.Image")));
-            this.btnTeacher.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTeacher.Location = new System.Drawing.Point(0, 267);
-            this.btnTeacher.Name = "btnTeacher";
-            this.btnTeacher.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnTeacher.Size = new System.Drawing.Size(273, 62);
-            this.btnTeacher.TabIndex = 7;
-            this.btnTeacher.Text = "Giáo viên";
-            this.btnTeacher.UseVisualStyleBackColor = true;
             // 
             // btnStudent
             // 
@@ -270,9 +234,7 @@
 
         private System.Windows.Forms.Panel pnNavbar;
         private System.Windows.Forms.Button btnFinace;
-        private System.Windows.Forms.Button btnCourse;
         private System.Windows.Forms.Button btnClass;
-        private System.Windows.Forms.Button btnTeacher;
         private System.Windows.Forms.Button btnStudent;
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Label lbRole;

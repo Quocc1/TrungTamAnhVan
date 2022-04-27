@@ -31,7 +31,7 @@ namespace TrungTamAnhVan
             ucAdminTeacher1.Visible = false;
             ucAdminClass1.Visible = false;
             ucAdminCourse1.Visible = false;
-            //ucAdminFinace1.Visible = false;
+            ucAdminFinance1.Visible = false;
 
             control.Visible = true;
         }
@@ -75,7 +75,7 @@ namespace TrungTamAnhVan
 
         private void btnFinance_Click(object sender, EventArgs e)
         {
-            //SetActivePanel(ucAdminFinance1);
+            SetActivePanel(ucAdminFinance1);
         }
     }
 }

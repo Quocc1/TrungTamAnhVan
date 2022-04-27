@@ -57,12 +57,12 @@
             // pnStudents
             // 
             this.pnStudents.BackColor = System.Drawing.Color.White;
-            this.pnStudents.Controls.Add(this.lbStudentDescription);
             this.pnStudents.Controls.Add(this.ptbStudents);
+            this.pnStudents.Controls.Add(this.lbStudentDescription);
             this.pnStudents.Controls.Add(this.lbStudentQuantity);
             this.pnStudents.Location = new System.Drawing.Point(44, 105);
             this.pnStudents.Name = "pnStudents";
-            this.pnStudents.Size = new System.Drawing.Size(323, 125);
+            this.pnStudents.Size = new System.Drawing.Size(353, 125);
             this.pnStudents.TabIndex = 7;
             // 
             // lbStudentDescription
@@ -78,11 +78,12 @@
             // 
             // ptbStudents
             // 
+            this.ptbStudents.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ptbStudents.BackColor = System.Drawing.Color.Transparent;
             this.ptbStudents.Image = ((System.Drawing.Image)(resources.GetObject("ptbStudents.Image")));
-            this.ptbStudents.Location = new System.Drawing.Point(214, 25);
+            this.ptbStudents.Location = new System.Drawing.Point(242, 25);
             this.ptbStudents.Name = "ptbStudents";
-            this.ptbStudents.Size = new System.Drawing.Size(106, 65);
+            this.ptbStudents.Size = new System.Drawing.Size(92, 65);
             this.ptbStudents.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ptbStudents.TabIndex = 11;
             this.ptbStudents.TabStop = false;
@@ -100,12 +101,12 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.lbTeacherDescription);
             this.panel1.Controls.Add(this.ptbTeachers);
+            this.panel1.Controls.Add(this.lbTeacherDescription);
             this.panel1.Controls.Add(this.lbTeacherQuantity);
             this.panel1.Location = new System.Drawing.Point(603, 105);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(323, 125);
+            this.panel1.Size = new System.Drawing.Size(353, 125);
             this.panel1.TabIndex = 10;
             // 
             // lbTeacherDescription
@@ -121,11 +122,12 @@
             // 
             // ptbTeachers
             // 
+            this.ptbTeachers.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ptbTeachers.BackColor = System.Drawing.Color.Transparent;
             this.ptbTeachers.Image = ((System.Drawing.Image)(resources.GetObject("ptbTeachers.Image")));
-            this.ptbTeachers.Location = new System.Drawing.Point(214, 25);
+            this.ptbTeachers.Location = new System.Drawing.Point(251, 25);
             this.ptbTeachers.Name = "ptbTeachers";
-            this.ptbTeachers.Size = new System.Drawing.Size(106, 65);
+            this.ptbTeachers.Size = new System.Drawing.Size(92, 65);
             this.ptbTeachers.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ptbTeachers.TabIndex = 12;
             this.ptbTeachers.TabStop = false;

@@ -30,10 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdminMain));
             this.pnContainer = new System.Windows.Forms.Panel();
-            this.ucAdminStudent1 = new TrungTamAnhVan.ucAdminStudent();
-            this.ucAdminTeacher1 = new TrungTamAnhVan.ucAdminTeacher();
-            this.ucAdminCourse1 = new TrungTamAnhVan.ucAdminCourse();
-            this.ucAdminClass1 = new TrungTamAnhVan.ucAdminClass();
             this.ptbHomeLogo = new System.Windows.Forms.PictureBox();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
@@ -48,6 +44,11 @@
             this.btnFinance = new System.Windows.Forms.Button();
             this.pnNavbar = new System.Windows.Forms.Panel();
             this.ucAdminHome1 = new TrungTamAnhVan.ucAdminHome();
+            this.ucAdminStudent1 = new TrungTamAnhVan.ucAdminStudent();
+            this.ucAdminTeacher1 = new TrungTamAnhVan.ucAdminTeacher();
+            this.ucAdminCourse1 = new TrungTamAnhVan.ucAdminCourse();
+            this.ucAdminClass1 = new TrungTamAnhVan.ucAdminClass();
+            this.ucAdminFinance1 = new TrungTamAnhVan.ucAdminFinance();
             this.pnContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbHomeLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbIcon)).BeginInit();
@@ -61,43 +62,12 @@
             this.pnContainer.Controls.Add(this.ucAdminTeacher1);
             this.pnContainer.Controls.Add(this.ucAdminCourse1);
             this.pnContainer.Controls.Add(this.ucAdminClass1);
+            this.pnContainer.Controls.Add(this.ucAdminFinance1);
             this.pnContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnContainer.Location = new System.Drawing.Point(273, 0);
             this.pnContainer.Name = "pnContainer";
             this.pnContainer.Size = new System.Drawing.Size(989, 754);
             this.pnContainer.TabIndex = 1;
-            // 
-            // ucAdminStudent1
-            // 
-            this.ucAdminStudent1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucAdminStudent1.Location = new System.Drawing.Point(0, 0);
-            this.ucAdminStudent1.Name = "ucAdminStudent1";
-            this.ucAdminStudent1.Size = new System.Drawing.Size(989, 754);
-            this.ucAdminStudent1.TabIndex = 0;
-            // 
-            // ucAdminTeacher1
-            // 
-            this.ucAdminTeacher1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucAdminTeacher1.Location = new System.Drawing.Point(0, 0);
-            this.ucAdminTeacher1.Name = "ucAdminTeacher1";
-            this.ucAdminTeacher1.Size = new System.Drawing.Size(989, 754);
-            this.ucAdminTeacher1.TabIndex = 4;
-            // 
-            // ucAdminCourse1
-            // 
-            this.ucAdminCourse1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucAdminCourse1.Location = new System.Drawing.Point(0, 0);
-            this.ucAdminCourse1.Name = "ucAdminCourse1";
-            this.ucAdminCourse1.Size = new System.Drawing.Size(989, 754);
-            this.ucAdminCourse1.TabIndex = 3;
-            // 
-            // ucAdminClass1
-            // 
-            this.ucAdminClass1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucAdminClass1.Location = new System.Drawing.Point(0, 0);
-            this.ucAdminClass1.Name = "ucAdminClass1";
-            this.ucAdminClass1.Size = new System.Drawing.Size(989, 754);
-            this.ucAdminClass1.TabIndex = 2;
             // 
             // ptbHomeLogo
             // 
@@ -304,6 +274,46 @@
             this.ucAdminHome1.Size = new System.Drawing.Size(989, 754);
             this.ucAdminHome1.TabIndex = 5;
             // 
+            // ucAdminStudent1
+            // 
+            this.ucAdminStudent1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucAdminStudent1.Location = new System.Drawing.Point(0, 0);
+            this.ucAdminStudent1.Name = "ucAdminStudent1";
+            this.ucAdminStudent1.Size = new System.Drawing.Size(989, 754);
+            this.ucAdminStudent1.TabIndex = 0;
+            // 
+            // ucAdminTeacher1
+            // 
+            this.ucAdminTeacher1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucAdminTeacher1.Location = new System.Drawing.Point(0, 0);
+            this.ucAdminTeacher1.Name = "ucAdminTeacher1";
+            this.ucAdminTeacher1.Size = new System.Drawing.Size(989, 754);
+            this.ucAdminTeacher1.TabIndex = 4;
+            // 
+            // ucAdminCourse1
+            // 
+            this.ucAdminCourse1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucAdminCourse1.Location = new System.Drawing.Point(0, 0);
+            this.ucAdminCourse1.Name = "ucAdminCourse1";
+            this.ucAdminCourse1.Size = new System.Drawing.Size(989, 754);
+            this.ucAdminCourse1.TabIndex = 3;
+            // 
+            // ucAdminClass1
+            // 
+            this.ucAdminClass1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucAdminClass1.Location = new System.Drawing.Point(0, 0);
+            this.ucAdminClass1.Name = "ucAdminClass1";
+            this.ucAdminClass1.Size = new System.Drawing.Size(989, 754);
+            this.ucAdminClass1.TabIndex = 2;
+            // 
+            // ucAdminFinance1
+            // 
+            this.ucAdminFinance1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucAdminFinance1.Location = new System.Drawing.Point(0, 0);
+            this.ucAdminFinance1.Name = "ucAdminFinance1";
+            this.ucAdminFinance1.Size = new System.Drawing.Size(989, 754);
+            this.ucAdminFinance1.TabIndex = 6;
+            // 
             // frmAdminMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -345,6 +355,7 @@
         private ucAdminCourse ucAdminCourse1;
         private ucAdminClass ucAdminClass1;
         private ucAdminHome ucAdminHome1;
+        private ucAdminFinance ucAdminFinance1;
     }
 }
 
