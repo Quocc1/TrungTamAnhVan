@@ -16,5 +16,16 @@ namespace TrungTamAnhVan
         {
             InitializeComponent();
         }
+
+        private void btnInsert_Click(object sender, EventArgs e)
+        {
+            if(!frmAdminMain.Instance.PnContainer.Controls.ContainsKey("ucInsertStudent"))
+            {
+                ucInsertStudent uc = new ucInsertStudent();
+                uc.Dock = DockStyle.Fill;
+                frmAdminMain.Instance.PnContainer.Controls.Add(uc);
+            }
+            frmAdminMain.Instance.PnContainer.Controls["ucInsertStudent"].BringToFront();
+        }
     }
 }

@@ -122,6 +122,12 @@
     <Compile Include="ucAdminTeacher.Designer.cs">
       <DependentUpon>ucAdminTeacher.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucInsertStudent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucInsertStudent.Designer.cs">
+      <DependentUpon>ucInsertStudent.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -156,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ucAdminTeacher.resx">
       <DependentUpon>ucAdminTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucInsertStudent.resx">
+      <DependentUpon>ucInsertStudent.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.Config" />
     <None Include="app.manifest" />

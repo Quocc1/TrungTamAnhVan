@@ -12,6 +12,25 @@ namespace TrungTamAnhVan
 {
     public partial class frmAdminMain : Form
     {
+        static frmAdminMain _obj;
+
+        public static frmAdminMain Instance
+        {
+            get
+            {
+                if (_obj == null)
+                {
+                    _obj = new frmAdminMain("DEMO");
+                }
+                return _obj;
+            }
+        }
+
+        public Panel PnContainer
+        {
+            get { return pnContainer; }
+            set { pnContainer = value; }
+        }
         public frmAdminMain(string name)
         {
             InitializeComponent();
@@ -21,6 +40,7 @@ namespace TrungTamAnhVan
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
+            _obj = this;
             SetActivePanel(ucAdminHome1);
         }
 
