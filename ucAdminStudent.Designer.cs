@@ -41,6 +41,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(46, 236);
             this.dataGridView1.Name = "dataGridView1";
@@ -122,6 +123,8 @@
             // cboClass
             // 
             this.cboClass.FormattingEnabled = true;
+            this.cboClass.Items.AddRange(new object[] {
+            "Tất cả"});
             this.cboClass.Location = new System.Drawing.Point(202, 190);
             this.cboClass.Name = "cboClass";
             this.cboClass.Size = new System.Drawing.Size(121, 24);
@@ -141,6 +144,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "ucAdminStudent";
             this.Size = new System.Drawing.Size(989, 754);
+            this.Load += new System.EventHandler(this.ucAdminStudent_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

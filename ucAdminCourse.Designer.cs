@@ -28,27 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cboGender = new System.Windows.Forms.ComboBox();
+            this.cboLevel = new System.Windows.Forms.ComboBox();
             this.lbTitle = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnInsert = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.cboCategory = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // cboGender
+            // cboLevel
             // 
-            this.cboGender.FormattingEnabled = true;
-            this.cboGender.Items.AddRange(new object[] {
+            this.cboLevel.FormattingEnabled = true;
+            this.cboLevel.Items.AddRange(new object[] {
             "Tất cả",
-            "Nam",
-            "Nữ"});
-            this.cboGender.Location = new System.Drawing.Point(46, 190);
-            this.cboGender.Name = "cboGender";
-            this.cboGender.Size = new System.Drawing.Size(121, 24);
-            this.cboGender.TabIndex = 21;
+            "A1",
+            "A2",
+            "B1",
+            "B2",
+            "C1",
+            "C2"});
+            this.cboLevel.Location = new System.Drawing.Point(46, 190);
+            this.cboLevel.Name = "cboLevel";
+            this.cboLevel.Size = new System.Drawing.Size(121, 24);
+            this.cboLevel.TabIndex = 21;
             // 
             // lbTitle
             // 
@@ -117,11 +122,25 @@
             this.dataGridView1.Size = new System.Drawing.Size(906, 486);
             this.dataGridView1.TabIndex = 15;
             // 
+            // cboCategory
+            // 
+            this.cboCategory.FormattingEnabled = true;
+            this.cboCategory.Items.AddRange(new object[] {
+            "Tất cả",
+            "Trẻ em",
+            "Thanh niên",
+            "Người lớn"});
+            this.cboCategory.Location = new System.Drawing.Point(202, 190);
+            this.cboCategory.Name = "cboCategory";
+            this.cboCategory.Size = new System.Drawing.Size(121, 24);
+            this.cboCategory.TabIndex = 22;
+            // 
             // ucAdminCourse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.cboGender);
+            this.Controls.Add(this.cboCategory);
+            this.Controls.Add(this.cboLevel);
             this.Controls.Add(this.lbTitle);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnDelete);
@@ -130,6 +149,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "ucAdminCourse";
             this.Size = new System.Drawing.Size(989, 754);
+            this.Load += new System.EventHandler(this.ucAdminCourse_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -138,12 +158,13 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox cboGender;
+        private System.Windows.Forms.ComboBox cboLevel;
         private System.Windows.Forms.Label lbTitle;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnInsert;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ComboBox cboCategory;
     }
 }

@@ -3,6 +3,14 @@ GO
 
 USE TrungTamAnhVanDB
 
+CREATE TABLE Event (
+	id INT PRIMARY KEY IDENTITY(1,1),
+	name NVARCHAR(50),
+	start_day DATE,
+	description NVARCHAR(100),
+	class_id INT NULL FOREIGN KEY REFERENCES Class(id)
+)
+
 CREATE TABLE Category (
 	id INT PRIMARY KEY IDENTITY(1,1),
 	name NVARCHAR(20)
@@ -25,11 +33,12 @@ CREATE TABLE Course (
 
 CREATE TABLE Student (
 	id INT PRIMARY KEY IDENTITY(1,1),
-	date_birth DATE,
-	address NVARCHAR(50),
 	full_name NVARCHAR(20),
 	gender NVARCHAR(3),
+	date_birth DATE,
 	phone NVARCHAR(15),
+	address NVARCHAR(50),
+	class_id INT NULL FOREIGN KEY REFERENCES Class(id)
 )
 
 CREATE TABLE Student_account (
@@ -41,11 +50,10 @@ CREATE TABLE Student_account (
 
 CREATE TABLE Teacher (
 	id INT PRIMARY KEY IDENTITY(1,1),
-	description NVARCHAR(50),
-	address NVARCHAR(50),
 	full_name NVARCHAR(20),
-	email NVARCHAR(20),
 	phone NVARCHAR(15),
+	address NVARCHAR(50),
+	description NVARCHAR(50),
 )
 
 CREATE TABLE Teacher_account (
@@ -77,11 +85,11 @@ CREATE TABLE Class (
 	course_id INT FOREIGN KEY REFERENCES Course(id)
 )
 
-CREATE TABLE Class_student (
-	id INT PRIMARY KEY IDENTITY(1,1),
-	class_id INT FOREIGN KEY REFERENCES Class(id),
-	student_id INT FOREIGN KEY REFERENCES Student(id)
-)
+--CREATE TABLE Class_student (
+--	id INT PRIMARY KEY IDENTITY(1,1),
+--	class_id INT FOREIGN KEY REFERENCES Class(id),
+--	student_id INT FOREIGN KEY REFERENCES Student(id)
+--)
 
 
 CREATE TABLE Weekday (
@@ -95,3 +103,23 @@ CREATE TABLE Class_weekday (
 	hours NVARCHAR(10),
 	CONSTRAINT PK_Class_weekday PRIMARY KEY (class_id, weekday_id)
 )
+
+INSERT INTO Weekday VALUES('Monday')
+INSERT INTO Weekday VALUES('Tuesday')
+INSERT INTO Weekday VALUES('Wednesday')
+INSERT INTO Weekday VALUES('Thursday')
+INSERT INTO Weekday VALUES('Friday')
+INSERT INTO Weekday VALUES('Saturday')
+INSERT INTO Weekday VALUES('Sunday')
+
+INSERT INTO Category VALUES('Children')
+INSERT INTO Category VALUES('Youth')
+INSERT INTO Category VALUES('Adult')
+
+INSERT INTO Level VALUES('A1', 'Beginner')
+INSERT INTO Level VALUES('A2', 'Elementary')
+INSERT INTO Level VALUES('B1', 'Intermediate')
+INSERT INTO Level VALUES('B2', 'Upper Intermediate')
+INSERT INTO Level VALUES('C1', 'Advanced')
+INSERT INTO Level VALUES('C2', 'Proficient')
+

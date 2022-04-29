@@ -18,8 +18,10 @@ namespace DAL
         public Connection()
             : base("name=Connection")
         {
+            //this.Configuration.LazyLoadingEnabled = false;
+
         }
-    
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();

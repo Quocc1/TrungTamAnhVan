@@ -17,6 +17,7 @@ namespace TrungTamAnhVan
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmAdminMain("demo"));
+            //Application.Run(new frmLogin());
         }
     }
 }

@@ -121,7 +121,7 @@
   <data name="ptbStudents.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EQAACxEBf2RfkQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAEXSSURBVHhe7d15
+        EAAACxABrSO9dQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAEXSSURBVHhe7d15
         lF1VnfbxFhy6fdXXt7VFRFAJYU6AJCQQZshAIMxDC7SIIAiCNoI0KiDS0iLQKKANgp15HiqEmRpPTSGE
         AEmOgogjMoMIMYTUzVD73SdFJXd4qupW1b23zt77+8dn9eK3Vi9zzt3nPM+te4Z/MMYAAIDAyCEAAPCb
         HAIAAL/JIQAA8JscAgAAv8khAADwmxwCAAC/ySEAAPCbHAIAAL/JIQAA8JscAgAAv8khAADwmxwCAAC/
@@ -426,7 +426,7 @@
   <data name="ptbTeachers.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vQAADr0BR/uQrQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAHbnSURBVHhe7b0J
+        vAAADrwBlbxySQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAHbnSURBVHhe7b0J
         fFTXefdvO3HWN26bpElbt03SN2+TNmnT/JO0TWIhYidxHMe7hYWMbWxsvGIMSDNisS2DbYyxMUKsZt/N
         jtl3SSxaQCyaRUIasYOQRisSAqHt/M8ZHdnS1SNpljtzz73z+37y/eCAdO+duzy/Z+7cOecmAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA

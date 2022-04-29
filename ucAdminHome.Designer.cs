@@ -31,12 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucAdminHome));
             this.lbTitle = new System.Windows.Forms.Label();
             this.pnStudents = new System.Windows.Forms.Panel();
-            this.lbStudentDescription = new System.Windows.Forms.Label();
             this.ptbStudents = new System.Windows.Forms.PictureBox();
+            this.lbStudentDescription = new System.Windows.Forms.Label();
             this.lbStudentQuantity = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lbTeacherDescription = new System.Windows.Forms.Label();
             this.ptbTeachers = new System.Windows.Forms.PictureBox();
+            this.lbTeacherDescription = new System.Windows.Forms.Label();
             this.lbTeacherQuantity = new System.Windows.Forms.Label();
             this.pnStudents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbStudents)).BeginInit();
@@ -65,17 +65,6 @@
             this.pnStudents.Size = new System.Drawing.Size(353, 125);
             this.pnStudents.TabIndex = 7;
             // 
-            // lbStudentDescription
-            // 
-            this.lbStudentDescription.AutoSize = true;
-            this.lbStudentDescription.BackColor = System.Drawing.Color.Transparent;
-            this.lbStudentDescription.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbStudentDescription.Location = new System.Drawing.Point(21, 69);
-            this.lbStudentDescription.Name = "lbStudentDescription";
-            this.lbStudentDescription.Size = new System.Drawing.Size(211, 33);
-            this.lbStudentDescription.TabIndex = 9;
-            this.lbStudentDescription.Text = "Số lượng học viên";
-            // 
             // ptbStudents
             // 
             this.ptbStudents.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -87,6 +76,17 @@
             this.ptbStudents.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ptbStudents.TabIndex = 11;
             this.ptbStudents.TabStop = false;
+            // 
+            // lbStudentDescription
+            // 
+            this.lbStudentDescription.AutoSize = true;
+            this.lbStudentDescription.BackColor = System.Drawing.Color.Transparent;
+            this.lbStudentDescription.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStudentDescription.Location = new System.Drawing.Point(21, 69);
+            this.lbStudentDescription.Name = "lbStudentDescription";
+            this.lbStudentDescription.Size = new System.Drawing.Size(211, 33);
+            this.lbStudentDescription.TabIndex = 9;
+            this.lbStudentDescription.Text = "Số lượng học viên";
             // 
             // lbStudentQuantity
             // 
@@ -109,17 +109,6 @@
             this.panel1.Size = new System.Drawing.Size(353, 125);
             this.panel1.TabIndex = 10;
             // 
-            // lbTeacherDescription
-            // 
-            this.lbTeacherDescription.AutoSize = true;
-            this.lbTeacherDescription.BackColor = System.Drawing.Color.Transparent;
-            this.lbTeacherDescription.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTeacherDescription.Location = new System.Drawing.Point(21, 69);
-            this.lbTeacherDescription.Name = "lbTeacherDescription";
-            this.lbTeacherDescription.Size = new System.Drawing.Size(217, 33);
-            this.lbTeacherDescription.TabIndex = 9;
-            this.lbTeacherDescription.Text = "Số lượng giáo viên";
-            // 
             // ptbTeachers
             // 
             this.ptbTeachers.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -131,6 +120,17 @@
             this.ptbTeachers.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ptbTeachers.TabIndex = 12;
             this.ptbTeachers.TabStop = false;
+            // 
+            // lbTeacherDescription
+            // 
+            this.lbTeacherDescription.AutoSize = true;
+            this.lbTeacherDescription.BackColor = System.Drawing.Color.Transparent;
+            this.lbTeacherDescription.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTeacherDescription.Location = new System.Drawing.Point(21, 69);
+            this.lbTeacherDescription.Name = "lbTeacherDescription";
+            this.lbTeacherDescription.Size = new System.Drawing.Size(217, 33);
+            this.lbTeacherDescription.TabIndex = 9;
+            this.lbTeacherDescription.Text = "Số lượng giáo viên";
             // 
             // lbTeacherQuantity
             // 
@@ -151,6 +151,7 @@
             this.Controls.Add(this.lbTitle);
             this.Name = "ucAdminHome";
             this.Size = new System.Drawing.Size(989, 754);
+            this.Load += new System.EventHandler(this.ucAdminHome_Load);
             this.pnStudents.ResumeLayout(false);
             this.pnStudents.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbStudents)).EndInit();

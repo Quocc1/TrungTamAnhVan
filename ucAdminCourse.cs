@@ -16,5 +16,13 @@ namespace TrungTamAnhVan
         {
             InitializeComponent();
         }
+
+        private void ucAdminCourse_Load(object sender, EventArgs e)
+        {
+            cboLevel.SelectedIndex = 0;
+            cboCategory.SelectedIndex = 0;
+
+            //dataGridView1.DataSource = 
+        }
     }
 }

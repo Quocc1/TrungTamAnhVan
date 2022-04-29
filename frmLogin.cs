@@ -76,5 +76,10 @@ namespace TrungTamAnhVan
                 }
             }
         }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            this.AcceptButton = btnLogin;
+        }
     }
 }
