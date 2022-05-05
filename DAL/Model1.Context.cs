@@ -18,10 +18,8 @@ namespace DAL
         public Connection()
             : base("name=Connection")
         {
-            //this.Configuration.LazyLoadingEnabled = false;
-
         }
-
+    
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
@@ -31,9 +29,9 @@ namespace DAL
         public virtual DbSet<Admin_account> Admin_account { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Class> Classes { get; set; }
-        public virtual DbSet<Class_student> Class_student { get; set; }
         public virtual DbSet<Class_weekday> Class_weekday { get; set; }
         public virtual DbSet<Course> Courses { get; set; }
+        public virtual DbSet<Event> Events { get; set; }
         public virtual DbSet<Level> Levels { get; set; }
         public virtual DbSet<Student> Students { get; set; }
         public virtual DbSet<Student_account> Student_account { get; set; }

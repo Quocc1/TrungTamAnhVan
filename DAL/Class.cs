@@ -17,8 +17,9 @@ namespace DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Class()
         {
-            this.Class_student = new HashSet<Class_student>();
             this.Class_weekday = new HashSet<Class_weekday>();
+            this.Events = new HashSet<Event>();
+            this.Students = new HashSet<Student>();
         }
     
         public int id { get; set; }
@@ -28,12 +29,16 @@ namespace DAL
         public Nullable<decimal> price { get; set; }
         public Nullable<int> teacher_id { get; set; }
         public Nullable<int> course_id { get; set; }
+        public Nullable<int> quantity { get; set; }
+        public Nullable<int> max_quantity { get; set; }
     
         public virtual Course Course { get; set; }
         public virtual Teacher Teacher { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Class_student> Class_student { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Class_weekday> Class_weekday { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Event> Events { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Student> Students { get; set; }
     }
 }

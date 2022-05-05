@@ -35,6 +35,12 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnInsert = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Term = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Lesssons = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Level = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cboCategory = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -85,6 +91,7 @@
             this.btnDelete.TabIndex = 18;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
@@ -98,6 +105,7 @@
             this.btnEdit.TabIndex = 17;
             this.btnEdit.Text = "Sửa";
             this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnInsert
             // 
@@ -111,16 +119,72 @@
             this.btnInsert.TabIndex = 16;
             this.btnInsert.Text = "Thêm";
             this.btnInsert.UseVisualStyleBackColor = false;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.Description,
+            this.Term,
+            this.Lesssons,
+            this.Level,
+            this.Category});
             this.dataGridView1.Location = new System.Drawing.Point(46, 236);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(906, 486);
             this.dataGridView1.TabIndex = 15;
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "id";
+            this.Id.HeaderText = "Id";
+            this.Id.MinimumWidth = 6;
+            this.Id.Name = "Id";
+            this.Id.Width = 125;
+            // 
+            // Description
+            // 
+            this.Description.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Description.DataPropertyName = "description";
+            this.Description.HeaderText = "Tên khóa học";
+            this.Description.MinimumWidth = 6;
+            this.Description.Name = "Description";
+            // 
+            // Term
+            // 
+            this.Term.DataPropertyName = "term";
+            this.Term.HeaderText = "Kỳ hạn";
+            this.Term.MinimumWidth = 6;
+            this.Term.Name = "Term";
+            this.Term.Width = 125;
+            // 
+            // Lesssons
+            // 
+            this.Lesssons.DataPropertyName = "lessons";
+            this.Lesssons.HeaderText = "Số lượng bài học";
+            this.Lesssons.MinimumWidth = 6;
+            this.Lesssons.Name = "Lesssons";
+            this.Lesssons.Width = 125;
+            // 
+            // Level
+            // 
+            this.Level.DataPropertyName = "level";
+            this.Level.HeaderText = "Cấp độ";
+            this.Level.MinimumWidth = 6;
+            this.Level.Name = "Level";
+            this.Level.Width = 125;
+            // 
+            // Category
+            // 
+            this.Category.DataPropertyName = "category";
+            this.Category.HeaderText = "Đối tượng";
+            this.Category.MinimumWidth = 6;
+            this.Category.Name = "Category";
+            this.Category.Width = 125;
             // 
             // cboCategory
             // 
@@ -166,5 +230,11 @@
         private System.Windows.Forms.Button btnInsert;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ComboBox cboCategory;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Term;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Lesssons;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Level;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Category;
     }
 }

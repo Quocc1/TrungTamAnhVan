@@ -18,6 +18,7 @@ namespace DAL
         public Level()
         {
             this.Courses = new HashSet<Course>();
+            this.Students = new HashSet<Student>();
         }
     
         public int id { get; set; }
@@ -26,5 +27,7 @@ namespace DAL
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Course> Courses { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Student> Students { get; set; }
     }
 }

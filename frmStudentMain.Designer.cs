@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStudentMain));
             this.pnNavbar = new System.Windows.Forms.Panel();
             this.btnFee = new System.Windows.Forms.Button();
-            this.btnAssignment = new System.Windows.Forms.Button();
             this.btnScore = new System.Windows.Forms.Button();
             this.btnSchedule = new System.Windows.Forms.Button();
             this.btnInfo = new System.Windows.Forms.Button();
@@ -52,7 +51,6 @@
             // 
             this.pnNavbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(86)))), ((int)(((byte)(246)))));
             this.pnNavbar.Controls.Add(this.btnFee);
-            this.pnNavbar.Controls.Add(this.btnAssignment);
             this.pnNavbar.Controls.Add(this.btnScore);
             this.pnNavbar.Controls.Add(this.btnSchedule);
             this.pnNavbar.Controls.Add(this.btnInfo);
@@ -78,7 +76,7 @@
             this.btnFee.ForeColor = System.Drawing.Color.White;
             this.btnFee.Image = ((System.Drawing.Image)(resources.GetObject("btnFee.Image")));
             this.btnFee.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFee.Location = new System.Drawing.Point(0, 471);
+            this.btnFee.Location = new System.Drawing.Point(0, 402);
             this.btnFee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFee.Name = "btnFee";
             this.btnFee.Padding = new System.Windows.Forms.Padding(29, 0, 0, 0);
@@ -86,23 +84,6 @@
             this.btnFee.TabIndex = 10;
             this.btnFee.Text = "Học phí";
             this.btnFee.UseVisualStyleBackColor = true;
-            // 
-            // btnAssignment
-            // 
-            this.btnAssignment.FlatAppearance.BorderSize = 0;
-            this.btnAssignment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAssignment.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAssignment.ForeColor = System.Drawing.Color.White;
-            this.btnAssignment.Image = ((System.Drawing.Image)(resources.GetObject("btnAssignment.Image")));
-            this.btnAssignment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAssignment.Location = new System.Drawing.Point(0, 402);
-            this.btnAssignment.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAssignment.Name = "btnAssignment";
-            this.btnAssignment.Padding = new System.Windows.Forms.Padding(29, 0, 0, 0);
-            this.btnAssignment.Size = new System.Drawing.Size(273, 62);
-            this.btnAssignment.TabIndex = 9;
-            this.btnAssignment.Text = "Bài tập";
-            this.btnAssignment.UseVisualStyleBackColor = true;
             // 
             // btnScore
             // 
@@ -135,7 +116,7 @@
             this.btnSchedule.Padding = new System.Windows.Forms.Padding(29, 0, 0, 0);
             this.btnSchedule.Size = new System.Drawing.Size(273, 62);
             this.btnSchedule.TabIndex = 7;
-            this.btnSchedule.Text = "Lịch học";
+            this.btnSchedule.Text = "Lịch biểu";
             this.btnSchedule.UseVisualStyleBackColor = true;
             // 
             // btnInfo
@@ -284,7 +265,6 @@
 
         private System.Windows.Forms.Panel pnNavbar;
         private System.Windows.Forms.Button btnFee;
-        private System.Windows.Forms.Button btnAssignment;
         private System.Windows.Forms.Button btnScore;
         private System.Windows.Forms.Button btnSchedule;
         private System.Windows.Forms.Button btnInfo;

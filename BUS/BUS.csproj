@@ -42,10 +42,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddInstanceBUS.cs" />
+    <Compile Include="DeleteInstanceBUS.cs" />
     <Compile Include="InformationBUS.cs" />
-    <Compile Include="InstanceBUS.cs" />
+    <Compile Include="GetInstanceBUS.cs" />
     <Compile Include="LoginBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UpdateInstanceBUS.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">

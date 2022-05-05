@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTeacherMain));
             this.pnNavbar = new System.Windows.Forms.Panel();
+            this.btnSalary = new System.Windows.Forms.Button();
+            this.btnEvent = new System.Windows.Forms.Button();
             this.btnSchedule = new System.Windows.Forms.Button();
             this.btnClass = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
@@ -40,8 +42,6 @@
             this.btnLogout = new System.Windows.Forms.Button();
             this.ptbHomeLogo = new System.Windows.Forms.PictureBox();
             this.pnContainer = new System.Windows.Forms.Panel();
-            this.btnEvent = new System.Windows.Forms.Button();
-            this.btnSalary = new System.Windows.Forms.Button();
             this.pnNavbar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbHomeLogo)).BeginInit();
@@ -67,6 +67,38 @@
             this.pnNavbar.Size = new System.Drawing.Size(273, 754);
             this.pnNavbar.TabIndex = 2;
             // 
+            // btnSalary
+            // 
+            this.btnSalary.FlatAppearance.BorderSize = 0;
+            this.btnSalary.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalary.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalary.ForeColor = System.Drawing.Color.White;
+            this.btnSalary.Image = ((System.Drawing.Image)(resources.GetObject("btnSalary.Image")));
+            this.btnSalary.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSalary.Location = new System.Drawing.Point(0, 403);
+            this.btnSalary.Name = "btnSalary";
+            this.btnSalary.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnSalary.Size = new System.Drawing.Size(273, 62);
+            this.btnSalary.TabIndex = 12;
+            this.btnSalary.Text = "Lương";
+            this.btnSalary.UseVisualStyleBackColor = true;
+            // 
+            // btnEvent
+            // 
+            this.btnEvent.FlatAppearance.BorderSize = 0;
+            this.btnEvent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEvent.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEvent.ForeColor = System.Drawing.Color.White;
+            this.btnEvent.Image = ((System.Drawing.Image)(resources.GetObject("btnEvent.Image")));
+            this.btnEvent.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEvent.Location = new System.Drawing.Point(0, 335);
+            this.btnEvent.Name = "btnEvent";
+            this.btnEvent.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnEvent.Size = new System.Drawing.Size(273, 62);
+            this.btnEvent.TabIndex = 11;
+            this.btnEvent.Text = "Thông báo";
+            this.btnEvent.UseVisualStyleBackColor = true;
+            // 
             // btnSchedule
             // 
             this.btnSchedule.FlatAppearance.BorderSize = 0;
@@ -80,7 +112,7 @@
             this.btnSchedule.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.btnSchedule.Size = new System.Drawing.Size(273, 62);
             this.btnSchedule.TabIndex = 10;
-            this.btnSchedule.Text = "Lịch dạy";
+            this.btnSchedule.Text = "Lịch biểu";
             this.btnSchedule.UseVisualStyleBackColor = true;
             // 
             // btnClass
@@ -196,38 +228,6 @@
             this.pnContainer.Name = "pnContainer";
             this.pnContainer.Size = new System.Drawing.Size(1262, 754);
             this.pnContainer.TabIndex = 3;
-            // 
-            // btnEvent
-            // 
-            this.btnEvent.FlatAppearance.BorderSize = 0;
-            this.btnEvent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEvent.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEvent.ForeColor = System.Drawing.Color.White;
-            this.btnEvent.Image = ((System.Drawing.Image)(resources.GetObject("btnEvent.Image")));
-            this.btnEvent.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEvent.Location = new System.Drawing.Point(0, 335);
-            this.btnEvent.Name = "btnEvent";
-            this.btnEvent.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnEvent.Size = new System.Drawing.Size(273, 62);
-            this.btnEvent.TabIndex = 11;
-            this.btnEvent.Text = "Sự kiện";
-            this.btnEvent.UseVisualStyleBackColor = true;
-            // 
-            // btnSalary
-            // 
-            this.btnSalary.FlatAppearance.BorderSize = 0;
-            this.btnSalary.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalary.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalary.ForeColor = System.Drawing.Color.White;
-            this.btnSalary.Image = ((System.Drawing.Image)(resources.GetObject("btnSalary.Image")));
-            this.btnSalary.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalary.Location = new System.Drawing.Point(0, 403);
-            this.btnSalary.Name = "btnSalary";
-            this.btnSalary.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnSalary.Size = new System.Drawing.Size(273, 62);
-            this.btnSalary.TabIndex = 12;
-            this.btnSalary.Text = "Lương";
-            this.btnSalary.UseVisualStyleBackColor = true;
             // 
             // frmTeacherMain
             // 

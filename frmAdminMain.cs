@@ -13,6 +13,7 @@ namespace TrungTamAnhVan
     public partial class frmAdminMain : Form
     {
         static frmAdminMain _obj;
+        static string NAME = "";
 
         public static frmAdminMain Instance
         {
@@ -20,7 +21,7 @@ namespace TrungTamAnhVan
             {
                 if (_obj == null)
                 {
-                    _obj = new frmAdminMain("DEMO");
+                    _obj = new frmAdminMain(NAME);
                 }
                 return _obj;
             }
@@ -35,7 +36,7 @@ namespace TrungTamAnhVan
         {
             InitializeComponent();
             Load += FrmMain_Load;
-            lbName.Text = name;
+            lbName.Text = NAME = name;
         }
 
         private void FrmMain_Load(object sender, EventArgs e)
@@ -71,31 +72,37 @@ namespace TrungTamAnhVan
         private void btnHome_Click(object sender, EventArgs e)
         {
             SetActivePanel(ucAdminHome1);
+            ucAdminHome.Instance.Reload();
         }
 
         private void btnStudent_Click(object sender, EventArgs e)
         {
             SetActivePanel(ucAdminStudent1);
+            ucAdminStudent.Instance.Reload();
         }
 
         private void btnTeacher_Click(object sender, EventArgs e)
         {
             SetActivePanel(ucAdminTeacher1);
+            ucAdminTeacher.Instance.Reload();
         }
 
         private void btnClass_Click(object sender, EventArgs e)
         {
             SetActivePanel(ucAdminClass1);
+            ucAdminClass.Instance.Reload();
         }
 
         private void btnCourse_Click(object sender, EventArgs e)
         {
             SetActivePanel(ucAdminCourse1);
+            ucAdminCourse.Instance.Reload();
         }
 
         private void btnFinance_Click(object sender, EventArgs e)
         {
             SetActivePanel(ucAdminFinance1);
+            //ucAdminFinance.Instance.Reload();
         }
     }
 }

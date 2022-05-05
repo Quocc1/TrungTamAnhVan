@@ -26,13 +26,13 @@ namespace TrungTamAnhVan
         private void btnLogin_Click(object sender, EventArgs e)
         {
             LoginBUS loginBUS = new LoginBUS();
-            if (txtUsername.Text == "" || txtPassword.Text == "" || (rbtnStudent.Checked == false && rbtnTeacher.Checked == false && rbtnAdmin.Checked == false))
+            if (txtUsername.Text == "" || txtPassword.Text == "" || (rbtStudent.Checked == false && rbtTeacher.Checked == false && rbtAdmin.Checked == false))
             {
                 MessageBox.Show("Vui lòng điền đủ thông tin!");
             }
             else
             {
-                if (rbtnAdmin.Checked)
+                if (rbtAdmin.Checked)
                 {
                     string name = loginBUS.CheckLoginAdmin(txtUsername.Text, txtPassword.Text);
                     if (name != null)
@@ -46,7 +46,7 @@ namespace TrungTamAnhVan
                         MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng");
                     }
                 }
-                else if (rbtnTeacher.Checked)
+                else if (rbtTeacher.Checked)
                 {
                     string name = loginBUS.CheckLoginTeacher(txtUsername.Text, txtPassword.Text);
                     if (name != null)

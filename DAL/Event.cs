@@ -12,13 +12,14 @@ namespace DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class Class_student
+    public partial class Event
     {
         public int id { get; set; }
+        public string name { get; set; }
+        public Nullable<System.DateTime> start_day { get; set; }
+        public string description { get; set; }
         public Nullable<int> class_id { get; set; }
-        public Nullable<int> student_id { get; set; }
     
         public virtual Class Class { get; set; }
-        public virtual Student Student { get; set; }
     }
 }

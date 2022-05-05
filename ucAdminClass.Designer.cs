@@ -28,27 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cboGender = new System.Windows.Forms.ComboBox();
             this.lbTitle = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnInsert = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameClass = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Start_day = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.End_day = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Teacher = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Course = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cboClassStatus = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // cboGender
-            // 
-            this.cboGender.FormattingEnabled = true;
-            this.cboGender.Items.AddRange(new object[] {
-            "Tất cả",
-            "Nam",
-            "Nữ"});
-            this.cboGender.Location = new System.Drawing.Point(46, 190);
-            this.cboGender.Name = "cboGender";
-            this.cboGender.Size = new System.Drawing.Size(121, 24);
-            this.cboGender.TabIndex = 21;
             // 
             // lbTitle
             // 
@@ -80,6 +76,7 @@
             this.btnDelete.TabIndex = 18;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
@@ -106,10 +103,20 @@
             this.btnInsert.TabIndex = 16;
             this.btnInsert.Text = "Thêm";
             this.btnInsert.UseVisualStyleBackColor = false;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.NameClass,
+            this.Start_day,
+            this.End_day,
+            this.Price,
+            this.Teacher,
+            this.Course,
+            this.Quantity});
             this.dataGridView1.Location = new System.Drawing.Point(46, 236);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
@@ -117,11 +124,87 @@
             this.dataGridView1.Size = new System.Drawing.Size(906, 486);
             this.dataGridView1.TabIndex = 15;
             // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "id";
+            this.Id.HeaderText = "id";
+            this.Id.MinimumWidth = 6;
+            this.Id.Name = "Id";
+            this.Id.Width = 50;
+            // 
+            // NameClass
+            // 
+            this.NameClass.DataPropertyName = "name";
+            this.NameClass.HeaderText = "Tên lớp";
+            this.NameClass.MinimumWidth = 6;
+            this.NameClass.Name = "NameClass";
+            this.NameClass.Width = 125;
+            // 
+            // Start_day
+            // 
+            this.Start_day.DataPropertyName = "start_day";
+            this.Start_day.HeaderText = "Ngày bắt đầu";
+            this.Start_day.MinimumWidth = 6;
+            this.Start_day.Name = "Start_day";
+            this.Start_day.Width = 80;
+            // 
+            // End_day
+            // 
+            this.End_day.DataPropertyName = "end_day";
+            this.End_day.HeaderText = "Ngày kết thúc";
+            this.End_day.MinimumWidth = 6;
+            this.End_day.Name = "End_day";
+            this.End_day.Width = 80;
+            // 
+            // Price
+            // 
+            this.Price.DataPropertyName = "price";
+            this.Price.HeaderText = "Học phí";
+            this.Price.MinimumWidth = 6;
+            this.Price.Name = "Price";
+            this.Price.Width = 125;
+            // 
+            // Teacher
+            // 
+            this.Teacher.DataPropertyName = "teacher_id";
+            this.Teacher.HeaderText = "Giáo viên phụ trách";
+            this.Teacher.MinimumWidth = 6;
+            this.Teacher.Name = "Teacher";
+            this.Teacher.Width = 125;
+            // 
+            // Course
+            // 
+            this.Course.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Course.DataPropertyName = "course_id";
+            this.Course.HeaderText = "Tên khóa";
+            this.Course.MinimumWidth = 6;
+            this.Course.Name = "Course";
+            // 
+            // Quantity
+            // 
+            this.Quantity.DataPropertyName = "quantity";
+            this.Quantity.HeaderText = "Số lượng học viên";
+            this.Quantity.MinimumWidth = 6;
+            this.Quantity.Name = "Quantity";
+            this.Quantity.Width = 125;
+            // 
+            // cboClassStatus
+            // 
+            this.cboClassStatus.FormattingEnabled = true;
+            this.cboClassStatus.Items.AddRange(new object[] {
+            "Tất cả",
+            "Lớp còn trống"});
+            this.cboClassStatus.Location = new System.Drawing.Point(46, 190);
+            this.cboClassStatus.Name = "cboClassStatus";
+            this.cboClassStatus.Size = new System.Drawing.Size(121, 24);
+            this.cboClassStatus.TabIndex = 21;
+            this.cboClassStatus.SelectedIndexChanged += new System.EventHandler(this.cboClassStatus_SelectedIndexChanged);
+            // 
             // ucAdminClass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.cboGender);
+            this.Controls.Add(this.cboClassStatus);
             this.Controls.Add(this.lbTitle);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnDelete);
@@ -130,6 +213,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "ucAdminClass";
             this.Size = new System.Drawing.Size(989, 754);
+            this.Load += new System.EventHandler(this.ucAdminClass_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -137,13 +221,20 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox cboGender;
         private System.Windows.Forms.Label lbTitle;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnInsert;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ComboBox cboClassStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NameClass;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Start_day;
+        private System.Windows.Forms.DataGridViewTextBoxColumn End_day;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Teacher;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Course;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
     }
 }

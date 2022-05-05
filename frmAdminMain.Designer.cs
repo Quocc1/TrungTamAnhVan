@@ -36,6 +36,9 @@
             this.ucAdminCourse1 = new TrungTamAnhVan.ucAdminCourse();
             this.ucAdminClass1 = new TrungTamAnhVan.ucAdminClass();
             this.ucAdminFinance1 = new TrungTamAnhVan.ucAdminFinance();
+            this.ucInsertStudent1 = new TrungTamAnhVan.ucInsertStudent();
+            this.ucInsertCourse1 = new TrungTamAnhVan.ucInsertCourse();
+            this.ucInsertClass1 = new TrungTamAnhVan.ucInsertClass();
             this.ptbHomeLogo = new System.Windows.Forms.PictureBox();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
@@ -49,7 +52,6 @@
             this.btnCourse = new System.Windows.Forms.Button();
             this.btnFinance = new System.Windows.Forms.Button();
             this.pnNavbar = new System.Windows.Forms.Panel();
-            this.ucInsertStudent1 = new TrungTamAnhVan.ucInsertStudent();
             this.pnContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbHomeLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbIcon)).BeginInit();
@@ -65,6 +67,8 @@
             this.pnContainer.Controls.Add(this.ucAdminClass1);
             this.pnContainer.Controls.Add(this.ucAdminFinance1);
             this.pnContainer.Controls.Add(this.ucInsertStudent1);
+            this.pnContainer.Controls.Add(this.ucInsertCourse1);
+            this.pnContainer.Controls.Add(this.ucInsertClass1);
             this.pnContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnContainer.Location = new System.Drawing.Point(273, 0);
             this.pnContainer.Name = "pnContainer";
@@ -118,6 +122,30 @@
             this.ucAdminFinance1.Name = "ucAdminFinance1";
             this.ucAdminFinance1.Size = new System.Drawing.Size(989, 754);
             this.ucAdminFinance1.TabIndex = 6;
+            // 
+            // ucInsertStudent1
+            // 
+            this.ucInsertStudent1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucInsertStudent1.Location = new System.Drawing.Point(0, 0);
+            this.ucInsertStudent1.Name = "ucInsertStudent1";
+            this.ucInsertStudent1.Size = new System.Drawing.Size(989, 754);
+            this.ucInsertStudent1.TabIndex = 7;
+            // 
+            // ucInsertCourse1
+            // 
+            this.ucInsertCourse1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucInsertCourse1.Location = new System.Drawing.Point(0, 0);
+            this.ucInsertCourse1.Name = "ucInsertCourse1";
+            this.ucInsertCourse1.Size = new System.Drawing.Size(989, 754);
+            this.ucInsertCourse1.TabIndex = 8;
+            // 
+            // ucInsertClass1
+            // 
+            this.ucInsertClass1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucInsertClass1.Location = new System.Drawing.Point(0, 0);
+            this.ucInsertClass1.Name = "ucInsertClass1";
+            this.ucInsertClass1.Size = new System.Drawing.Size(989, 754);
+            this.ucInsertClass1.TabIndex = 9;
             // 
             // ptbHomeLogo
             // 
@@ -316,14 +344,6 @@
             this.pnNavbar.Size = new System.Drawing.Size(273, 754);
             this.pnNavbar.TabIndex = 0;
             // 
-            // ucInsertStudent1
-            // 
-            this.ucInsertStudent1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucInsertStudent1.Location = new System.Drawing.Point(0, 0);
-            this.ucInsertStudent1.Name = "ucInsertStudent1";
-            this.ucInsertStudent1.Size = new System.Drawing.Size(989, 754);
-            this.ucInsertStudent1.TabIndex = 7;
-            // 
             // frmAdminMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -367,6 +387,8 @@
         private ucAdminHome ucAdminHome1;
         private ucAdminFinance ucAdminFinance1;
         private ucInsertStudent ucInsertStudent1;
+        private ucInsertCourse ucInsertCourse1;
+        private ucInsertClass ucInsertClass1;
     }
 }
 

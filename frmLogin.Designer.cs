@@ -36,9 +36,9 @@
             this.lbUsername = new System.Windows.Forms.Label();
             this.lbPassword = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
-            this.rbtnStudent = new System.Windows.Forms.RadioButton();
-            this.rbtnAdmin = new System.Windows.Forms.RadioButton();
-            this.rbtnTeacher = new System.Windows.Forms.RadioButton();
+            this.rbtStudent = new System.Windows.Forms.RadioButton();
+            this.rbtAdmin = new System.Windows.Forms.RadioButton();
+            this.rbtTeacher = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.ptbLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -121,41 +121,41 @@
             this.txtPassword.Size = new System.Drawing.Size(242, 48);
             this.txtPassword.TabIndex = 1;
             // 
-            // rbtnStudent
+            // rbtStudent
             // 
-            this.rbtnStudent.AutoSize = true;
-            this.rbtnStudent.Font = new System.Drawing.Font("Open Sans SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtnStudent.Location = new System.Drawing.Point(73, 429);
-            this.rbtnStudent.Name = "rbtnStudent";
-            this.rbtnStudent.Size = new System.Drawing.Size(117, 32);
-            this.rbtnStudent.TabIndex = 2;
-            this.rbtnStudent.TabStop = true;
-            this.rbtnStudent.Text = "Học viên";
-            this.rbtnStudent.UseVisualStyleBackColor = true;
+            this.rbtStudent.AutoSize = true;
+            this.rbtStudent.Font = new System.Drawing.Font("Open Sans SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtStudent.Location = new System.Drawing.Point(73, 429);
+            this.rbtStudent.Name = "rbtStudent";
+            this.rbtStudent.Size = new System.Drawing.Size(117, 32);
+            this.rbtStudent.TabIndex = 2;
+            this.rbtStudent.TabStop = true;
+            this.rbtStudent.Text = "Học viên";
+            this.rbtStudent.UseVisualStyleBackColor = true;
             // 
-            // rbtnAdmin
+            // rbtAdmin
             // 
-            this.rbtnAdmin.AutoSize = true;
-            this.rbtnAdmin.Font = new System.Drawing.Font("Open Sans SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtnAdmin.Location = new System.Drawing.Point(73, 505);
-            this.rbtnAdmin.Name = "rbtnAdmin";
-            this.rbtnAdmin.Size = new System.Drawing.Size(162, 32);
-            this.rbtnAdmin.TabIndex = 4;
-            this.rbtnAdmin.TabStop = true;
-            this.rbtnAdmin.Text = "Quản trị viên";
-            this.rbtnAdmin.UseVisualStyleBackColor = true;
+            this.rbtAdmin.AutoSize = true;
+            this.rbtAdmin.Font = new System.Drawing.Font("Open Sans SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtAdmin.Location = new System.Drawing.Point(73, 505);
+            this.rbtAdmin.Name = "rbtAdmin";
+            this.rbtAdmin.Size = new System.Drawing.Size(162, 32);
+            this.rbtAdmin.TabIndex = 4;
+            this.rbtAdmin.TabStop = true;
+            this.rbtAdmin.Text = "Quản trị viên";
+            this.rbtAdmin.UseVisualStyleBackColor = true;
             // 
-            // rbtnTeacher
+            // rbtTeacher
             // 
-            this.rbtnTeacher.AutoSize = true;
-            this.rbtnTeacher.Font = new System.Drawing.Font("Open Sans SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtnTeacher.Location = new System.Drawing.Point(73, 467);
-            this.rbtnTeacher.Name = "rbtnTeacher";
-            this.rbtnTeacher.Size = new System.Drawing.Size(125, 32);
-            this.rbtnTeacher.TabIndex = 3;
-            this.rbtnTeacher.TabStop = true;
-            this.rbtnTeacher.Text = "Giáo viên";
-            this.rbtnTeacher.UseVisualStyleBackColor = true;
+            this.rbtTeacher.AutoSize = true;
+            this.rbtTeacher.Font = new System.Drawing.Font("Open Sans SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtTeacher.Location = new System.Drawing.Point(73, 467);
+            this.rbtTeacher.Name = "rbtTeacher";
+            this.rbtTeacher.Size = new System.Drawing.Size(125, 32);
+            this.rbtTeacher.TabIndex = 3;
+            this.rbtTeacher.TabStop = true;
+            this.rbtTeacher.Text = "Giáo viên";
+            this.rbtTeacher.UseVisualStyleBackColor = true;
             // 
             // frmLogin
             // 
@@ -163,9 +163,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(391, 694);
-            this.Controls.Add(this.rbtnTeacher);
-            this.Controls.Add(this.rbtnAdmin);
-            this.Controls.Add(this.rbtnStudent);
+            this.Controls.Add(this.rbtTeacher);
+            this.Controls.Add(this.rbtAdmin);
+            this.Controls.Add(this.rbtStudent);
             this.Controls.Add(this.lbPassword);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.lbUsername);
@@ -193,8 +193,8 @@
         private System.Windows.Forms.Label lbUsername;
         private System.Windows.Forms.Label lbPassword;
         private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.RadioButton rbtnStudent;
-        private System.Windows.Forms.RadioButton rbtnAdmin;
-        private System.Windows.Forms.RadioButton rbtnTeacher;
+        private System.Windows.Forms.RadioButton rbtStudent;
+        private System.Windows.Forms.RadioButton rbtAdmin;
+        private System.Windows.Forms.RadioButton rbtTeacher;
     }
 }

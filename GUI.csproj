@@ -122,11 +122,53 @@
     <Compile Include="ucAdminTeacher.Designer.cs">
       <DependentUpon>ucAdminTeacher.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucEditClass.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucEditClass.Designer.cs">
+      <DependentUpon>ucEditClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucEditCourse.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucEditCourse.Designer.cs">
+      <DependentUpon>ucEditCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucEditStudent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucEditStudent.Designer.cs">
+      <DependentUpon>ucEditStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucEditTeacher.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucEditTeacher.Designer.cs">
+      <DependentUpon>ucEditTeacher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucInsertClass.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucInsertClass.Designer.cs">
+      <DependentUpon>ucInsertClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucInsertCourse.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucInsertCourse.Designer.cs">
+      <DependentUpon>ucInsertCourse.cs</DependentUpon>
+    </Compile>
     <Compile Include="ucInsertStudent.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ucInsertStudent.Designer.cs">
       <DependentUpon>ucInsertStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucInsertTeacher.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucInsertTeacher.Designer.cs">
+      <DependentUpon>ucInsertTeacher.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
@@ -163,8 +205,29 @@
     <EmbeddedResource Include="ucAdminTeacher.resx">
       <DependentUpon>ucAdminTeacher.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ucEditClass.resx">
+      <DependentUpon>ucEditClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucEditCourse.resx">
+      <DependentUpon>ucEditCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucEditStudent.resx">
+      <DependentUpon>ucEditStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucEditTeacher.resx">
+      <DependentUpon>ucEditTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucInsertClass.resx">
+      <DependentUpon>ucInsertClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucInsertCourse.resx">
+      <DependentUpon>ucInsertCourse.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ucInsertStudent.resx">
       <DependentUpon>ucInsertStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucInsertTeacher.resx">
+      <DependentUpon>ucInsertTeacher.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.Config" />
     <None Include="app.manifest" />

@@ -9,20 +9,42 @@ namespace BUS
 {
     public class InformationBUS
     {
+        GetInstanceDAL getInstance = new GetInstanceDAL();
         InformationDAL infoDAL = new InformationDAL();
-        public string CountAdmin()
+
+        public int GetTermCourse(int id)
         {
-            return infoDAL.CountAdmin().ToString();
+            return Convert.ToInt32(infoDAL.GetTermCourse(getInstance.GetCourseFromId(id)));
         }
 
-        public string CountTeacher()
+        public int GetNewestTeacherId()
         {
-            return infoDAL.CountTeacher().ToString();
+            return infoDAL.GetNewestTeacherId();
         }
 
-        public string CountStudent()
+        public int GetNewestStudentId()
         {
-            return infoDAL.CountStudent().ToString();
+            return infoDAL.GetNewestStudentId();
+        }
+
+        public int GetNewestClassId()
+        {
+            return infoDAL.GetNewestClassId();
+        }
+
+        public int CountAdmin()
+        {
+            return infoDAL.CountAdmin();
+        }
+
+        public int CountTeacher()
+        {
+            return infoDAL.CountTeacher();
+        }
+
+        public int CountStudent()
+        {
+            return infoDAL.CountStudent();
         }
     }
 }

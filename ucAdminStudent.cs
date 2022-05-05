@@ -13,27 +13,46 @@ namespace TrungTamAnhVan
 {
     public partial class ucAdminStudent : UserControl
     {
-        InstanceBUS instanceBUS = new InstanceBUS();
+        static ucAdminStudent _obj;
+        GetInstanceBUS getInstance = new GetInstanceBUS();
+        DeleteInstanceBUS deleteInstance = new DeleteInstanceBUS();
+        
+        public static ucAdminStudent Instance
+        {
+            get
+            {
+                if (_obj == null)
+                {
+                    _obj = new ucAdminStudent();
+                }
+                return _obj;
+            }
+        }
+
+        public void Reload()
+        {
+            if (!DesignMode)
+            {
+                getInstance.GetAllStudent(dataGridView1);
+            }
+        }
+
         public ucAdminStudent()
         {
+            _obj = this;
             InitializeComponent();
         }
+
 
         private void ucAdminStudent_Load(object sender, EventArgs e)
         {
             cboClass.SelectedIndex = 0;
             cboGender.SelectedIndex = 0;
-
-            instanceBUS.GetAllStudent(dataGridView1);
-            dataGridView1.Columns[0].HeaderText = "Id";
-            dataGridView1.Columns[1].HeaderText = "Họ và tên";
-            dataGridView1.Columns[2].HeaderText = "Giới tính";
-            dataGridView1.Columns[3].HeaderText = "Năm sinh";
-            dataGridView1.Columns[4].HeaderText = "SĐT";
-            dataGridView1.Columns[5].HeaderText = "Địa chỉ";
-            dataGridView1.Columns[6].Visible = false;
-            dataGridView1.Columns[7].Visible = false;
-
+            
+            if(!DesignMode)
+            {
+                getInstance.GetAllStudent(dataGridView1);
+            }
         }
 
         private void btnInsert_Click(object sender, EventArgs e)
@@ -44,7 +63,49 @@ namespace TrungTamAnhVan
                 uc.Dock = DockStyle.Fill;
                 frmAdminMain.Instance.PnContainer.Controls.Add(uc);
             }
+            if(frmAdminMain.Instance.PnContainer.Controls.ContainsKey("ucAdminStudent"))
+            {
+                frmAdminMain.Instance.PnContainer.Controls.RemoveByKey("ucAdminStudent");
+            }
             frmAdminMain.Instance.PnContainer.Controls["ucInsertStudent"].BringToFront();
+        }
+
+        private void cboGender_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!DesignMode)
+            {
+                getInstance.GetAllStudentByGenderAndClass(dataGridView1, cboGender.Text, cboClass.Text);
+            }
+        }
+
+        private void cboClass_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!DesignMode)
+            {
+                getInstance.GetAllStudentByGenderAndClass(dataGridView1, cboGender.Text, cboClass.Text);
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+            if (!DesignMode)
+            {
+                deleteInstance.DeleteStudentAccount(id);
+                deleteInstance.DeleteStudent(id);
+            }
+            this.Reload();
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            //int id = dataGridView1.CurrentRow.Cells[0].Value;
+            //string full_name = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            //string id = dataGridView1.CurrentRow.Cells[2].Value;
+            //int id = dataGridView1.CurrentRow.Cells[3].Value;
+            //int id = dataGridView1.CurrentRow.Cells[4].Value;
+            //string address = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            //int class_id = dataGridView1.CurrentRow.Cells[6].Value;
         }
     }
 }

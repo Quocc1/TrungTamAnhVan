@@ -13,7 +13,30 @@ namespace TrungTamAnhVan
 {
     public partial class ucAdminHome : UserControl
     {
+        static ucAdminHome _obj;
         InformationBUS infoBUS = new InformationBUS();
+
+        public static ucAdminHome Instance
+        {
+            get
+            {
+                if (_obj == null)
+                {
+                    _obj = new ucAdminHome();
+                }
+                return _obj;
+            }
+        }
+
+        public void Reload()
+        {
+            if (!DesignMode)
+            {
+                lbStudentQuantity.Text = infoBUS.CountStudent().ToString();
+                lbTeacherQuantity.Text = infoBUS.CountTeacher().ToString();
+            }
+        }
+
         public ucAdminHome()
         {
             InitializeComponent();
@@ -21,10 +44,11 @@ namespace TrungTamAnhVan
 
         private void ucAdminHome_Load(object sender, EventArgs e)
         {
+            _obj = this;
             if (!DesignMode)
             {
-                lbStudentQuantity.Text = infoBUS.CountStudent();
-                lbTeacherQuantity.Text = infoBUS.CountTeacher();
+                lbStudentQuantity.Text = infoBUS.CountStudent().ToString();
+                lbTeacherQuantity.Text = infoBUS.CountTeacher().ToString();
             }
         }
     }

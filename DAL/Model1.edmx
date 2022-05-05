@@ -37,16 +37,10 @@
           <Property Name="start_day" Type="date" />
           <Property Name="end_day" Type="date" />
           <Property Name="price" Type="money" />
+          <Property Name="quantity" Type="int" />
+          <Property Name="max_quantity" Type="int" />
           <Property Name="teacher_id" Type="int" />
           <Property Name="course_id" Type="int" />
-        </EntityType>
-        <EntityType Name="Class_student">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="class_id" Type="int" />
-          <Property Name="student_id" Type="int" />
         </EntityType>
         <EntityType Name="Class_weekday">
           <Key>
@@ -68,6 +62,16 @@
           <Property Name="level_id" Type="int" />
           <Property Name="category_id" Type="int" />
         </EntityType>
+        <EntityType Name="Event">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="start_day" Type="date" />
+          <Property Name="description" Type="nvarchar" MaxLength="100" />
+          <Property Name="class_id" Type="int" />
+        </EntityType>
         <EntityType Name="Level">
           <Key>
             <PropertyRef Name="id" />
@@ -81,11 +85,13 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="date_birth" Type="date" />
-          <Property Name="address" Type="nvarchar" MaxLength="50" />
           <Property Name="full_name" Type="nvarchar" MaxLength="20" />
           <Property Name="gender" Type="nvarchar" MaxLength="3" />
+          <Property Name="date_birth" Type="date" />
           <Property Name="phone" Type="nvarchar" MaxLength="15" />
+          <Property Name="address" Type="nvarchar" MaxLength="50" />
+          <Property Name="class_id" Type="int" />
+          <Property Name="level_id" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Student_account">
           <Key>
@@ -101,18 +107,20 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="description" Type="nvarchar" MaxLength="50" />
-          <Property Name="address" Type="nvarchar" MaxLength="50" />
           <Property Name="full_name" Type="nvarchar" MaxLength="20" />
-          <Property Name="email" Type="nvarchar" MaxLength="20" />
+          <Property Name="gender" Type="nvarchar" MaxLength="3" />
+          <Property Name="date_birth" Type="date" />
           <Property Name="phone" Type="nvarchar" MaxLength="15" />
+          <Property Name="address" Type="nvarchar" MaxLength="50" />
+          <Property Name="description" Type="nvarchar" MaxLength="50" />
+          <Property Name="salary" Type="money" />
         </EntityType>
         <EntityType Name="Teacher_account">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Teacher_id" Type="int" />
+          <Property Name="teacher_id" Type="int" />
           <Property Name="login" Type="nvarchar" MaxLength="20" />
           <Property Name="password" Type="nvarchar" MaxLength="20" />
         </EntityType>
@@ -123,7 +131,7 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="nvarchar" MaxLength="10" />
         </EntityType>
-        <Association Name="FK__Admin_acc__admin__37A5467C">
+        <Association Name="FK__Admin_acc__admin__32E0915F">
           <End Role="Admin" Type="Self.Admin" Multiplicity="0..1" />
           <End Role="Admin_account" Type="Self.Admin_account" Multiplicity="*" />
           <ReferentialConstraint>
@@ -135,7 +143,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Class__course_id__3B75D760">
+        <Association Name="FK__Class__course_id__36B12243">
           <End Role="Course" Type="Self.Course" Multiplicity="0..1" />
           <End Role="Class" Type="Self.Class" Multiplicity="*" />
           <ReferentialConstraint>
@@ -147,7 +155,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Class__teacher_i__3A81B327">
+        <Association Name="FK__Class__teacher_i__35BCFE0A">
           <End Role="Teacher" Type="Self.Teacher" Multiplicity="0..1" />
           <End Role="Class" Type="Self.Class" Multiplicity="*" />
           <ReferentialConstraint>
@@ -159,31 +167,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Class_stu__class__3E52440B">
-          <End Role="Class" Type="Self.Class" Multiplicity="0..1" />
-          <End Role="Class_student" Type="Self.Class_student" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Class">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="Class_student">
-              <PropertyRef Name="class_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Class_stu__stude__3F466844">
-          <End Role="Student" Type="Self.Student" Multiplicity="0..1" />
-          <End Role="Class_student" Type="Self.Class_student" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Student">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="Class_student">
-              <PropertyRef Name="student_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Class_wee__class__440B1D61">
+        <Association Name="FK__Class_wee__class__44FF419A">
           <End Role="Class" Type="Self.Class" Multiplicity="1" />
           <End Role="Class_weekday" Type="Self.Class_weekday" Multiplicity="*" />
           <ReferentialConstraint>
@@ -195,7 +179,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Class_wee__weekd__44FF419A">
+        <Association Name="FK__Class_wee__weekd__45F365D3">
           <End Role="Weekday" Type="Self.Weekday" Multiplicity="1" />
           <End Role="Class_weekday" Type="Self.Class_weekday" Multiplicity="*" />
           <ReferentialConstraint>
@@ -231,7 +215,43 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Student_a__stude__2E1BDC42">
+        <Association Name="FK__Event__class_id__403A8C7D">
+          <End Role="Class" Type="Self.Class" Multiplicity="0..1" />
+          <End Role="Event" Type="Self.Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Class">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Event">
+              <PropertyRef Name="class_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Student__class_i__398D8EEE">
+          <End Role="Class" Type="Self.Class" Multiplicity="0..1" />
+          <End Role="Student" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Class">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="class_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Student__level_i__3A81B327">
+          <End Role="Level" Type="Self.Level" Multiplicity="1" />
+          <End Role="Student" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Level">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="level_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Student_a__stude__3D5E1FD2">
           <End Role="Student" Type="Self.Student" Multiplicity="0..1" />
           <End Role="Student_account" Type="Self.Student_account" Multiplicity="*" />
           <ReferentialConstraint>
@@ -243,7 +263,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Teacher_a__Teach__32E0915F">
+        <Association Name="FK__Teacher_a__teach__2E1BDC42">
           <End Role="Teacher" Type="Self.Teacher" Multiplicity="0..1" />
           <End Role="Teacher_account" Type="Self.Teacher_account" Multiplicity="*" />
           <ReferentialConstraint>
@@ -251,7 +271,7 @@
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="Teacher_account">
-              <PropertyRef Name="Teacher_id" />
+              <PropertyRef Name="teacher_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -260,40 +280,32 @@
           <EntitySet Name="Admin_account" EntityType="Self.Admin_account" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Class" EntityType="Self.Class" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Class_student" EntityType="Self.Class_student" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Class_weekday" EntityType="Self.Class_weekday" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Course" EntityType="Self.Course" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Event" EntityType="Self.Event" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Level" EntityType="Self.Level" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Student_account" EntityType="Self.Student_account" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Teacher" EntityType="Self.Teacher" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Teacher_account" EntityType="Self.Teacher_account" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Weekday" EntityType="Self.Weekday" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Admin_acc__admin__37A5467C" Association="Self.FK__Admin_acc__admin__37A5467C">
+          <AssociationSet Name="FK__Admin_acc__admin__32E0915F" Association="Self.FK__Admin_acc__admin__32E0915F">
             <End Role="Admin" EntitySet="Admin" />
             <End Role="Admin_account" EntitySet="Admin_account" />
           </AssociationSet>
-          <AssociationSet Name="FK__Class__course_id__3B75D760" Association="Self.FK__Class__course_id__3B75D760">
+          <AssociationSet Name="FK__Class__course_id__36B12243" Association="Self.FK__Class__course_id__36B12243">
             <End Role="Course" EntitySet="Course" />
             <End Role="Class" EntitySet="Class" />
           </AssociationSet>
-          <AssociationSet Name="FK__Class__teacher_i__3A81B327" Association="Self.FK__Class__teacher_i__3A81B327">
+          <AssociationSet Name="FK__Class__teacher_i__35BCFE0A" Association="Self.FK__Class__teacher_i__35BCFE0A">
             <End Role="Teacher" EntitySet="Teacher" />
             <End Role="Class" EntitySet="Class" />
           </AssociationSet>
-          <AssociationSet Name="FK__Class_stu__class__3E52440B" Association="Self.FK__Class_stu__class__3E52440B">
-            <End Role="Class" EntitySet="Class" />
-            <End Role="Class_student" EntitySet="Class_student" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Class_stu__stude__3F466844" Association="Self.FK__Class_stu__stude__3F466844">
-            <End Role="Student" EntitySet="Student" />
-            <End Role="Class_student" EntitySet="Class_student" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Class_wee__class__440B1D61" Association="Self.FK__Class_wee__class__440B1D61">
+          <AssociationSet Name="FK__Class_wee__class__44FF419A" Association="Self.FK__Class_wee__class__44FF419A">
             <End Role="Class" EntitySet="Class" />
             <End Role="Class_weekday" EntitySet="Class_weekday" />
           </AssociationSet>
-          <AssociationSet Name="FK__Class_wee__weekd__44FF419A" Association="Self.FK__Class_wee__weekd__44FF419A">
+          <AssociationSet Name="FK__Class_wee__weekd__45F365D3" Association="Self.FK__Class_wee__weekd__45F365D3">
             <End Role="Weekday" EntitySet="Weekday" />
             <End Role="Class_weekday" EntitySet="Class_weekday" />
           </AssociationSet>
@@ -305,11 +317,23 @@
             <End Role="Level" EntitySet="Level" />
             <End Role="Course" EntitySet="Course" />
           </AssociationSet>
-          <AssociationSet Name="FK__Student_a__stude__2E1BDC42" Association="Self.FK__Student_a__stude__2E1BDC42">
+          <AssociationSet Name="FK__Event__class_id__403A8C7D" Association="Self.FK__Event__class_id__403A8C7D">
+            <End Role="Class" EntitySet="Class" />
+            <End Role="Event" EntitySet="Event" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Student__class_i__398D8EEE" Association="Self.FK__Student__class_i__398D8EEE">
+            <End Role="Class" EntitySet="Class" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Student__level_i__3A81B327" Association="Self.FK__Student__level_i__3A81B327">
+            <End Role="Level" EntitySet="Level" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Student_a__stude__3D5E1FD2" Association="Self.FK__Student_a__stude__3D5E1FD2">
             <End Role="Student" EntitySet="Student" />
             <End Role="Student_account" EntitySet="Student_account" />
           </AssociationSet>
-          <AssociationSet Name="FK__Teacher_a__Teach__32E0915F" Association="Self.FK__Teacher_a__Teach__32E0915F">
+          <AssociationSet Name="FK__Teacher_a__teach__2E1BDC42" Association="Self.FK__Teacher_a__teach__2E1BDC42">
             <End Role="Teacher" EntitySet="Teacher" />
             <End Role="Teacher_account" EntitySet="Teacher_account" />
           </AssociationSet>
@@ -324,7 +348,7 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="full_name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Admin_account" Relationship="Self.FK__Admin_acc__admin__37A5467C" FromRole="Admin" ToRole="Admin_account" />
+          <NavigationProperty Name="Admin_account" Relationship="Self.FK__Admin_acc__admin__32E0915F" FromRole="Admin" ToRole="Admin_account" />
         </EntityType>
         <EntityType Name="Admin_account">
           <Key>
@@ -334,7 +358,7 @@
           <Property Name="admin_id" Type="Int32" />
           <Property Name="login" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Admin" Relationship="Self.FK__Admin_acc__admin__37A5467C" FromRole="Admin_account" ToRole="Admin" />
+          <NavigationProperty Name="Admin" Relationship="Self.FK__Admin_acc__admin__32E0915F" FromRole="Admin_account" ToRole="Admin" />
         </EntityType>
         <EntityType Name="Category">
           <Key>
@@ -355,20 +379,13 @@
           <Property Name="price" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="teacher_id" Type="Int32" />
           <Property Name="course_id" Type="Int32" />
-          <NavigationProperty Name="Course" Relationship="Self.FK__Class__course_id__3B75D760" FromRole="Class" ToRole="Course" />
-          <NavigationProperty Name="Teacher" Relationship="Self.FK__Class__teacher_i__3A81B327" FromRole="Class" ToRole="Teacher" />
-          <NavigationProperty Name="Class_student" Relationship="Self.FK__Class_stu__class__3E52440B" FromRole="Class" ToRole="Class_student" />
+          <NavigationProperty Name="Course" Relationship="Self.FK__Class__course_id__36B12243" FromRole="Class" ToRole="Course" />
+          <NavigationProperty Name="Teacher" Relationship="Self.FK__Class__teacher_i__35BCFE0A" FromRole="Class" ToRole="Teacher" />
           <NavigationProperty Name="Class_weekday" Relationship="Self.FK__Class_wee__class__440B1D61" FromRole="Class" ToRole="Class_weekday" />
-        </EntityType>
-        <EntityType Name="Class_student">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="class_id" Type="Int32" />
-          <Property Name="student_id" Type="Int32" />
-          <NavigationProperty Name="Class" Relationship="Self.FK__Class_stu__class__3E52440B" FromRole="Class_student" ToRole="Class" />
-          <NavigationProperty Name="Student" Relationship="Self.FK__Class_stu__stude__3F466844" FromRole="Class_student" ToRole="Student" />
+          <NavigationProperty Name="Events" Relationship="Self.FK__Event__class_id__3F466844" FromRole="Class" ToRole="Event" />
+          <NavigationProperty Name="Students" Relationship="Self.FK__Student__class_i__398D8EEE" FromRole="Class" ToRole="Student" />
+          <Property Name="quantity" Type="Int32" />
+          <Property Name="max_quantity" Type="Int32" />
         </EntityType>
         <EntityType Name="Class_weekday">
           <Key>
@@ -392,8 +409,19 @@
           <Property Name="level_id" Type="Int32" />
           <Property Name="category_id" Type="Int32" />
           <NavigationProperty Name="Category" Relationship="Self.FK__Course__category__29572725" FromRole="Course" ToRole="Category" />
-          <NavigationProperty Name="Classes" Relationship="Self.FK__Class__course_id__3B75D760" FromRole="Course" ToRole="Class" />
+          <NavigationProperty Name="Classes" Relationship="Self.FK__Class__course_id__36B12243" FromRole="Course" ToRole="Class" />
           <NavigationProperty Name="Level" Relationship="Self.FK__Course__level_id__286302EC" FromRole="Course" ToRole="Level" />
+        </EntityType>
+        <EntityType Name="Event">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="start_day" Type="DateTime" Precision="0" />
+          <Property Name="description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="class_id" Type="Int32" />
+          <NavigationProperty Name="Class" Relationship="Self.FK__Event__class_id__3F466844" FromRole="Event" ToRole="Class" />
         </EntityType>
         <EntityType Name="Level">
           <Key>
@@ -403,19 +431,23 @@
           <Property Name="sign" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
           <Property Name="name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Courses" Relationship="Self.FK__Course__level_id__286302EC" FromRole="Level" ToRole="Course" />
+          <NavigationProperty Name="Students" Relationship="TrungTamAnhVanDBModel.FK__Student__level_i__3A81B327" FromRole="Level" ToRole="Student" />
         </EntityType>
         <EntityType Name="Student">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="date_birth" Type="DateTime" Precision="0" />
-          <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="full_name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="gender" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="date_birth" Type="DateTime" Precision="0" />
           <Property Name="phone" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Class_student" Relationship="Self.FK__Class_stu__stude__3F466844" FromRole="Student" ToRole="Class_student" />
-          <NavigationProperty Name="Student_account" Relationship="Self.FK__Student_a__stude__2E1BDC42" FromRole="Student" ToRole="Student_account" />
+          <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="class_id" Type="Int32" />
+          <NavigationProperty Name="Class" Relationship="Self.FK__Student__class_i__398D8EEE" FromRole="Student" ToRole="Class" />
+          <NavigationProperty Name="Student_account" Relationship="Self.FK__Student_a__stude__3C69FB99" FromRole="Student" ToRole="Student_account" />
+          <Property Name="level_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Level" Relationship="TrungTamAnhVanDBModel.FK__Student__level_i__3A81B327" FromRole="Student" ToRole="Level" />
         </EntityType>
         <EntityType Name="Student_account">
           <Key>
@@ -425,20 +457,22 @@
           <Property Name="student_id" Type="Int32" />
           <Property Name="login" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Student" Relationship="Self.FK__Student_a__stude__2E1BDC42" FromRole="Student_account" ToRole="Student" />
+          <NavigationProperty Name="Student" Relationship="Self.FK__Student_a__stude__3C69FB99" FromRole="Student_account" ToRole="Student" />
         </EntityType>
         <EntityType Name="Teacher">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="full_name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="email" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="phone" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Classes" Relationship="Self.FK__Class__teacher_i__3A81B327" FromRole="Teacher" ToRole="Class" />
-          <NavigationProperty Name="Teacher_account" Relationship="Self.FK__Teacher_a__Teach__32E0915F" FromRole="Teacher" ToRole="Teacher_account" />
+          <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="salary" Type="Decimal" Precision="19" Scale="4" />
+          <NavigationProperty Name="Classes" Relationship="Self.FK__Class__teacher_i__35BCFE0A" FromRole="Teacher" ToRole="Class" />
+          <NavigationProperty Name="Teacher_account" Relationship="Self.FK__Teacher_a__teach__2E1BDC42" FromRole="Teacher" ToRole="Teacher_account" />
+          <Property Name="gender" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="date_birth" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="Teacher_account">
           <Key>
@@ -448,7 +482,7 @@
           <Property Name="teacher_id" Type="Int32" />
           <Property Name="login" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Teacher" Relationship="Self.FK__Teacher_a__Teach__32E0915F" FromRole="Teacher_account" ToRole="Teacher" />
+          <NavigationProperty Name="Teacher" Relationship="Self.FK__Teacher_a__teach__2E1BDC42" FromRole="Teacher_account" ToRole="Teacher" />
         </EntityType>
         <EntityType Name="Weekday">
           <Key>
@@ -458,7 +492,7 @@
           <Property Name="name" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Class_weekday" Relationship="Self.FK__Class_wee__weekd__44FF419A" FromRole="Weekday" ToRole="Class_weekday" />
         </EntityType>
-        <Association Name="FK__Admin_acc__admin__37A5467C">
+        <Association Name="FK__Admin_acc__admin__32E0915F">
           <End Role="Admin" Type="Self.Admin" Multiplicity="0..1" />
           <End Role="Admin_account" Type="Self.Admin_account" Multiplicity="*" />
           <ReferentialConstraint>
@@ -482,7 +516,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Class__course_id__3B75D760">
+        <Association Name="FK__Class__course_id__36B12243">
           <End Role="Course" Type="Self.Course" Multiplicity="0..1" />
           <End Role="Class" Type="Self.Class" Multiplicity="*" />
           <ReferentialConstraint>
@@ -494,7 +528,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Class__teacher_i__3A81B327">
+        <Association Name="FK__Class__teacher_i__35BCFE0A">
           <End Role="Teacher" Type="Self.Teacher" Multiplicity="0..1" />
           <End Role="Class" Type="Self.Class" Multiplicity="*" />
           <ReferentialConstraint>
@@ -503,18 +537,6 @@
             </Principal>
             <Dependent Role="Class">
               <PropertyRef Name="teacher_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Class_stu__class__3E52440B">
-          <End Role="Class" Type="Self.Class" Multiplicity="0..1" />
-          <End Role="Class_student" Type="Self.Class_student" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Class">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="Class_student">
-              <PropertyRef Name="class_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -530,15 +552,27 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Class_stu__stude__3F466844">
-          <End Role="Student" Type="Self.Student" Multiplicity="0..1" />
-          <End Role="Class_student" Type="Self.Class_student" Multiplicity="*" />
+        <Association Name="FK__Event__class_id__3F466844">
+          <End Role="Class" Type="Self.Class" Multiplicity="0..1" />
+          <End Role="Event" Type="Self.Event" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Student">
+            <Principal Role="Class">
               <PropertyRef Name="id" />
             </Principal>
-            <Dependent Role="Class_student">
-              <PropertyRef Name="student_id" />
+            <Dependent Role="Event">
+              <PropertyRef Name="class_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Student__class_i__398D8EEE">
+          <End Role="Class" Type="Self.Class" Multiplicity="0..1" />
+          <End Role="Student" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Class">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="class_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -566,7 +600,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Student_a__stude__2E1BDC42">
+        <Association Name="FK__Student_a__stude__3C69FB99">
           <End Role="Student" Type="Self.Student" Multiplicity="0..1" />
           <End Role="Student_account" Type="Self.Student_account" Multiplicity="*" />
           <ReferentialConstraint>
@@ -578,7 +612,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Teacher_a__Teach__32E0915F">
+        <Association Name="FK__Teacher_a__teach__2E1BDC42">
           <End Role="Teacher" Type="Self.Teacher" Multiplicity="0..1" />
           <End Role="Teacher_account" Type="Self.Teacher_account" Multiplicity="*" />
           <ReferentialConstraint>
@@ -595,16 +629,16 @@
           <EntitySet Name="Admin_account" EntityType="Self.Admin_account" />
           <EntitySet Name="Categories" EntityType="Self.Category" />
           <EntitySet Name="Classes" EntityType="Self.Class" />
-          <EntitySet Name="Class_student" EntityType="Self.Class_student" />
           <EntitySet Name="Class_weekday" EntityType="Self.Class_weekday" />
           <EntitySet Name="Courses" EntityType="Self.Course" />
+          <EntitySet Name="Events" EntityType="Self.Event" />
           <EntitySet Name="Levels" EntityType="Self.Level" />
           <EntitySet Name="Students" EntityType="Self.Student" />
           <EntitySet Name="Student_account" EntityType="Self.Student_account" />
           <EntitySet Name="Teachers" EntityType="Self.Teacher" />
           <EntitySet Name="Teacher_account" EntityType="Self.Teacher_account" />
           <EntitySet Name="Weekdays" EntityType="Self.Weekday" />
-          <AssociationSet Name="FK__Admin_acc__admin__37A5467C" Association="Self.FK__Admin_acc__admin__37A5467C">
+          <AssociationSet Name="FK__Admin_acc__admin__32E0915F" Association="Self.FK__Admin_acc__admin__32E0915F">
             <End Role="Admin" EntitySet="Admins" />
             <End Role="Admin_account" EntitySet="Admin_account" />
           </AssociationSet>
@@ -612,25 +646,25 @@
             <End Role="Category" EntitySet="Categories" />
             <End Role="Course" EntitySet="Courses" />
           </AssociationSet>
-          <AssociationSet Name="FK__Class__course_id__3B75D760" Association="Self.FK__Class__course_id__3B75D760">
+          <AssociationSet Name="FK__Class__course_id__36B12243" Association="Self.FK__Class__course_id__36B12243">
             <End Role="Course" EntitySet="Courses" />
             <End Role="Class" EntitySet="Classes" />
           </AssociationSet>
-          <AssociationSet Name="FK__Class__teacher_i__3A81B327" Association="Self.FK__Class__teacher_i__3A81B327">
+          <AssociationSet Name="FK__Class__teacher_i__35BCFE0A" Association="Self.FK__Class__teacher_i__35BCFE0A">
             <End Role="Teacher" EntitySet="Teachers" />
             <End Role="Class" EntitySet="Classes" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Class_stu__class__3E52440B" Association="Self.FK__Class_stu__class__3E52440B">
-            <End Role="Class" EntitySet="Classes" />
-            <End Role="Class_student" EntitySet="Class_student" />
           </AssociationSet>
           <AssociationSet Name="FK__Class_wee__class__440B1D61" Association="Self.FK__Class_wee__class__440B1D61">
             <End Role="Class" EntitySet="Classes" />
             <End Role="Class_weekday" EntitySet="Class_weekday" />
           </AssociationSet>
-          <AssociationSet Name="FK__Class_stu__stude__3F466844" Association="Self.FK__Class_stu__stude__3F466844">
+          <AssociationSet Name="FK__Event__class_id__3F466844" Association="Self.FK__Event__class_id__3F466844">
+            <End Role="Class" EntitySet="Classes" />
+            <End Role="Event" EntitySet="Events" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Student__class_i__398D8EEE" Association="Self.FK__Student__class_i__398D8EEE">
+            <End Role="Class" EntitySet="Classes" />
             <End Role="Student" EntitySet="Students" />
-            <End Role="Class_student" EntitySet="Class_student" />
           </AssociationSet>
           <AssociationSet Name="FK__Class_wee__weekd__44FF419A" Association="Self.FK__Class_wee__weekd__44FF419A">
             <End Role="Weekday" EntitySet="Weekdays" />
@@ -640,15 +674,31 @@
             <End Role="Level" EntitySet="Levels" />
             <End Role="Course" EntitySet="Courses" />
           </AssociationSet>
-          <AssociationSet Name="FK__Student_a__stude__2E1BDC42" Association="Self.FK__Student_a__stude__2E1BDC42">
+          <AssociationSet Name="FK__Student_a__stude__3C69FB99" Association="Self.FK__Student_a__stude__3C69FB99">
             <End Role="Student" EntitySet="Students" />
             <End Role="Student_account" EntitySet="Student_account" />
           </AssociationSet>
-          <AssociationSet Name="FK__Teacher_a__Teach__32E0915F" Association="Self.FK__Teacher_a__Teach__32E0915F">
+          <AssociationSet Name="FK__Teacher_a__teach__2E1BDC42" Association="Self.FK__Teacher_a__teach__2E1BDC42">
             <End Role="Teacher" EntitySet="Teachers" />
             <End Role="Teacher_account" EntitySet="Teacher_account" />
           </AssociationSet>
+          <AssociationSet Name="FK__Student__level_i__3A81B327" Association="TrungTamAnhVanDBModel.FK__Student__level_i__3A81B327">
+            <End Role="Level" EntitySet="Levels" />
+            <End Role="Student" EntitySet="Students" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="FK__Student__level_i__3A81B327">
+          <End Type="TrungTamAnhVanDBModel.Level" Role="Level" Multiplicity="1" />
+          <End Type="TrungTamAnhVanDBModel.Student" Role="Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Level">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="level_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -684,6 +734,8 @@
           <EntitySetMapping Name="Classes">
             <EntityTypeMapping TypeName="TrungTamAnhVanDBModel.Class">
               <MappingFragment StoreEntitySet="Class">
+                <ScalarProperty Name="max_quantity" ColumnName="max_quantity" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="start_day" ColumnName="start_day" />
@@ -691,15 +743,6 @@
                 <ScalarProperty Name="price" ColumnName="price" />
                 <ScalarProperty Name="teacher_id" ColumnName="teacher_id" />
                 <ScalarProperty Name="course_id" ColumnName="course_id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Class_student">
-            <EntityTypeMapping TypeName="TrungTamAnhVanDBModel.Class_student">
-              <MappingFragment StoreEntitySet="Class_student">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="class_id" ColumnName="class_id" />
-                <ScalarProperty Name="student_id" ColumnName="student_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -724,6 +767,17 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Events">
+            <EntityTypeMapping TypeName="TrungTamAnhVanDBModel.Event">
+              <MappingFragment StoreEntitySet="Event">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="start_day" ColumnName="start_day" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="class_id" ColumnName="class_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Levels">
             <EntityTypeMapping TypeName="TrungTamAnhVanDBModel.Level">
               <MappingFragment StoreEntitySet="Level">
@@ -736,12 +790,14 @@
           <EntitySetMapping Name="Students">
             <EntityTypeMapping TypeName="TrungTamAnhVanDBModel.Student">
               <MappingFragment StoreEntitySet="Student">
+                <ScalarProperty Name="level_id" ColumnName="level_id" />
                 <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="date_birth" ColumnName="date_birth" />
-                <ScalarProperty Name="address" ColumnName="address" />
                 <ScalarProperty Name="full_name" ColumnName="full_name" />
                 <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="date_birth" ColumnName="date_birth" />
                 <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="class_id" ColumnName="class_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -758,12 +814,14 @@
           <EntitySetMapping Name="Teachers">
             <EntityTypeMapping TypeName="TrungTamAnhVanDBModel.Teacher">
               <MappingFragment StoreEntitySet="Teacher">
+                <ScalarProperty Name="date_birth" ColumnName="date_birth" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
                 <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="description" ColumnName="description" />
-                <ScalarProperty Name="address" ColumnName="address" />
                 <ScalarProperty Name="full_name" ColumnName="full_name" />
-                <ScalarProperty Name="email" ColumnName="email" />
                 <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="salary" ColumnName="salary" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -771,7 +829,7 @@
             <EntityTypeMapping TypeName="TrungTamAnhVanDBModel.Teacher_account">
               <MappingFragment StoreEntitySet="Teacher_account">
                 <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="teacher_id" ColumnName="Teacher_id" />
+                <ScalarProperty Name="teacher_id" ColumnName="teacher_id" />
                 <ScalarProperty Name="login" ColumnName="login" />
                 <ScalarProperty Name="password" ColumnName="password" />
               </MappingFragment>

@@ -10,7 +10,7 @@ namespace BUS
     public class LoginBUS
     {
         LoginDAL loginDAL = new LoginDAL();
-        InstanceDAL instanceDAL = new InstanceDAL();
+        GetInstanceDAL instanceDAL = new GetInstanceDAL();
         InformationDAL infoDAL = new InformationDAL();
 
         public string CheckLoginAdmin(string username, string password)

@@ -36,6 +36,14 @@
             this.lbTitle = new System.Windows.Forms.Label();
             this.cboGender = new System.Windows.Forms.ComboBox();
             this.cboClass = new System.Windows.Forms.ComboBox();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Full_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date_birth = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.classes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Level = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,6 +51,15 @@
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.Full_name,
+            this.Gender,
+            this.date_birth,
+            this.phone,
+            this.address,
+            this.classes,
+            this.Level});
             this.dataGridView1.Location = new System.Drawing.Point(46, 236);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
@@ -76,6 +93,7 @@
             this.btnEdit.TabIndex = 2;
             this.btnEdit.Text = "Sửa";
             this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnDelete
             // 
@@ -89,6 +107,7 @@
             this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // textBox1
             // 
@@ -119,16 +138,77 @@
             this.cboGender.Name = "cboGender";
             this.cboGender.Size = new System.Drawing.Size(121, 24);
             this.cboGender.TabIndex = 6;
+            this.cboGender.SelectedIndexChanged += new System.EventHandler(this.cboGender_SelectedIndexChanged);
             // 
             // cboClass
             // 
             this.cboClass.FormattingEnabled = true;
             this.cboClass.Items.AddRange(new object[] {
-            "Tất cả"});
+            "Tất cả",
+            "Chưa có lớp"});
             this.cboClass.Location = new System.Drawing.Point(202, 190);
             this.cboClass.Name = "cboClass";
             this.cboClass.Size = new System.Drawing.Size(121, 24);
             this.cboClass.TabIndex = 7;
+            this.cboClass.SelectedIndexChanged += new System.EventHandler(this.cboClass_SelectedIndexChanged);
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "id";
+            this.Id.HeaderText = "Id";
+            this.Id.MinimumWidth = 6;
+            this.Id.Name = "Id";
+            // 
+            // Full_name
+            // 
+            this.Full_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Full_name.DataPropertyName = "full_name";
+            this.Full_name.HeaderText = "Họ và tên";
+            this.Full_name.MinimumWidth = 6;
+            this.Full_name.Name = "Full_name";
+            // 
+            // Gender
+            // 
+            this.Gender.DataPropertyName = "gender";
+            this.Gender.HeaderText = "Giới tính";
+            this.Gender.MinimumWidth = 6;
+            this.Gender.Name = "Gender";
+            // 
+            // date_birth
+            // 
+            this.date_birth.DataPropertyName = "date_birth";
+            this.date_birth.HeaderText = "Năm sinh";
+            this.date_birth.MinimumWidth = 6;
+            this.date_birth.Name = "date_birth";
+            // 
+            // phone
+            // 
+            this.phone.DataPropertyName = "phone";
+            this.phone.HeaderText = "SĐT";
+            this.phone.MinimumWidth = 6;
+            this.phone.Name = "phone";
+            // 
+            // address
+            // 
+            this.address.DataPropertyName = "address";
+            this.address.HeaderText = "Địa chỉ";
+            this.address.MinimumWidth = 6;
+            this.address.Name = "address";
+            // 
+            // classes
+            // 
+            this.classes.DataPropertyName = "classes";
+            this.classes.HeaderText = "Lớp đang học";
+            this.classes.MinimumWidth = 6;
+            this.classes.Name = "classes";
+            this.classes.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Level
+            // 
+            this.Level.DataPropertyName = "level";
+            this.Level.HeaderText = "Trình độ";
+            this.Level.MinimumWidth = 6;
+            this.Level.Name = "Level";
             // 
             // ucAdminStudent
             // 
@@ -161,5 +241,13 @@
         private System.Windows.Forms.Label lbTitle;
         private System.Windows.Forms.ComboBox cboGender;
         private System.Windows.Forms.ComboBox cboClass;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Full_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Gender;
+        private System.Windows.Forms.DataGridViewTextBoxColumn date_birth;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn address;
+        private System.Windows.Forms.DataGridViewTextBoxColumn classes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Level;
     }
 }
