@@ -31,6 +31,16 @@ namespace TrungTamAnhVan
 
         public void Reload()
         {
+            if (dataGridView1.Rows.Count == 0)
+            {
+                btnEdit.Enabled = false;
+                btnDelete.Enabled = false;
+            }
+            else
+            {
+                btnEdit.Enabled = true;
+                btnDelete.Enabled = true;
+            }
             if (!DesignMode)
             {
                 getInstance.GetAllStudent(dataGridView1);
@@ -46,6 +56,17 @@ namespace TrungTamAnhVan
 
         private void ucAdminStudent_Load(object sender, EventArgs e)
         {
+            dataGridView1.AutoGenerateColumns = false;
+            if (dataGridView1.Rows.Count == 0)
+            {
+                btnEdit.Enabled = false;
+                btnDelete.Enabled = false;
+            }
+            else
+            {
+                btnEdit.Enabled = false;
+                btnDelete.Enabled = true;
+            }
             cboClass.SelectedIndex = 0;
             cboGender.SelectedIndex = 0;
             
@@ -63,15 +84,12 @@ namespace TrungTamAnhVan
                 uc.Dock = DockStyle.Fill;
                 frmAdminMain.Instance.PnContainer.Controls.Add(uc);
             }
-            if(frmAdminMain.Instance.PnContainer.Controls.ContainsKey("ucAdminStudent"))
-            {
-                frmAdminMain.Instance.PnContainer.Controls.RemoveByKey("ucAdminStudent");
-            }
             frmAdminMain.Instance.PnContainer.Controls["ucInsertStudent"].BringToFront();
         }
 
         private void cboGender_SelectedIndexChanged(object sender, EventArgs e)
         {
+            dataGridView1.DataSource = null;
             if (!DesignMode)
             {
                 getInstance.GetAllStudentByGenderAndClass(dataGridView1, cboGender.Text, cboClass.Text);
@@ -80,6 +98,7 @@ namespace TrungTamAnhVan
 
         private void cboClass_SelectedIndexChanged(object sender, EventArgs e)
         {
+            dataGridView1.DataSource = null;
             if (!DesignMode)
             {
                 getInstance.GetAllStudentByGenderAndClass(dataGridView1, cboGender.Text, cboClass.Text);
@@ -87,14 +106,17 @@ namespace TrungTamAnhVan
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
-        {
-            int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-            if (!DesignMode)
+        {   
+            if (dataGridView1.CurrentRow.Cells[0].Value != null)
             {
-                deleteInstance.DeleteStudentAccount(id);
-                deleteInstance.DeleteStudent(id);
+                int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+                if (!DesignMode)
+                {
+                    deleteInstance.DeleteStudentAccount(id);
+                    deleteInstance.DeleteStudent(id);
+                }
+                this.Reload();
             }
-            this.Reload();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -106,6 +128,21 @@ namespace TrungTamAnhVan
             //int id = dataGridView1.CurrentRow.Cells[4].Value;
             //string address = dataGridView1.CurrentRow.Cells[5].Value.ToString();
             //int class_id = dataGridView1.CurrentRow.Cells[6].Value;
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            if (txtSearch.Text != "")
+            {
+                if (!DesignMode)
+                {
+                    getInstance.FindStudentByNameOrPhone(dataGridView1, txtSearch.Text.ToLower().Trim());
+                }
+            }
+            else
+            {
+                this.Reload();
+            }
         }
     }
 }

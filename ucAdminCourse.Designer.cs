@@ -30,7 +30,7 @@
         {
             this.cboLevel = new System.Windows.Forms.ComboBox();
             this.lbTitle = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnInsert = new System.Windows.Forms.Button();
@@ -60,6 +60,7 @@
             this.cboLevel.Name = "cboLevel";
             this.cboLevel.Size = new System.Drawing.Size(121, 24);
             this.cboLevel.TabIndex = 21;
+            this.cboLevel.SelectedIndexChanged += new System.EventHandler(this.cboLevel_SelectedIndexChanged);
             // 
             // lbTitle
             // 
@@ -71,13 +72,15 @@
             this.lbTitle.TabIndex = 20;
             this.lbTitle.Text = "Dữ Liệu Khóa Học";
             // 
-            // textBox1
+            // txtSearch
             // 
-            this.textBox1.Location = new System.Drawing.Point(46, 103);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(342, 64);
-            this.textBox1.TabIndex = 19;
+            this.txtSearch.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(46, 103);
+            this.txtSearch.Multiline = true;
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(342, 64);
+            this.txtSearch.TabIndex = 19;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // btnDelete
             // 
@@ -198,6 +201,7 @@
             this.cboCategory.Name = "cboCategory";
             this.cboCategory.Size = new System.Drawing.Size(121, 24);
             this.cboCategory.TabIndex = 22;
+            this.cboCategory.SelectedIndexChanged += new System.EventHandler(this.cboCategory_SelectedIndexChanged);
             // 
             // ucAdminCourse
             // 
@@ -206,7 +210,7 @@
             this.Controls.Add(this.cboCategory);
             this.Controls.Add(this.cboLevel);
             this.Controls.Add(this.lbTitle);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnInsert);
@@ -224,7 +228,7 @@
 
         private System.Windows.Forms.ComboBox cboLevel;
         private System.Windows.Forms.Label lbTitle;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnInsert;

@@ -24,14 +24,15 @@ namespace BUS
             addInstance.AddCourse(course);
         }
 
-        public void AddClassWeekday(int class_id, List<int> listWeekday, string time)
+        public void AddClassWeekday(int class_id, List<int> listWeekday, int start_hour, int end_hour)
         {
             foreach(int item in listWeekday)
             {
                 Class_weekday classWeekday = new Class_weekday();
                 classWeekday.class_id = class_id;
                 classWeekday.weekday_id = item;
-                classWeekday.hours = time;
+                classWeekday.start_hour = start_hour;
+                classWeekday.end_hour = end_hour;
 
                 addInstance.AddClassWeekday(classWeekday);
             }
@@ -51,7 +52,7 @@ namespace BUS
             addInstance.AddClass(classes);
         }
 
-        public void AddStudent(string full_name, string gender, string date_birth, string phone, string address, int class_id)
+        public void AddStudent(string full_name, string gender, string date_birth, string phone, string address, int class_id, int level_id)
         {
             Student student = new Student();
             {
@@ -60,7 +61,15 @@ namespace BUS
                 student.date_birth = Convert.ToDateTime(date_birth);
                 student.phone = phone;
                 student.address = address;
-                student.class_id = class_id;
+                student.level_id = level_id;
+                if (class_id < 0)
+                {
+                    student.class_id = null;
+                }
+                else
+                {
+                    student.class_id = class_id;
+                }
             }
             addInstance.AddStudent(student);
         }
@@ -69,7 +78,7 @@ namespace BUS
         {
             Student_account studentAccount = new Student_account();
             {
-                studentAccount.id = id;
+                studentAccount.student_id = id;
                 studentAccount.login = login;
                 studentAccount.password = password;
             }
@@ -95,7 +104,7 @@ namespace BUS
         {
             Teacher_account teacherAccount = new Teacher_account();
             {
-                teacherAccount.id = id;
+                teacherAccount.teacher_id = id;
                 teacherAccount.login = login;
                 teacherAccount.password = password;
             }

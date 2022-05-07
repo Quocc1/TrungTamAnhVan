@@ -46,6 +46,7 @@ namespace TrungTamAnhVan
 
         private void ucAdminCourse_Load(object sender, EventArgs e)
         {
+            dataGridView1.AutoGenerateColumns = false;
             cboLevel.SelectedIndex = 0;
             cboCategory.SelectedIndex = 0;
 
@@ -89,6 +90,37 @@ namespace TrungTamAnhVan
                 frmAdminMain.Instance.PnContainer.Controls.Add(uc);
             }
             frmAdminMain.Instance.PnContainer.Controls["ucEditCourse"].BringToFront();
+        }
+
+        private void cboLevel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!DesignMode)
+            {
+                getInstance.GetAllCourseByLevelAndCategory(dataGridView1, cboLevel.SelectedIndex, cboCategory.SelectedIndex);
+            }
+        }
+
+        private void cboCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!DesignMode)
+            {
+                getInstance.GetAllCourseByLevelAndCategory(dataGridView1, cboLevel.SelectedIndex, cboCategory.SelectedIndex);
+            }
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            if (txtSearch.Text != "")
+            {
+                if (!DesignMode)
+                {
+                    getInstance.FindCourseByName(dataGridView1, txtSearch.Text.ToLower().Trim());
+                }
+            }
+            else
+            {
+                this.Reload();
+            }
         }
     }
 }

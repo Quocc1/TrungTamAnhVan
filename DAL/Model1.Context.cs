@@ -38,5 +38,6 @@ namespace DAL
         public virtual DbSet<Teacher> Teachers { get; set; }
         public virtual DbSet<Teacher_account> Teacher_account { get; set; }
         public virtual DbSet<Weekday> Weekdays { get; set; }
+        public virtual DbSet<Score> Scores { get; set; }
     }
 }

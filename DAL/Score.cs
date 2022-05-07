@@ -12,17 +12,15 @@ namespace DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class Event
+    public partial class Score
     {
         public int id { get; set; }
-        public string name { get; set; }
-        public Nullable<System.DateTime> start_day { get; set; }
-        public string description { get; set; }
-        public Nullable<int> class_id { get; set; }
-        public Nullable<System.DateTime> sending_time { get; set; }
-        public Nullable<int> teacher_id { get; set; }
+        public string listening_score { get; set; }
+        public string reading_score { get; set; }
+        public string speaking_score { get; set; }
+        public string writing_score { get; set; }
+        public Nullable<int> student_id { get; set; }
     
-        public virtual Class Class { get; set; }
-        public virtual Teacher Teacher { get; set; }
+        public virtual Student Student { get; set; }
     }
 }

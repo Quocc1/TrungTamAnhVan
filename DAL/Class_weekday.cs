@@ -16,7 +16,8 @@ namespace DAL
     {
         public int class_id { get; set; }
         public int weekday_id { get; set; }
-        public string hours { get; set; }
+        public Nullable<int> start_hour { get; set; }
+        public Nullable<int> end_hour { get; set; }
     
         public virtual Class Class { get; set; }
         public virtual Weekday Weekday { get; set; }

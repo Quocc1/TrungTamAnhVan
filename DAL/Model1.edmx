@@ -49,7 +49,8 @@
           </Key>
           <Property Name="class_id" Type="int" Nullable="false" />
           <Property Name="weekday_id" Type="int" Nullable="false" />
-          <Property Name="hours" Type="nvarchar" MaxLength="10" />
+          <Property Name="start_hour" Type="int" />
+          <Property Name="end_hour" Type="int" />
         </EntityType>
         <EntityType Name="Course">
           <Key>
@@ -68,9 +69,11 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="nvarchar" MaxLength="50" />
-          <Property Name="start_day" Type="date" />
           <Property Name="description" Type="nvarchar" MaxLength="100" />
+          <Property Name="sending_time" Type="datetime" />
+          <Property Name="start_day" Type="date" />
           <Property Name="class_id" Type="int" />
+          <Property Name="teacher_id" Type="int" />
         </EntityType>
         <EntityType Name="Level">
           <Key>
@@ -79,6 +82,17 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="sign" Type="char" MaxLength="2" />
           <Property Name="name" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Score">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="listening_score" Type="nvarchar" MaxLength="1" />
+          <Property Name="reading_score" Type="nvarchar" MaxLength="1" />
+          <Property Name="speaking_score" Type="nvarchar" MaxLength="1" />
+          <Property Name="writing_score" Type="nvarchar" MaxLength="1" />
+          <Property Name="student_id" Type="int" />
         </EntityType>
         <EntityType Name="Student">
           <Key>
@@ -167,7 +181,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Class_wee__class__44FF419A">
+        <Association Name="FK__Class_wee__class__48CFD27E">
           <End Role="Class" Type="Self.Class" Multiplicity="1" />
           <End Role="Class_weekday" Type="Self.Class_weekday" Multiplicity="*" />
           <ReferentialConstraint>
@@ -179,7 +193,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Class_wee__weekd__45F365D3">
+        <Association Name="FK__Class_wee__weekd__49C3F6B7">
           <End Role="Weekday" Type="Self.Weekday" Multiplicity="1" />
           <End Role="Class_weekday" Type="Self.Class_weekday" Multiplicity="*" />
           <ReferentialConstraint>
@@ -215,7 +229,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Event__class_id__403A8C7D">
+        <Association Name="FK__Event__class_id__4316F928">
           <End Role="Class" Type="Self.Class" Multiplicity="0..1" />
           <End Role="Event" Type="Self.Event" Multiplicity="*" />
           <ReferentialConstraint>
@@ -224,6 +238,30 @@
             </Principal>
             <Dependent Role="Event">
               <PropertyRef Name="class_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Event__teacher_i__440B1D61">
+          <End Role="Teacher" Type="Self.Teacher" Multiplicity="0..1" />
+          <End Role="Event" Type="Self.Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Teacher">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Event">
+              <PropertyRef Name="teacher_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Score__student_i__403A8C7D">
+          <End Role="Student" Type="Self.Student" Multiplicity="0..1" />
+          <End Role="Score" Type="Self.Score" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Student">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Score">
+              <PropertyRef Name="student_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -284,6 +322,7 @@
           <EntitySet Name="Course" EntityType="Self.Course" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Event" EntityType="Self.Event" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Level" EntityType="Self.Level" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Score" EntityType="Self.Score" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Student_account" EntityType="Self.Student_account" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Teacher" EntityType="Self.Teacher" Schema="dbo" store:Type="Tables" />
@@ -301,11 +340,11 @@
             <End Role="Teacher" EntitySet="Teacher" />
             <End Role="Class" EntitySet="Class" />
           </AssociationSet>
-          <AssociationSet Name="FK__Class_wee__class__44FF419A" Association="Self.FK__Class_wee__class__44FF419A">
+          <AssociationSet Name="FK__Class_wee__class__48CFD27E" Association="Self.FK__Class_wee__class__48CFD27E">
             <End Role="Class" EntitySet="Class" />
             <End Role="Class_weekday" EntitySet="Class_weekday" />
           </AssociationSet>
-          <AssociationSet Name="FK__Class_wee__weekd__45F365D3" Association="Self.FK__Class_wee__weekd__45F365D3">
+          <AssociationSet Name="FK__Class_wee__weekd__49C3F6B7" Association="Self.FK__Class_wee__weekd__49C3F6B7">
             <End Role="Weekday" EntitySet="Weekday" />
             <End Role="Class_weekday" EntitySet="Class_weekday" />
           </AssociationSet>
@@ -317,9 +356,17 @@
             <End Role="Level" EntitySet="Level" />
             <End Role="Course" EntitySet="Course" />
           </AssociationSet>
-          <AssociationSet Name="FK__Event__class_id__403A8C7D" Association="Self.FK__Event__class_id__403A8C7D">
+          <AssociationSet Name="FK__Event__class_id__4316F928" Association="Self.FK__Event__class_id__4316F928">
             <End Role="Class" EntitySet="Class" />
             <End Role="Event" EntitySet="Event" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Event__teacher_i__440B1D61" Association="Self.FK__Event__teacher_i__440B1D61">
+            <End Role="Teacher" EntitySet="Teacher" />
+            <End Role="Event" EntitySet="Event" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Score__student_i__403A8C7D" Association="Self.FK__Score__student_i__403A8C7D">
+            <End Role="Student" EntitySet="Student" />
+            <End Role="Score" EntitySet="Score" />
           </AssociationSet>
           <AssociationSet Name="FK__Student__class_i__398D8EEE" Association="Self.FK__Student__class_i__398D8EEE">
             <End Role="Class" EntitySet="Class" />
@@ -394,9 +441,10 @@
           </Key>
           <Property Name="class_id" Type="Int32" Nullable="false" />
           <Property Name="weekday_id" Type="Int32" Nullable="false" />
-          <Property Name="hours" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Class" Relationship="Self.FK__Class_wee__class__440B1D61" FromRole="Class_weekday" ToRole="Class" />
           <NavigationProperty Name="Weekday" Relationship="Self.FK__Class_wee__weekd__44FF419A" FromRole="Class_weekday" ToRole="Weekday" />
+          <Property Name="start_hour" Type="Int32" />
+          <Property Name="end_hour" Type="Int32" />
         </EntityType>
         <EntityType Name="Course">
           <Key>
@@ -422,6 +470,9 @@
           <Property Name="description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="class_id" Type="Int32" />
           <NavigationProperty Name="Class" Relationship="Self.FK__Event__class_id__3F466844" FromRole="Event" ToRole="Class" />
+          <Property Name="sending_time" Type="DateTime" Precision="3" />
+          <Property Name="teacher_id" Type="Int32" />
+          <NavigationProperty Name="Teacher" Relationship="TrungTamAnhVanDBModel.FK__Event__teacher_i__440B1D61" FromRole="Event" ToRole="Teacher" />
         </EntityType>
         <EntityType Name="Level">
           <Key>
@@ -448,6 +499,7 @@
           <NavigationProperty Name="Student_account" Relationship="Self.FK__Student_a__stude__3C69FB99" FromRole="Student" ToRole="Student_account" />
           <Property Name="level_id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Level" Relationship="TrungTamAnhVanDBModel.FK__Student__level_i__3A81B327" FromRole="Student" ToRole="Level" />
+          <NavigationProperty Name="Scores" Relationship="TrungTamAnhVanDBModel.FK__Score__student_i__403A8C7D" FromRole="Student" ToRole="Score" />
         </EntityType>
         <EntityType Name="Student_account">
           <Key>
@@ -473,6 +525,7 @@
           <NavigationProperty Name="Teacher_account" Relationship="Self.FK__Teacher_a__teach__2E1BDC42" FromRole="Teacher" ToRole="Teacher_account" />
           <Property Name="gender" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
           <Property Name="date_birth" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Events" Relationship="TrungTamAnhVanDBModel.FK__Event__teacher_i__440B1D61" FromRole="Teacher" ToRole="Event" />
         </EntityType>
         <EntityType Name="Teacher_account">
           <Key>
@@ -686,6 +739,15 @@
             <End Role="Level" EntitySet="Levels" />
             <End Role="Student" EntitySet="Students" />
           </AssociationSet>
+          <EntitySet Name="Scores" EntityType="TrungTamAnhVanDBModel.Score" />
+          <AssociationSet Name="FK__Event__teacher_i__440B1D61" Association="TrungTamAnhVanDBModel.FK__Event__teacher_i__440B1D61">
+            <End Role="Teacher" EntitySet="Teachers" />
+            <End Role="Event" EntitySet="Events" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Score__student_i__403A8C7D" Association="TrungTamAnhVanDBModel.FK__Score__student_i__403A8C7D">
+            <End Role="Student" EntitySet="Students" />
+            <End Role="Score" EntitySet="Scores" />
+          </AssociationSet>
         </EntityContainer>
         <Association Name="FK__Student__level_i__3A81B327">
           <End Type="TrungTamAnhVanDBModel.Level" Role="Level" Multiplicity="1" />
@@ -696,6 +758,42 @@
             </Principal>
             <Dependent Role="Student">
               <PropertyRef Name="level_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Score">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="listening_score" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="reading_score" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="speaking_score" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="writing_score" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="student_id" Type="Int32" />
+          <NavigationProperty Name="Student" Relationship="TrungTamAnhVanDBModel.FK__Score__student_i__403A8C7D" FromRole="Score" ToRole="Student" />
+        </EntityType>
+        <Association Name="FK__Event__teacher_i__440B1D61">
+          <End Type="TrungTamAnhVanDBModel.Teacher" Role="Teacher" Multiplicity="0..1" />
+          <End Type="TrungTamAnhVanDBModel.Event" Role="Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Teacher">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Event">
+              <PropertyRef Name="teacher_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Score__student_i__403A8C7D">
+          <End Type="TrungTamAnhVanDBModel.Student" Role="Student" Multiplicity="0..1" />
+          <End Type="TrungTamAnhVanDBModel.Score" Role="Score" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Student">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Score">
+              <PropertyRef Name="student_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -749,9 +847,10 @@
           <EntitySetMapping Name="Class_weekday">
             <EntityTypeMapping TypeName="TrungTamAnhVanDBModel.Class_weekday">
               <MappingFragment StoreEntitySet="Class_weekday">
+                <ScalarProperty Name="end_hour" ColumnName="end_hour" />
+                <ScalarProperty Name="start_hour" ColumnName="start_hour" />
                 <ScalarProperty Name="class_id" ColumnName="class_id" />
                 <ScalarProperty Name="weekday_id" ColumnName="weekday_id" />
-                <ScalarProperty Name="hours" ColumnName="hours" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -770,6 +869,8 @@
           <EntitySetMapping Name="Events">
             <EntityTypeMapping TypeName="TrungTamAnhVanDBModel.Event">
               <MappingFragment StoreEntitySet="Event">
+                <ScalarProperty Name="teacher_id" ColumnName="teacher_id" />
+                <ScalarProperty Name="sending_time" ColumnName="sending_time" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="start_day" ColumnName="start_day" />
@@ -840,6 +941,18 @@
               <MappingFragment StoreEntitySet="Weekday">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Scores">
+            <EntityTypeMapping TypeName="TrungTamAnhVanDBModel.Score">
+              <MappingFragment StoreEntitySet="Score">
+                <ScalarProperty Name="student_id" ColumnName="student_id" />
+                <ScalarProperty Name="writing_score" ColumnName="writing_score" />
+                <ScalarProperty Name="speaking_score" ColumnName="speaking_score" />
+                <ScalarProperty Name="reading_score" ColumnName="reading_score" />
+                <ScalarProperty Name="listening_score" ColumnName="listening_score" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

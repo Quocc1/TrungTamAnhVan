@@ -100,5 +100,64 @@ namespace DAL
             }
             return count;
         }
+
+        public int CountClass()
+        {
+            int count = 0;
+            using (var db = new Connection())
+            {
+                count = (from cl in db.Classes select cl).Count();
+            }
+            return count;
+        }
+
+        public int CountCourse()
+        {
+            int count = 0;
+            using (var db = new Connection())
+            {
+                count = (from cs in db.Courses select cs).Count();
+            }
+            return count;
+        }
+
+        public (string, bool) CheckAvailableTeacher(int teacher_id, int weekday, DateTime start_dayx, DateTime end_dayx, int start_hourx, int end_hourx, bool flag)
+        {
+            string result = "";
+            using (var db = new Connection())
+            {
+                var classes = (from cl in db.Classes.Include("Class_weekday")
+                               where cl.teacher_id == teacher_id
+                               select cl);
+
+                foreach(var cl in classes)
+                {
+                    DateTime dt1 = cl.start_day ?? DateTime.Now;
+                    DateTime dt2 = cl.end_day ?? DateTime.Now;
+                    if (DateTime.Compare(start_dayx, dt2) < 0 && DateTime.Compare(end_dayx, dt1) > 0)
+                    {
+                        foreach (var wd in cl.Class_weekday)
+                        {
+                            if (wd.weekday_id == weekday)
+                            {
+                                if (start_hourx < wd.end_hour && end_hourx > wd.start_hour)
+                                {
+                                    if (!flag)
+                                    {
+                                        result += $"Giáo viên {cl.Teacher.full_name} bị kẹt lịch: ";
+                                        result += $"\nLớp {cl.name} thứ {wd.Weekday.name} lúc {wd.start_hour} - {wd.end_hour}";
+                                    }
+                                    else
+                                    {
+                                        result += $"\nLớp {cl.name} thứ {wd.Weekday.name} lúc {wd.start_hour} - {wd.end_hour}";
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            return (result, true);
+        }
     }
 }

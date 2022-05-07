@@ -34,6 +34,8 @@ namespace TrungTamAnhVan
             {
                 lbStudentQuantity.Text = infoBUS.CountStudent().ToString();
                 lbTeacherQuantity.Text = infoBUS.CountTeacher().ToString();
+                lbClassQuantity.Text = infoBUS.CountClass().ToString();
+                lbCourseQuantity.Text = infoBUS.CountCourse().ToString();
             }
         }
 
@@ -49,6 +51,8 @@ namespace TrungTamAnhVan
             {
                 lbStudentQuantity.Text = infoBUS.CountStudent().ToString();
                 lbTeacherQuantity.Text = infoBUS.CountTeacher().ToString();
+                lbCourseQuantity.Text = infoBUS.CountCourse().ToString();
+                lbClassQuantity.Text = infoBUS.CountClass().ToString();
             }
         }
     }

@@ -96,6 +96,7 @@
             // 
             // txtDescription
             // 
+            this.txtDescription.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescription.Location = new System.Drawing.Point(97, 345);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
@@ -159,16 +160,18 @@
             // 
             // txtTerm
             // 
-            this.txtTerm.Location = new System.Drawing.Point(678, 74);
+            this.txtTerm.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTerm.Location = new System.Drawing.Point(678, 61);
             this.txtTerm.Name = "txtTerm";
-            this.txtTerm.Size = new System.Drawing.Size(100, 22);
+            this.txtTerm.Size = new System.Drawing.Size(100, 39);
             this.txtTerm.TabIndex = 22;
             // 
             // txtLessons
             // 
-            this.txtLessons.Location = new System.Drawing.Point(678, 154);
+            this.txtLessons.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLessons.Location = new System.Drawing.Point(678, 141);
             this.txtLessons.Name = "txtLessons";
-            this.txtLessons.Size = new System.Drawing.Size(100, 22);
+            this.txtLessons.Size = new System.Drawing.Size(100, 39);
             this.txtLessons.TabIndex = 23;
             // 
             // lbMonth

@@ -42,10 +42,11 @@ namespace TrungTamAnhVan
                     string name = txtName.Text;
                     string start_day = dtpStartDay.Value.ToShortDateString();
                     string end_day = dtpEndDay.Value.ToShortDateString();
+                    int start_hour = Convert.ToInt32(txtTimeStart.Text); ;
+                    int end_hour = Convert.ToInt32(txtTimeEnd.Text);
                     int price = Int32.Parse(txtPrice.Text);
                     int teacher_id = Convert.ToInt32(cboTeacher.SelectedValue.ToString());
                     int course_id = Convert.ToInt32(cboCourse.SelectedValue.ToString());
-                    string time = ($"{txtTimeStart.Text}h - {txtTimeEnd}h");
 
                     List<int> listWeekday = new List<int>();
                     if (chkMonday.Checked)
@@ -79,13 +80,21 @@ namespace TrungTamAnhVan
 
                     if (!DesignMode)
                     {
-                        addInstance.AddClass(name, start_day, end_day, price, teacher_id, course_id);
-                        int class_id = infoBUS.GetNewestClassId();
-                        addInstance.AddClassWeekday(class_id, listWeekday, time);
-                    }
+                        string result = infoBUS.CheckAvailableTeacher(teacher_id, listWeekday, start_day, end_day, start_hour, end_hour);
+                        if (result != "")
+                        {
+                            MessageBox.Show(result);
+                        }
+                        else
+                        {
+                            addInstance.AddClass(name, start_day, end_day, price, teacher_id, course_id);
+                            int class_id = infoBUS.GetNewestClassId();
+                            addInstance.AddClassWeekday(class_id, listWeekday, start_hour, end_hour);
 
-                    ucAdminClass.Instance.Reload();
-                    btnCancel.PerformClick();
+                            ucAdminClass.Instance.Reload();
+                            btnCancel.PerformClick();
+                        }
+                    }
                 }
             }
         }

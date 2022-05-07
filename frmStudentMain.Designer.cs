@@ -84,6 +84,7 @@
             this.btnFee.TabIndex = 10;
             this.btnFee.Text = "Học phí";
             this.btnFee.UseVisualStyleBackColor = true;
+            this.btnFee.Click += new System.EventHandler(this.btnFee_Click);
             // 
             // btnScore
             // 
@@ -101,6 +102,7 @@
             this.btnScore.TabIndex = 8;
             this.btnScore.Text = "Điểm số";
             this.btnScore.UseVisualStyleBackColor = true;
+            this.btnScore.Click += new System.EventHandler(this.btnScore_Click);
             // 
             // btnSchedule
             // 
@@ -118,6 +120,7 @@
             this.btnSchedule.TabIndex = 7;
             this.btnSchedule.Text = "Lịch biểu";
             this.btnSchedule.UseVisualStyleBackColor = true;
+            this.btnSchedule.Click += new System.EventHandler(this.btnSchedule_Click);
             // 
             // btnInfo
             // 
@@ -135,7 +138,7 @@
             this.btnInfo.TabIndex = 6;
             this.btnInfo.Text = "Thông tin";
             this.btnInfo.UseVisualStyleBackColor = true;
-            this.btnInfo.Click += new System.EventHandler(this.btnStudent_Click);
+            this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
             // 
             // btnHome
             // 
@@ -153,6 +156,7 @@
             this.btnHome.TabIndex = 5;
             this.btnHome.Text = "Trang chủ";
             this.btnHome.UseVisualStyleBackColor = true;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // lbRole
             // 

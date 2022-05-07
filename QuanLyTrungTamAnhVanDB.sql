@@ -83,12 +83,23 @@ CREATE TABLE Student_account (
 	password NVARCHAR(20)
 )
 
+CREATE TABLE Score (
+	id INT PRIMARY KEY IDENTITY(1,1),
+	listening_score NVARCHAR,
+	reading_score NVARCHAR,
+	speaking_score NVARCHAR,
+	writing_score NVARCHAR,
+	student_id INT FOREIGN KEY REFERENCES Student(id)
+)
+
 CREATE TABLE Event (
 	id INT PRIMARY KEY IDENTITY(1,1),
 	name NVARCHAR(50),
-	start_day DATE,
 	description NVARCHAR(100),
-	class_id INT FOREIGN KEY REFERENCES Class(id)
+	sending_time DATETIME,
+	start_day DATE,
+	class_id INT FOREIGN KEY REFERENCES Class(id),
+	teacher_id INT FOREIGN KEY REFERENCES Teacher(id)
 )
 
 --CREATE TABLE Class_student (
@@ -106,7 +117,8 @@ CREATE TABLE Weekday (
 CREATE TABLE Class_weekday (
 	class_id INT FOREIGN KEY REFERENCES Class(id),
 	weekday_id INT FOREIGN KEY REFERENCES Weekday(id),
-	hours NVARCHAR(10),
+	start_hour INT,
+	end_hour INT,
 	CONSTRAINT PK_Class_weekday PRIMARY KEY (class_id, weekday_id)
 )
 
@@ -127,14 +139,6 @@ INSERT INTO Teacher_account VALUES(3, 'teacher3', '3')
 INSERT INTO Teacher_account VALUES(4, 'teacher4', '4')
 INSERT INTO Teacher_account VALUES(5, 'teacher5', '5')
 
-INSERT INTO Weekday VALUES('Monday')
-INSERT INTO Weekday VALUES('Tuesday')
-INSERT INTO Weekday VALUES('Wednesday')
-INSERT INTO Weekday VALUES('Thursday')
-INSERT INTO Weekday VALUES('Friday')
-INSERT INTO Weekday VALUES('Saturday')
-INSERT INTO Weekday VALUES('Sunday')
-
 INSERT INTO Category VALUES('Children')
 INSERT INTO Category VALUES('Youth')
 INSERT INTO Category VALUES('Adult')
@@ -146,13 +150,72 @@ INSERT INTO Level VALUES('B2', 'Upper Intermediate')
 INSERT INTO Level VALUES('C1', 'Advanced')
 INSERT INTO Level VALUES('C2', 'Proficient')
 
-INSERT INTO Course VALUES(15, N'Khoá học hè cho trẻ em', N'3 tháng', 1, 1)
-INSERT INTO Course VALUES(15, N'Khoá học hè cho thanh niên', N'3 tháng', 3, 2)
-INSERT INTO Course VALUES(15, N'Khoá học hè cho người lớn', N'3 tháng', 4, 3)
+INSERT INTO Course VALUES(15, N'Khoá học hè cho trẻ em mới bắt đầu', N'3 tháng', 1, 1)
+INSERT INTO Course VALUES(15, N'Khoá học hè cho trẻ em sơ cấp', N'3 tháng', 2, 1)
+INSERT INTO Course VALUES(15, N'Khoá học hè cho thanh niên mới bắt đầu', N'3 tháng', 1, 2)
+INSERT INTO Course VALUES(15, N'Khoá học hè cho thanh niên sơ cấp', N'3 tháng', 2, 2)
+INSERT INTO Course VALUES(15, N'Khoá học hè cho thanh niên trung cấp', N'3 tháng', 3, 2)
+INSERT INTO Course VALUES(15, N'Khoá học hè cho thanh niên trên trung cấp', N'3 tháng', 4, 2)
+INSERT INTO Course VALUES(15, N'Khoá học hè cho thanh niên cao cấp', N'3 tháng', 5, 2)
+INSERT INTO Course VALUES(15, N'Khoá học hè cho thanh niên thành thạo', N'3 tháng', 6, 2)
+INSERT INTO Course VALUES(15, N'Khoá học hè cho người lớn mới bắt đầu', N'3 tháng', 1, 3)
+INSERT INTO Course VALUES(15, N'Khoá học hè cho người lớn sơ cấp', N'3 tháng', 2, 3)
+INSERT INTO Course VALUES(15, N'Khoá học hè cho người lớn trung cấp', N'3 tháng', 3, 3)
+INSERT INTO Course VALUES(15, N'Khoá học hè cho người lớn trên trung cấp', N'3 tháng', 4, 3)
+INSERT INTO Course VALUES(15, N'Khoá học hè cho người lớn cao cấp', N'3 tháng', 5, 3)
+INSERT INTO Course VALUES(15, N'Khoá học hè cho người lớn thành thạo', N'3 tháng', 6, 3)
 
 INSERT INTO Class VALUES('A101', '2022-05-01', '2022-08-01', 1000000, 0, 20, 1, 1)
 INSERT INTO Class VALUES('A102', '2022-05-01', '2022-08-01', 2000000, 0, 20, 2, 2)
 INSERT INTO Class VALUES('A103', '2022-05-01', '2022-08-01', 3000000, 0, 20, 3, 3)
+INSERT INTO Class VALUES('A104', '2022-05-01', '2022-08-01', 3000000, 0, 20, 4, 4)
+INSERT INTO Class VALUES('A105', '2022-05-01', '2022-08-01', 3000000, 0, 20, 5, 9)
+INSERT INTO Class VALUES('A106', '2022-05-01', '2022-08-01', 3000000, 0, 20, 1, 10)
+INSERT INTO Class VALUES('B101', '2022-05-01', '2022-08-01', 3000000, 0, 20, 2, 5)
+INSERT INTO Class VALUES('B102', '2022-05-01', '2022-08-01', 3000000, 0, 20, 3, 6)
+INSERT INTO Class VALUES('B103', '2022-05-01', '2022-08-01', 3000000, 0, 20, 4, 11)
+INSERT INTO Class VALUES('B104', '2022-05-01', '2022-08-01', 3000000, 0, 20, 5, 12)
+INSERT INTO Class VALUES('C101', '2022-05-01', '2022-08-01', 3000000, 0, 20, 1, 7)
+INSERT INTO Class VALUES('C102', '2022-05-01', '2022-08-01', 3000000, 0, 20, 2, 8)
+INSERT INTO Class VALUES('C103', '2022-05-01', '2022-08-01', 3000000, 0, 20, 3, 13)
+INSERT INTO Class VALUES('C104', '2022-05-01', '2022-08-01', 3000000, 0, 20, 4, 14)
+
+INSERT INTO Weekday VALUES(N'Thứ hai')
+INSERT INTO Weekday VALUES(N'Thứ ba')
+INSERT INTO Weekday VALUES(N'Thứ tư')
+INSERT INTO Weekday VALUES(N'Thứ năm')
+INSERT INTO Weekday VALUES(N'Thứ sáu')
+INSERT INTO Weekday VALUES(N'Thứ bảy')
+INSERT INTO Weekday VALUES(N'Chủ nhật')
+
+INSERT INTO Class_weekday VALUES(1, 1, 7, 10)
+INSERT INTO Class_weekday VALUES(1, 3, 7, 10)
+INSERT INTO Class_weekday VALUES(2, 2, 7, 10)
+INSERT INTO Class_weekday VALUES(2, 4, 7, 10)
+INSERT INTO Class_weekday VALUES(3, 3, 7, 10)
+INSERT INTO Class_weekday VALUES(3, 5, 7, 10)
+INSERT INTO Class_weekday VALUES(4, 4, 7, 10)
+INSERT INTO Class_weekday VALUES(4, 6, 7, 10)
+INSERT INTO Class_weekday VALUES(5, 5, 7, 10)
+INSERT INTO Class_weekday VALUES(5, 7, 7, 10)
+INSERT INTO Class_weekday VALUES(6, 1, 18, 21)
+INSERT INTO Class_weekday VALUES(6, 3, 18, 21)
+INSERT INTO Class_weekday VALUES(7, 2, 18, 21)
+INSERT INTO Class_weekday VALUES(7, 4, 18, 21)
+INSERT INTO Class_weekday VALUES(8, 3, 18, 21)
+INSERT INTO Class_weekday VALUES(8, 5, 18, 21)
+INSERT INTO Class_weekday VALUES(9, 4, 18, 21)
+INSERT INTO Class_weekday VALUES(9, 6, 18, 21)
+INSERT INTO Class_weekday VALUES(10, 5, 18, 21)
+INSERT INTO Class_weekday VALUES(10, 7, 18, 21)
+INSERT INTO Class_weekday VALUES(11, 1, 14, 17)
+INSERT INTO Class_weekday VALUES(11, 3, 14, 17)
+INSERT INTO Class_weekday VALUES(12, 2, 14, 17)
+INSERT INTO Class_weekday VALUES(12, 4, 14, 17)
+INSERT INTO Class_weekday VALUES(13, 3, 14, 17)
+INSERT INTO Class_weekday VALUES(13, 5, 14, 17)
+INSERT INTO Class_weekday VALUES(14, 4, 14, 17)
+INSERT INTO Class_weekday VALUES(14, 6, 14, 17)
 
 INSERT INTO Student VALUES(N'Nguyễn Văn A', 'Nam', '2002-01-01', '0123456701', N'0 Trường Chinh', NULL, 1)
 INSERT INTO Student VALUES(N'Nguyễn Văn B', 'Nam', '2002-01-02', '0123456702', N'1 Trường Chinh', NULL, 2)

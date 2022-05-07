@@ -30,6 +30,9 @@
         <AssociationConnector Association="TrungTamAnhVanDBModel.FK__Student_a__stude__3C69FB99" ManuallyRouted="false" />
         <AssociationConnector Association="TrungTamAnhVanDBModel.FK__Teacher_a__teach__2E1BDC42" ManuallyRouted="false" />
         <AssociationConnector Association="TrungTamAnhVanDBModel.FK__Student__level_i__3A81B327" />
+        <EntityTypeShape EntityType="TrungTamAnhVanDBModel.Score" Width="1.5" PointX="7.5" PointY="13.5" />
+        <AssociationConnector Association="TrungTamAnhVanDBModel.FK__Event__teacher_i__440B1D61" />
+        <AssociationConnector Association="TrungTamAnhVanDBModel.FK__Score__student_i__403A8C7D" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

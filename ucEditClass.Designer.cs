@@ -50,7 +50,7 @@
             this.dtpEndDay = new System.Windows.Forms.DateTimePicker();
             this.dtpStartDay = new System.Windows.Forms.DateTimePicker();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.btnInsert = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.lbEnđay = new System.Windows.Forms.Label();
             this.lbStartDay = new System.Windows.Forms.Label();
             this.lbName = new System.Windows.Forms.Label();
@@ -266,18 +266,18 @@
             this.btnCancel.Text = "Hủy";
             this.btnCancel.UseVisualStyleBackColor = false;
             // 
-            // btnInsert
+            // btnEdit
             // 
-            this.btnInsert.BackColor = System.Drawing.Color.White;
-            this.btnInsert.FlatAppearance.BorderSize = 0;
-            this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInsert.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInsert.Location = new System.Drawing.Point(97, 593);
-            this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(156, 64);
-            this.btnInsert.TabIndex = 64;
-            this.btnInsert.Text = "Thêm";
-            this.btnInsert.UseVisualStyleBackColor = false;
+            this.btnEdit.BackColor = System.Drawing.Color.White;
+            this.btnEdit.FlatAppearance.BorderSize = 0;
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.Location = new System.Drawing.Point(97, 593);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(156, 64);
+            this.btnEdit.TabIndex = 64;
+            this.btnEdit.Text = "Sửa";
+            this.btnEdit.UseVisualStyleBackColor = false;
             // 
             // lbEnđay
             // 
@@ -355,7 +355,7 @@
             this.Controls.Add(this.dtpEndDay);
             this.Controls.Add(this.dtpStartDay);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnInsert);
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.lbEnđay);
             this.Controls.Add(this.lbStartDay);
             this.Controls.Add(this.lbName);
@@ -392,7 +392,7 @@
         private System.Windows.Forms.DateTimePicker dtpEndDay;
         private System.Windows.Forms.DateTimePicker dtpStartDay;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnInsert;
+        private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Label lbEnđay;
         private System.Windows.Forms.Label lbStartDay;
         private System.Windows.Forms.Label lbName;

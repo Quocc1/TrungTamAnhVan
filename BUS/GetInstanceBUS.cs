@@ -63,6 +63,18 @@ namespace BUS
             cbo.DataSource = getInstance.GetAllCourse();
         }
 
+        public void GetAllCourseByLevelAndCategory(DataGridView data, int level_id, int category_id)
+        {
+            if (level_id == 0 && category_id == 0)
+            {
+                data.DataSource = getInstance.GetAllCourse();
+            }
+            else
+            {
+                data.DataSource = getInstance.GetAllCourseByLevelAndCategory(level_id, category_id);
+            }
+        }
+
         public void GetAllClass(DataGridView data, ComboBox cbo, string status)
         {
             if (status == "Tất cả")
@@ -74,7 +86,31 @@ namespace BUS
             {
                 data.DataSource = getInstance.GetAllAvailableClass();
                 cbo.DataSource = getInstance.GetAllAvailableClass();
-            }
+            }   
+        }
+
+        public void GetAllClassByLevelAndCategory(ComboBox cbo, int level_id, int age)
+        {
+            cbo.DataSource = getInstance.GetAllClassByLevelAndCategory(level_id, age);
+        }
+        public void FindTeacherByNameOrPhone(DataGridView data, string keyword)
+        {
+            data.DataSource = getInstance.FindTeacherByNameOrPhone(keyword);
+        }
+
+        public void FindStudentByNameOrPhone(DataGridView data, string keyword)
+        {
+            data.DataSource = getInstance.FindStudentByNameOrPhone(keyword);
+        }
+
+        public void FindCourseByName(DataGridView data, string keyword)
+        {
+            data.DataSource = getInstance.FindCourseByName(keyword);
+        }
+
+        public void FindClassByNameOrTeacher(DataGridView data, string keyword)
+        {
+            data.DataSource = getInstance.FindClassByNameOrTeacher(keyword);
         }
     }
 }

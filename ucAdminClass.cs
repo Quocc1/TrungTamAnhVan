@@ -46,6 +46,7 @@ namespace TrungTamAnhVan
 
         private void ucAdminClass_Load(object sender, EventArgs e)
         {
+            dataGridView1.AutoGenerateColumns = false;
             cboClassStatus.SelectedIndex = 0;
 
             if (!DesignMode)
@@ -82,10 +83,26 @@ namespace TrungTamAnhVan
 
         private void cboClassStatus_SelectedIndexChanged(object sender, EventArgs e)
         {
+            dataGridView1.DataSource = null;
             if (!DesignMode)
             {
                 ComboBox _ = new ComboBox();
                 getInstance.GetAllClass(dataGridView1, _, cboClassStatus.Text);
+            }
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            if (txtSearch.Text != "")
+            {
+                if (!DesignMode)
+                {
+                    getInstance.FindClassByNameOrTeacher(dataGridView1, txtSearch.Text.ToLower().Trim());
+                }
+            }
+            else
+            {
+                this.Reload();
             }
         }
     }

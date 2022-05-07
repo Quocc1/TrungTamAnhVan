@@ -47,6 +47,7 @@
             // 
             // txtDescription
             // 
+            this.txtDescription.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescription.Location = new System.Drawing.Point(689, 211);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
@@ -55,9 +56,10 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(236, 74);
+            this.txtName.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Location = new System.Drawing.Point(236, 57);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(200, 22);
+            this.txtName.Size = new System.Drawing.Size(200, 39);
             this.txtName.TabIndex = 77;
             // 
             // rbtMale
@@ -86,6 +88,7 @@
             // 
             // txtAddress
             // 
+            this.txtAddress.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAddress.Location = new System.Drawing.Point(236, 211);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
@@ -121,9 +124,10 @@
             // 
             // txtPhone
             // 
-            this.txtPhone.Location = new System.Drawing.Point(689, 154);
+            this.txtPhone.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhone.Location = new System.Drawing.Point(689, 142);
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(200, 22);
+            this.txtPhone.Size = new System.Drawing.Size(200, 39);
             this.txtPhone.TabIndex = 70;
             // 
             // btnCancel

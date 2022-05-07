@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btnCancel = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnInsert = new System.Windows.Forms.Button();
             this.lbEnđay = new System.Windows.Forms.Label();
             this.lbStartDay = new System.Windows.Forms.Label();
             this.lbName = new System.Windows.Forms.Label();
@@ -72,19 +72,19 @@
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // btnEdit
+            // btnInsert
             // 
-            this.btnEdit.BackColor = System.Drawing.Color.White;
-            this.btnEdit.FlatAppearance.BorderSize = 0;
-            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEdit.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Location = new System.Drawing.Point(97, 593);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(156, 64);
-            this.btnEdit.TabIndex = 30;
-            this.btnEdit.Text = "Sửa";
-            this.btnEdit.UseVisualStyleBackColor = false;
-            this.btnEdit.Click += new System.EventHandler(this.btnInsert_Click);
+            this.btnInsert.BackColor = System.Drawing.Color.White;
+            this.btnInsert.FlatAppearance.BorderSize = 0;
+            this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInsert.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInsert.Location = new System.Drawing.Point(97, 593);
+            this.btnInsert.Name = "btnInsert";
+            this.btnInsert.Size = new System.Drawing.Size(156, 64);
+            this.btnInsert.TabIndex = 30;
+            this.btnInsert.Text = "Thêm";
+            this.btnInsert.UseVisualStyleBackColor = false;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // lbEnđay
             // 
@@ -161,9 +161,10 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(236, 74);
+            this.txtName.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Location = new System.Drawing.Point(236, 61);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(206, 22);
+            this.txtName.Size = new System.Drawing.Size(206, 39);
             this.txtName.TabIndex = 39;
             // 
             // lbTeacher
@@ -188,8 +189,9 @@
             // 
             // cboTeacher
             // 
+            this.cboTeacher.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.cboTeacher.FormattingEnabled = true;
-            this.cboTeacher.Location = new System.Drawing.Point(819, 234);
+            this.cboTeacher.Location = new System.Drawing.Point(819, 232);
             this.cboTeacher.Name = "cboTeacher";
             this.cboTeacher.Size = new System.Drawing.Size(121, 24);
             this.cboTeacher.TabIndex = 44;
@@ -293,23 +295,25 @@
             // 
             // txtTimeStart
             // 
-            this.txtTimeStart.Location = new System.Drawing.Point(220, 497);
+            this.txtTimeStart.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTimeStart.Location = new System.Drawing.Point(215, 483);
             this.txtTimeStart.Name = "txtTimeStart";
-            this.txtTimeStart.Size = new System.Drawing.Size(28, 22);
+            this.txtTimeStart.Size = new System.Drawing.Size(38, 39);
             this.txtTimeStart.TabIndex = 54;
             // 
             // txtTimeEnd
             // 
-            this.txtTimeEnd.Location = new System.Drawing.Point(286, 497);
+            this.txtTimeEnd.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTimeEnd.Location = new System.Drawing.Point(292, 483);
             this.txtTimeEnd.Name = "txtTimeEnd";
-            this.txtTimeEnd.Size = new System.Drawing.Size(28, 22);
+            this.txtTimeEnd.Size = new System.Drawing.Size(38, 39);
             this.txtTimeEnd.TabIndex = 55;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(320, 490);
+            this.label1.Location = new System.Drawing.Point(328, 490);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(30, 33);
             this.label1.TabIndex = 56;
@@ -317,9 +321,10 @@
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(236, 234);
+            this.txtPrice.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrice.Location = new System.Drawing.Point(236, 219);
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(121, 22);
+            this.txtPrice.Size = new System.Drawing.Size(121, 39);
             this.txtPrice.TabIndex = 57;
             // 
             // lbCurrency
@@ -358,7 +363,7 @@
             this.Controls.Add(this.dtpEndDay);
             this.Controls.Add(this.dtpStartDay);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.btnInsert);
             this.Controls.Add(this.lbEnđay);
             this.Controls.Add(this.lbStartDay);
             this.Controls.Add(this.lbName);
@@ -374,7 +379,7 @@
 
         #endregion
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnInsert;
         private System.Windows.Forms.Label lbEnđay;
         private System.Windows.Forms.Label lbStartDay;
         private System.Windows.Forms.Label lbName;

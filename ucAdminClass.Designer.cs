@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.lbTitle = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnInsert = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.cboClassStatus = new System.Windows.Forms.ComboBox();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NameClass = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Start_day = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,7 +43,6 @@
             this.Teacher = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Course = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cboClassStatus = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,13 +56,15 @@
             this.lbTitle.TabIndex = 20;
             this.lbTitle.Text = "Dữ Liệu Lớp Học";
             // 
-            // textBox1
+            // txtSearch
             // 
-            this.textBox1.Location = new System.Drawing.Point(46, 103);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(342, 64);
-            this.textBox1.TabIndex = 19;
+            this.txtSearch.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(46, 103);
+            this.txtSearch.Multiline = true;
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(342, 64);
+            this.txtSearch.TabIndex = 19;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // btnDelete
             // 
@@ -124,10 +126,22 @@
             this.dataGridView1.Size = new System.Drawing.Size(906, 486);
             this.dataGridView1.TabIndex = 15;
             // 
+            // cboClassStatus
+            // 
+            this.cboClassStatus.FormattingEnabled = true;
+            this.cboClassStatus.Items.AddRange(new object[] {
+            "Tất cả",
+            "Lớp còn trống"});
+            this.cboClassStatus.Location = new System.Drawing.Point(46, 190);
+            this.cboClassStatus.Name = "cboClassStatus";
+            this.cboClassStatus.Size = new System.Drawing.Size(121, 24);
+            this.cboClassStatus.TabIndex = 21;
+            this.cboClassStatus.SelectedIndexChanged += new System.EventHandler(this.cboClassStatus_SelectedIndexChanged);
+            // 
             // Id
             // 
             this.Id.DataPropertyName = "id";
-            this.Id.HeaderText = "id";
+            this.Id.HeaderText = "Id";
             this.Id.MinimumWidth = 6;
             this.Id.Name = "Id";
             this.Id.Width = 50;
@@ -138,7 +152,7 @@
             this.NameClass.HeaderText = "Tên lớp";
             this.NameClass.MinimumWidth = 6;
             this.NameClass.Name = "NameClass";
-            this.NameClass.Width = 125;
+            this.NameClass.Width = 70;
             // 
             // Start_day
             // 
@@ -186,19 +200,7 @@
             this.Quantity.HeaderText = "Số lượng học viên";
             this.Quantity.MinimumWidth = 6;
             this.Quantity.Name = "Quantity";
-            this.Quantity.Width = 125;
-            // 
-            // cboClassStatus
-            // 
-            this.cboClassStatus.FormattingEnabled = true;
-            this.cboClassStatus.Items.AddRange(new object[] {
-            "Tất cả",
-            "Lớp còn trống"});
-            this.cboClassStatus.Location = new System.Drawing.Point(46, 190);
-            this.cboClassStatus.Name = "cboClassStatus";
-            this.cboClassStatus.Size = new System.Drawing.Size(121, 24);
-            this.cboClassStatus.TabIndex = 21;
-            this.cboClassStatus.SelectedIndexChanged += new System.EventHandler(this.cboClassStatus_SelectedIndexChanged);
+            this.Quantity.Width = 80;
             // 
             // ucAdminClass
             // 
@@ -206,7 +208,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.cboClassStatus);
             this.Controls.Add(this.lbTitle);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnInsert);
@@ -222,7 +224,7 @@
 
         #endregion
         private System.Windows.Forms.Label lbTitle;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnInsert;

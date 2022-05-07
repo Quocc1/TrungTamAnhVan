@@ -17,6 +17,8 @@ namespace TrungTamAnhVan
         GetInstanceBUS getInstance = new GetInstanceBUS();
         AddInstanceBUS addInstance = new AddInstanceBUS();
 
+        bool isChecked = false;
+
         public ucInsertStudent()
         {
             InitializeComponent();
@@ -24,14 +26,22 @@ namespace TrungTamAnhVan
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
-            if (txtPhone.Text == "" || txtName.Text == "" || txtAddress.Text == "" || cboClass.SelectedIndex < 0 || (rbtMale.Checked == false && rbtFemale.Checked == false))
+            if (txtPhone.Text == "" || txtName.Text == "" || txtAddress.Text == "" || (rbtMale.Checked == false && rbtFemale.Checked == false))
             {
-                MessageBox.Show("Vui lòng điền đầy dủ thông tin");
+                if (rbtNotSetClass.Checked == false)
+                {
+                    if (cboClass.SelectedIndex < 0)
+                    {
+                        MessageBox.Show("Vui lòng điền đầy dủ thông tin");
+                    }
+                }
             }
             else
             {
                 if (!DesignMode)
                 {
+                    int class_id = -1;
+                    int level_id = cboLevel.SelectedIndex + 1;
                     string full_name = txtName.Text;
                     string address = txtAddress.Text;
                     string phone = txtPhone.Text;
@@ -44,10 +54,13 @@ namespace TrungTamAnhVan
                     {
                         gender = "Nu";
                     }
-                    int class_id = Convert.ToInt32(cboClass.SelectedValue.ToString());
+                    if (!rbtNotSetClass.Checked)
+                    {
+                        class_id = Convert.ToInt32(cboClass.SelectedValue);
+                    }
                     string date_birth = dtpBirthDate.Value.ToShortDateString();
 
-                    addInstance.AddStudent(full_name, gender, date_birth, phone, address, class_id);
+                    addInstance.AddStudent(full_name, gender, date_birth, phone, address, class_id, level_id);
                     
                     int id = infoBUS.GetNewestStudentId();
                     string login = ($"student{id}");
@@ -78,6 +91,42 @@ namespace TrungTamAnhVan
                 cboClass.ValueMember = "id";
                 getInstance.GetAllClass(_, cboClass, "Lớp còn trống");
             }
+        }
+
+        private void rbtNotSetClass_CheckedChanged(object sender, EventArgs e)
+        {
+            isChecked = rbtNotSetClass.Checked;
+            if (rbtNotSetClass.Checked)
+            {
+                cboClass.Enabled = false;
+                cboClass.SelectedIndex = -1;
+            }
+            else
+            {
+                cboClass.Enabled = true;
+            }
+        }
+
+        private void rbtNotSetClass_Click(object sender, EventArgs e)
+        {
+            if (rbtNotSetClass.Checked && !isChecked)
+            {
+                rbtNotSetClass.Checked = false;
+            }
+            else
+            {
+                rbtNotSetClass.Checked = true;
+                isChecked = false;
+            }
+        }
+
+        private void cboLevel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cboClass.DataSource = null;
+            int age = DateTime.Now.Year - dtpBirthDate.Value.Year;
+            cboClass.DisplayMember = "name";
+            cboClass.ValueMember = "id";
+            getInstance.GetAllClassByLevelAndCategory(cboClass, cboLevel.SelectedIndex + 1, age);
         }
     }
 }

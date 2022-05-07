@@ -32,7 +32,7 @@
             this.btnInsert = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.lbTitle = new System.Windows.Forms.Label();
             this.cboGender = new System.Windows.Forms.ComboBox();
             this.cboClass = new System.Windows.Forms.ComboBox();
@@ -109,13 +109,15 @@
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // textBox1
+            // txtSearch
             // 
-            this.textBox1.Location = new System.Drawing.Point(46, 103);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(342, 64);
-            this.textBox1.TabIndex = 4;
+            this.txtSearch.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(46, 103);
+            this.txtSearch.Multiline = true;
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(342, 64);
+            this.txtSearch.TabIndex = 4;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // lbTitle
             // 
@@ -201,7 +203,6 @@
             this.classes.HeaderText = "Lớp đang học";
             this.classes.MinimumWidth = 6;
             this.classes.Name = "classes";
-            this.classes.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // Level
             // 
@@ -217,7 +218,7 @@
             this.Controls.Add(this.cboClass);
             this.Controls.Add(this.cboGender);
             this.Controls.Add(this.lbTitle);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnInsert);
@@ -237,7 +238,7 @@
         private System.Windows.Forms.Button btnInsert;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label lbTitle;
         private System.Windows.Forms.ComboBox cboGender;
         private System.Windows.Forms.ComboBox cboClass;

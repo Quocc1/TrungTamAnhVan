@@ -48,10 +48,11 @@ namespace TrungTamAnhVan
                 }
                 else if (rbtTeacher.Checked)
                 {
-                    string name = loginBUS.CheckLoginTeacher(txtUsername.Text, txtPassword.Text);
+                    string name = loginBUS.CheckLoginTeacher(txtUsername.Text, txtPassword.Text).Item1;
+                    int id = loginBUS.CheckLoginTeacher(txtUsername.Text, txtPassword.Text).Item2;
                     if (name != null)
                     {
-                        frmTeacherMain fMain = new frmTeacherMain(name);
+                        frmTeacherMain fMain = new frmTeacherMain(name, id);
                         fMain.Show();
                         this.Hide();
                     }
@@ -62,10 +63,11 @@ namespace TrungTamAnhVan
                 }
                 else
                 {
-                    string name = loginBUS.CheckLoginStudent(txtUsername.Text, txtPassword.Text);
+                    string name = loginBUS.CheckLoginStudent(txtUsername.Text, txtPassword.Text).Item1;
+                    int id = loginBUS.CheckLoginStudent(txtUsername.Text, txtPassword.Text).Item2;
                     if (name != null)
                     {
-                        frmStudentMain fMain = new frmStudentMain(name);
+                        frmStudentMain fMain = new frmStudentMain(name, id);
                         fMain.Show();
                         this.Hide();
                     }

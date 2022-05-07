@@ -26,7 +26,7 @@ namespace BUS
             }
             return null;
         }
-        public string CheckLoginTeacher(string username, string password)
+        public (string, int)CheckLoginTeacher(string username, string password)
         {
             List<Teacher_account> teacher_Accounts = new List<Teacher_account>();
             teacher_Accounts = loginDAL.GetTeacherAccounts();
@@ -34,12 +34,12 @@ namespace BUS
             {
                 if (account.login == username && account.password == password)
                 {
-                    return infoDAL.GetNameTeacher(instanceDAL.GetTeacherFromId((int)account.teacher_id));
+                    return (infoDAL.GetNameTeacher(instanceDAL.GetTeacherFromId((int)account.teacher_id)), account.teacher_id ?? 0);
                 }
             }
-            return null;
+            return (null, -1);
         }
-        public string CheckLoginStudent(string username, string password)
+        public (string, int) CheckLoginStudent(string username, string password)
         {
             List<Student_account> student_Accounts = new List<Student_account>();
             student_Accounts = loginDAL.GetStudentAccounts();
@@ -47,10 +47,10 @@ namespace BUS
             {
                 if (account.login == username && account.password == password)
                 {
-                    return infoDAL.GetNameStudent(instanceDAL.GetStudentFromId((int)account.student_id));
+                    return (infoDAL.GetNameStudent(instanceDAL.GetStudentFromId((int)account.student_id)), account.student_id ?? 0);
                 }
             }
-            return null;
+            return (null, -1);
         }
     }
 }

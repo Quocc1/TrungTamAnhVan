@@ -18,6 +18,7 @@ namespace DAL
         public Student()
         {
             this.Student_account = new HashSet<Student_account>();
+            this.Scores = new HashSet<Score>();
         }
     
         public int id { get; set; }
@@ -33,5 +34,7 @@ namespace DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Student_account> Student_account { get; set; }
         public virtual Level Level { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Score> Scores { get; set; }
     }
 }
