@@ -15,9 +15,11 @@ namespace TrungTamAnhVan
         static void Main()
         {
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmAdminMain("demo"));
-            //Application.Run(new frmLogin());
+            //Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(new frmAdminMain("Demo"));
+            //Application.Run(new frmTeacherMain("Lê Văn A", 1));
+            //Application.Run(new frmStudentMain("Nguyen Văn B", 2));
+            Application.Run(new frmLogin());
         }
     }
 }

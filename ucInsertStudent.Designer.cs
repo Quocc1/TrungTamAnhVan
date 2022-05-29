@@ -38,7 +38,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lbAddress = new System.Windows.Forms.Label();
             this.cboClass = new System.Windows.Forms.ComboBox();
-            this.dtpBirthDate = new System.Windows.Forms.DateTimePicker();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.rbtNotSetClass = new System.Windows.Forms.RadioButton();
@@ -47,6 +46,7 @@
             this.pnGender = new System.Windows.Forms.Panel();
             this.rbtMale = new System.Windows.Forms.RadioButton();
             this.rbtFemale = new System.Windows.Forms.RadioButton();
+            this.dtpDateBirth = new System.Windows.Forms.DateTimePicker();
             this.pnGender.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -154,13 +154,6 @@
             this.cboClass.Size = new System.Drawing.Size(200, 24);
             this.cboClass.TabIndex = 42;
             // 
-            // dtpBirthDate
-            // 
-            this.dtpBirthDate.Location = new System.Drawing.Point(689, 74);
-            this.dtpBirthDate.Name = "dtpBirthDate";
-            this.dtpBirthDate.Size = new System.Drawing.Size(200, 22);
-            this.dtpBirthDate.TabIndex = 43;
-            // 
             // txtAddress
             // 
             this.txtAddress.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -251,17 +244,28 @@
             this.rbtFemale.Text = "Nữ";
             this.rbtFemale.UseVisualStyleBackColor = true;
             // 
+            // dtpDateBirth
+            // 
+            this.dtpDateBirth.CalendarFont = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDateBirth.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDateBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDateBirth.Location = new System.Drawing.Point(689, 63);
+            this.dtpDateBirth.Name = "dtpDateBirth";
+            this.dtpDateBirth.Size = new System.Drawing.Size(200, 39);
+            this.dtpDateBirth.TabIndex = 53;
+            this.dtpDateBirth.Value = new System.DateTime(2022, 5, 13, 0, 0, 0, 0);
+            // 
             // ucInsertStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.dtpDateBirth);
             this.Controls.Add(this.pnGender);
             this.Controls.Add(this.cboLevel);
             this.Controls.Add(this.lbLevel);
             this.Controls.Add(this.rbtNotSetClass);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.txtAddress);
-            this.Controls.Add(this.dtpBirthDate);
             this.Controls.Add(this.cboClass);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbAddress);
@@ -294,7 +298,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbAddress;
         private System.Windows.Forms.ComboBox cboClass;
-        private System.Windows.Forms.DateTimePicker dtpBirthDate;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.RadioButton rbtNotSetClass;
@@ -303,5 +306,6 @@
         private System.Windows.Forms.Panel pnGender;
         private System.Windows.Forms.RadioButton rbtMale;
         private System.Windows.Forms.RadioButton rbtFemale;
+        private System.Windows.Forms.DateTimePicker dtpDateBirth;
     }
 }

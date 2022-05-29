@@ -14,6 +14,7 @@ namespace TrungTamAnhVan
     public partial class ucAdminClass : UserControl
     {
         static ucAdminClass _obj;
+        InformationBUS infoBUS = new InformationBUS();
         GetInstanceBUS getInstance = new GetInstanceBUS();
         DeleteInstanceBUS deleteInstance = new DeleteInstanceBUS();
 
@@ -64,10 +65,6 @@ namespace TrungTamAnhVan
                 uc.Dock = DockStyle.Fill;
                 frmAdminMain.Instance.PnContainer.Controls.Add(uc);
             }
-            if (frmAdminMain.Instance.PnContainer.Controls.ContainsKey("ucAdminClass"))
-            {
-                frmAdminMain.Instance.PnContainer.Controls.RemoveByKey("ucAdminClass");
-            }
             frmAdminMain.Instance.PnContainer.Controls["ucInsertClass"].BringToFront();
         }
 
@@ -76,6 +73,7 @@ namespace TrungTamAnhVan
             int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
             if (!DesignMode)
             {
+                deleteInstance.DeleteClassWeekday(id);
                 deleteInstance.DeleteClass(id);
             }
             this.Reload();
@@ -104,6 +102,33 @@ namespace TrungTamAnhVan
             {
                 this.Reload();
             }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (!frmAdminMain.Instance.PnContainer.Controls.ContainsKey("ucEditClass"))
+            {
+                int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+                string name = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                DateTime start_day = DateTime.Parse(dataGridView1.CurrentRow.Cells[2].Value.ToString());
+                DateTime end_day = DateTime.Parse(dataGridView1.CurrentRow.Cells[3].Value.ToString());
+                int start_hour = infoBUS.GetStartHour(id);
+                int end_hour = infoBUS.GetEndHour(id);
+                int price = Convert.ToInt32(dataGridView1.CurrentRow.Cells[4].Value);
+                string teacher = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                string course = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                List<int> weekday = infoBUS.GetWeekday(id);
+
+                ucEditClass uc = new ucEditClass(id, name, start_day, end_day, start_hour, end_hour, price, teacher, course, weekday);
+                uc.Dock = DockStyle.Fill;
+                frmAdminMain.Instance.PnContainer.Controls.Add(uc);
+            }
+            frmAdminMain.Instance.PnContainer.Controls["ucEditClass"].BringToFront();
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnEdit.PerformClick();
         }
     }
 }

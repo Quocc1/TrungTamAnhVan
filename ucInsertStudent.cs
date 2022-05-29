@@ -26,15 +26,9 @@ namespace TrungTamAnhVan
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
-            if (txtPhone.Text == "" || txtName.Text == "" || txtAddress.Text == "" || (rbtMale.Checked == false && rbtFemale.Checked == false))
+            if (txtPhone.Text == "" || txtName.Text == "" || txtAddress.Text == "" || (rbtMale.Checked == false && rbtFemale.Checked == false) || (rbtNotSetClass.Checked == false && cboClass.SelectedIndex < 0))
             {
-                if (rbtNotSetClass.Checked == false)
-                {
-                    if (cboClass.SelectedIndex < 0)
-                    {
-                        MessageBox.Show("Vui lòng điền đầy dủ thông tin");
-                    }
-                }
+                MessageBox.Show("Vui lòng điền đầy dủ thông tin");
             }
             else
             {
@@ -46,27 +40,33 @@ namespace TrungTamAnhVan
                     string address = txtAddress.Text;
                     string phone = txtPhone.Text;
                     string gender = "";
+
                     if (rbtMale.Checked)
                     {
                         gender = "Nam";
                     }
                     else
                     {
-                        gender = "Nu";
+                        gender = "Nữ";
                     }
+
                     if (!rbtNotSetClass.Checked)
                     {
                         class_id = Convert.ToInt32(cboClass.SelectedValue);
                     }
-                    string date_birth = dtpBirthDate.Value.ToShortDateString();
 
-                    addInstance.AddStudent(full_name, gender, date_birth, phone, address, class_id, level_id);
+                    DateTime date_birth = dtpDateBirth.Value;
+
+                    addInstance.AddStudent(full_name, gender, date_birth, phone, address, level_id);
                     
-                    int id = infoBUS.GetNewestStudentId();
-                    string login = ($"student{id}");
-                    string password = id.ToString();
-                    addInstance.AddStudentAccount(id, login, password);
-                    
+                    int student_id = infoBUS.GetNewestStudentId();
+                    string login = ($"student{student_id}");
+                    string password = student_id.ToString();
+
+                    addInstance.AddStudentAccount(student_id, login, password);
+                    addInstance.AddStudentToClass(student_id, class_id);
+                    addInstance.AddStudentScore(student_id);
+
                     ucAdminStudent.Instance.Reload();
                     btnCancel.PerformClick();
                 }
@@ -123,7 +123,7 @@ namespace TrungTamAnhVan
         private void cboLevel_SelectedIndexChanged(object sender, EventArgs e)
         {
             cboClass.DataSource = null;
-            int age = DateTime.Now.Year - dtpBirthDate.Value.Year;
+            int age = DateTime.Now.Year - dtpDateBirth.Value.Year;
             cboClass.DisplayMember = "name";
             cboClass.ValueMember = "id";
             getInstance.GetAllClassByLevelAndCategory(cboClass, cboLevel.SelectedIndex + 1, age);

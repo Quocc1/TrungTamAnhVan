@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -109,11 +110,16 @@ namespace TrungTamAnhVan
         {   
             if (dataGridView1.CurrentRow.Cells[0].Value != null)
             {
-                int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+                int student_id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
                 if (!DesignMode)
                 {
-                    deleteInstance.DeleteStudentAccount(id);
-                    deleteInstance.DeleteStudent(id);
+                    deleteInstance.DeleteStudentAccount(student_id);
+                    deleteInstance.DeleteStudentScore(student_id);
+                    if (dataGridView1.CurrentRow.Cells[6].ToString() != "Chưa có lớp")
+                    {
+                        deleteInstance.DeleteStudentFromClass(student_id, 0);
+                    }
+                    deleteInstance.DeleteStudent(student_id);
                 }
                 this.Reload();
             }
@@ -121,13 +127,22 @@ namespace TrungTamAnhVan
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            //int id = dataGridView1.CurrentRow.Cells[0].Value;
-            //string full_name = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            //string id = dataGridView1.CurrentRow.Cells[2].Value;
-            //int id = dataGridView1.CurrentRow.Cells[3].Value;
-            //int id = dataGridView1.CurrentRow.Cells[4].Value;
-            //string address = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-            //int class_id = dataGridView1.CurrentRow.Cells[6].Value;
+            int student_id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+            string full_name = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            string gender = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            DateTime date_birth = DateTime.Parse(dataGridView1.CurrentRow.Cells[3].Value.ToString());
+            string phone = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+            string address = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            string classes = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+            string level = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+
+            if (!frmAdminMain.Instance.PnContainer.Controls.ContainsKey("ucEditStudent"))
+            {
+                ucEditStudent uc = new ucEditStudent(student_id, full_name, gender, date_birth, phone, address, classes, level);
+                uc.Dock = DockStyle.Fill;
+                frmAdminMain.Instance.PnContainer.Controls.Add(uc);
+            }
+            frmAdminMain.Instance.PnContainer.Controls["ucEditStudent"].BringToFront();
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -143,6 +158,11 @@ namespace TrungTamAnhVan
             {
                 this.Reload();
             }
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnEdit.PerformClick();
         }
     }
 }

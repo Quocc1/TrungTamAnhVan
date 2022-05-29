@@ -36,6 +36,15 @@ namespace DAL
             }    
         }
 
+        public void AddStudentToClass(Class_student classStudent)
+        {
+            using (var db = new Connection())
+            {
+                db.Class_student.Add(classStudent);
+                db.SaveChanges();
+            }
+        }
+
         public void AddStudent(Student student)
         {
             using (var db = new Connection())
@@ -52,7 +61,15 @@ namespace DAL
                 db.Student_account.Add(studentAccount);
                 db.SaveChanges();
             }
+        }
 
+        public void AddStudentScore(Score score)
+        {
+            using (var db = new Connection())
+            {
+                db.Scores.Add(score);
+                db.SaveChanges();
+            }
         }
 
         public void AddTeacher(Teacher teacher)
@@ -69,6 +86,15 @@ namespace DAL
             using (var db = new Connection())
             {
                 db.Teacher_account.Add(TeacherAccount);
+                db.SaveChanges();
+            }
+        }
+
+        public void AddEvent(Event events)
+        {
+            using (var db = new Connection())
+            {
+                db.Events.Add(events);
                 db.SaveChanges();
             }
         }

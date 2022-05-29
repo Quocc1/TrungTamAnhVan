@@ -15,14 +15,11 @@ namespace DAL
     public partial class Event
     {
         public int id { get; set; }
-        public string name { get; set; }
-        public Nullable<System.DateTime> start_day { get; set; }
+        public string title { get; set; }
         public string description { get; set; }
-        public Nullable<int> class_id { get; set; }
         public Nullable<System.DateTime> sending_time { get; set; }
-        public Nullable<int> teacher_id { get; set; }
+        public Nullable<int> class_id { get; set; }
     
         public virtual Class Class { get; set; }
-        public virtual Teacher Teacher { get; set; }
     }
 }

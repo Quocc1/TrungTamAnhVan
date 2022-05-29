@@ -42,9 +42,15 @@
             this.btnLogout = new System.Windows.Forms.Button();
             this.ptbHomeLogo = new System.Windows.Forms.PictureBox();
             this.pnContainer = new System.Windows.Forms.Panel();
+            this.ucStudentFee1 = new TrungTamAnhVan.ucStudentFee();
+            this.ucStudentHome1 = new TrungTamAnhVan.ucStudentHome();
+            this.ucStudentInfo1 = new TrungTamAnhVan.ucStudentInfo();
+            this.ucStudentSchedule1 = new TrungTamAnhVan.ucStudentSchedule();
+            this.ucStudentScore1 = new TrungTamAnhVan.ucStudentScore();
             this.pnNavbar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbHomeLogo)).BeginInit();
+            this.pnContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnNavbar
@@ -238,12 +244,57 @@
             // 
             // pnContainer
             // 
-            this.pnContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnContainer.Location = new System.Drawing.Point(0, 0);
+            this.pnContainer.Controls.Add(this.ucStudentScore1);
+            this.pnContainer.Controls.Add(this.ucStudentSchedule1);
+            this.pnContainer.Controls.Add(this.ucStudentInfo1);
+            this.pnContainer.Controls.Add(this.ucStudentHome1);
+            this.pnContainer.Controls.Add(this.ucStudentFee1);
+            this.pnContainer.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnContainer.Location = new System.Drawing.Point(272, 0);
             this.pnContainer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnContainer.Name = "pnContainer";
-            this.pnContainer.Size = new System.Drawing.Size(1261, 754);
+            this.pnContainer.Size = new System.Drawing.Size(989, 754);
             this.pnContainer.TabIndex = 3;
+            // 
+            // ucStudentFee1
+            // 
+            this.ucStudentFee1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucStudentFee1.Location = new System.Drawing.Point(0, 0);
+            this.ucStudentFee1.Name = "ucStudentFee1";
+            this.ucStudentFee1.Size = new System.Drawing.Size(989, 754);
+            this.ucStudentFee1.TabIndex = 0;
+            // 
+            // ucStudentHome1
+            // 
+            this.ucStudentHome1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucStudentHome1.Location = new System.Drawing.Point(0, 0);
+            this.ucStudentHome1.Name = "ucStudentHome1";
+            this.ucStudentHome1.Size = new System.Drawing.Size(989, 754);
+            this.ucStudentHome1.TabIndex = 1;
+            // 
+            // ucStudentInfo1
+            // 
+            this.ucStudentInfo1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucStudentInfo1.Location = new System.Drawing.Point(0, 0);
+            this.ucStudentInfo1.Name = "ucStudentInfo1";
+            this.ucStudentInfo1.Size = new System.Drawing.Size(989, 754);
+            this.ucStudentInfo1.TabIndex = 2;
+            // 
+            // ucStudentSchedule1
+            // 
+            this.ucStudentSchedule1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucStudentSchedule1.Location = new System.Drawing.Point(0, 0);
+            this.ucStudentSchedule1.Name = "ucStudentSchedule1";
+            this.ucStudentSchedule1.Size = new System.Drawing.Size(989, 754);
+            this.ucStudentSchedule1.TabIndex = 3;
+            // 
+            // ucStudentScore1
+            // 
+            this.ucStudentScore1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucStudentScore1.Location = new System.Drawing.Point(0, 0);
+            this.ucStudentScore1.Name = "ucStudentScore1";
+            this.ucStudentScore1.Size = new System.Drawing.Size(989, 754);
+            this.ucStudentScore1.TabIndex = 4;
             // 
             // frmStudentMain
             // 
@@ -261,6 +312,7 @@
             this.pnNavbar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbHomeLogo)).EndInit();
+            this.pnContainer.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -280,5 +332,10 @@
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.PictureBox ptbHomeLogo;
         private System.Windows.Forms.Panel pnContainer;
+        private ucStudentFee ucStudentFee1;
+        private ucStudentScore ucStudentScore1;
+        private ucStudentSchedule ucStudentSchedule1;
+        private ucStudentInfo ucStudentInfo1;
+        private ucStudentHome ucStudentHome1;
     }
 }

@@ -35,8 +35,6 @@
             this.lbName = new System.Windows.Forms.Label();
             this.lbCourse = new System.Windows.Forms.Label();
             this.lbWeekday = new System.Windows.Forms.Label();
-            this.dtpStartDay = new System.Windows.Forms.DateTimePicker();
-            this.dtpEndDay = new System.Windows.Forms.DateTimePicker();
             this.cboCourse = new System.Windows.Forms.ComboBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.lbTeacher = new System.Windows.Forms.Label();
@@ -56,6 +54,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.lbCurrency = new System.Windows.Forms.Label();
+            this.dtpEndDay = new System.Windows.Forms.DateTimePicker();
+            this.dtpStartDay = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -135,21 +135,6 @@
             this.lbWeekday.Size = new System.Drawing.Size(128, 40);
             this.lbWeekday.TabIndex = 24;
             this.lbWeekday.Text = "Lịch học";
-            // 
-            // dtpStartDay
-            // 
-            this.dtpStartDay.Location = new System.Drawing.Point(740, 72);
-            this.dtpStartDay.Name = "dtpStartDay";
-            this.dtpStartDay.Size = new System.Drawing.Size(200, 22);
-            this.dtpStartDay.TabIndex = 36;
-            this.dtpStartDay.ValueChanged += new System.EventHandler(this.dtpStartDay_ValueChanged);
-            // 
-            // dtpEndDay
-            // 
-            this.dtpEndDay.Location = new System.Drawing.Point(740, 154);
-            this.dtpEndDay.Name = "dtpEndDay";
-            this.dtpEndDay.Size = new System.Drawing.Size(200, 22);
-            this.dtpEndDay.TabIndex = 37;
             // 
             // cboCourse
             // 
@@ -337,10 +322,34 @@
             this.lbCurrency.TabIndex = 58;
             this.lbCurrency.Text = "đồng";
             // 
+            // dtpEndDay
+            // 
+            this.dtpEndDay.CalendarFont = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpEndDay.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpEndDay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpEndDay.Location = new System.Drawing.Point(740, 137);
+            this.dtpEndDay.Name = "dtpEndDay";
+            this.dtpEndDay.Size = new System.Drawing.Size(200, 39);
+            this.dtpEndDay.TabIndex = 94;
+            this.dtpEndDay.Value = new System.DateTime(2022, 5, 13, 0, 0, 0, 0);
+            // 
+            // dtpStartDay
+            // 
+            this.dtpStartDay.CalendarFont = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpStartDay.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpStartDay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpStartDay.Location = new System.Drawing.Point(740, 61);
+            this.dtpStartDay.Name = "dtpStartDay";
+            this.dtpStartDay.Size = new System.Drawing.Size(200, 39);
+            this.dtpStartDay.TabIndex = 93;
+            this.dtpStartDay.Value = new System.DateTime(2022, 5, 13, 0, 0, 0, 0);
+            // 
             // ucInsertClass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.dtpEndDay);
+            this.Controls.Add(this.dtpStartDay);
             this.Controls.Add(this.lbCurrency);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.label1);
@@ -360,8 +369,6 @@
             this.Controls.Add(this.lbPrice);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.cboCourse);
-            this.Controls.Add(this.dtpEndDay);
-            this.Controls.Add(this.dtpStartDay);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnInsert);
             this.Controls.Add(this.lbEnđay);
@@ -385,8 +392,6 @@
         private System.Windows.Forms.Label lbName;
         private System.Windows.Forms.Label lbCourse;
         private System.Windows.Forms.Label lbWeekday;
-        private System.Windows.Forms.DateTimePicker dtpStartDay;
-        private System.Windows.Forms.DateTimePicker dtpEndDay;
         private System.Windows.Forms.ComboBox cboCourse;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label lbTeacher;
@@ -406,5 +411,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.Label lbCurrency;
+        private System.Windows.Forms.DateTimePicker dtpEndDay;
+        private System.Windows.Forms.DateTimePicker dtpStartDay;
     }
 }

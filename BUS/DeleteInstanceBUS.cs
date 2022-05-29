@@ -11,15 +11,26 @@ namespace BUS
     {
         DeleteInstanceDAL deleteInstance = new DeleteInstanceDAL();
 
-        public void DeleteStudent(int id)
+        public void DeleteStudent(int student_id)
         {
-            deleteInstance.DeleteStudent(id);
+            deleteInstance.DeleteStudent(student_id);
         }
 
-        public void DeleteStudentAccount(int id)
+        public void DeleteStudentFromClass(int student_id, int type)
         {
-            deleteInstance.DeleteStudentAccount(id);
+            deleteInstance.DeleteStudentFromClass(student_id, type);
         }
+
+        public void DeleteStudentAccount(int student_id)
+        {
+            deleteInstance.DeleteStudentAccount(student_id);
+        }
+
+        public void DeleteStudentScore(int student_id)
+        {
+            deleteInstance.DeleteStudentScore(student_id);
+        }
+
 
         public void DeleteTeacher(int id)
         {
@@ -31,6 +42,11 @@ namespace BUS
             deleteInstance.DeleteTeacherAccount(id);
         }
 
+        public void DeleteTeacherInClass(int id)
+        {
+            deleteInstance.DeleteTeacherInClass(id);
+        }
+
         public void DeleteCourse(int id)
         {
             deleteInstance.DeleteCourse(id);
@@ -39,6 +55,11 @@ namespace BUS
         public void DeleteClass(int id)
         {
             deleteInstance.DeleteClass(id);
+        }
+
+        public void DeleteClassWeekday(int id)
+        {
+            deleteInstance.DeleteClassWeekday(id);
         }
     }
 }

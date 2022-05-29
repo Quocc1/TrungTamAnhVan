@@ -16,6 +16,7 @@ namespace TrungTamAnhVan
         static ucAdminTeacher _obj;
         GetInstanceBUS getInstance = new GetInstanceBUS();
         DeleteInstanceBUS deleteInstance = new DeleteInstanceBUS();
+        InformationBUS infoBUS = new InformationBUS();
 
         public static ucAdminTeacher Instance
         {
@@ -35,6 +36,12 @@ namespace TrungTamAnhVan
             {
                 ComboBox _ = new ComboBox();
                 getInstance.GetAllTeacher(dataGridView1, _);
+
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                {
+                    int teacher_id = Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value);
+                    infoBUS.GetTeacherSalary(teacher_id);
+                }
             }
         }
 
@@ -53,6 +60,12 @@ namespace TrungTamAnhVan
             {
                 ComboBox _ = new ComboBox();
                 getInstance.GetAllTeacher(dataGridView1, _);
+
+                for (int i = 0; i < dataGridView1.Rows.Count; i ++)
+                {
+                    int teacher_id = Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value);
+                    infoBUS.GetTeacherSalary(teacher_id);
+                }
             }
         }
 
@@ -73,6 +86,7 @@ namespace TrungTamAnhVan
             if (!DesignMode)
             {
                 deleteInstance.DeleteTeacherAccount(id);
+                deleteInstance.DeleteTeacherInClass(id);
                 deleteInstance.DeleteTeacher(id);
             }
             this.Reload();
@@ -100,6 +114,30 @@ namespace TrungTamAnhVan
             {
                 this.Reload();
             }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+            string full_name = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            string gender = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            DateTime date_birth = Convert.ToDateTime(dataGridView1.CurrentRow.Cells[3].Value);
+            string phone = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+            string address = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            string description = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+
+            if (!frmAdminMain.Instance.PnContainer.Controls.ContainsKey("ucEditTeacher"))
+            {
+                ucEditTeacher uc = new ucEditTeacher(id, full_name, gender, date_birth, phone, address, description);
+                uc.Dock = DockStyle.Fill;
+                frmAdminMain.Instance.PnContainer.Controls.Add(uc);
+            }
+            frmAdminMain.Instance.PnContainer.Controls["ucEditTeacher"].BringToFront();
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnEdit.PerformClick();
         }
     }
 }

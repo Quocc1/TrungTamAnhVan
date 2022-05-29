@@ -15,10 +15,10 @@ namespace DAL
     public partial class Score
     {
         public int id { get; set; }
-        public string listening_score { get; set; }
-        public string reading_score { get; set; }
-        public string speaking_score { get; set; }
-        public string writing_score { get; set; }
+        public Nullable<double> listening_score { get; set; }
+        public Nullable<double> reading_score { get; set; }
+        public Nullable<double> speaking_score { get; set; }
+        public Nullable<double> writing_score { get; set; }
         public Nullable<int> student_id { get; set; }
     
         public virtual Student Student { get; set; }

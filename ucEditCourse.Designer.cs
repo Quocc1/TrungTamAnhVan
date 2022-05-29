@@ -66,25 +66,23 @@
             // 
             // txtLessons
             // 
-            this.txtLessons.Location = new System.Drawing.Point(678, 154);
+            this.txtLessons.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLessons.Location = new System.Drawing.Point(678, 141);
             this.txtLessons.Name = "txtLessons";
-            this.txtLessons.Size = new System.Drawing.Size(100, 22);
+            this.txtLessons.Size = new System.Drawing.Size(100, 39);
             this.txtLessons.TabIndex = 37;
             // 
             // txtTerm
             // 
-            this.txtTerm.Location = new System.Drawing.Point(678, 74);
+            this.txtTerm.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTerm.Location = new System.Drawing.Point(678, 61);
             this.txtTerm.Name = "txtTerm";
-            this.txtTerm.Size = new System.Drawing.Size(100, 22);
+            this.txtTerm.Size = new System.Drawing.Size(100, 39);
             this.txtTerm.TabIndex = 36;
             // 
             // cboCategory
             // 
             this.cboCategory.FormattingEnabled = true;
-            this.cboCategory.Items.AddRange(new object[] {
-            "Trẻ em",
-            "Thanh niên",
-            "Người lớn"});
             this.cboCategory.Location = new System.Drawing.Point(236, 154);
             this.cboCategory.Name = "cboCategory";
             this.cboCategory.Size = new System.Drawing.Size(121, 24);
@@ -93,13 +91,6 @@
             // cboLevel
             // 
             this.cboLevel.FormattingEnabled = true;
-            this.cboLevel.Items.AddRange(new object[] {
-            "A1",
-            "A2",
-            "B1",
-            "B2",
-            "C1",
-            "C2"});
             this.cboLevel.Location = new System.Drawing.Point(236, 74);
             this.cboLevel.Name = "cboLevel";
             this.cboLevel.Size = new System.Drawing.Size(121, 24);
@@ -135,6 +126,7 @@
             // 
             // txtDescription
             // 
+            this.txtDescription.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescription.Location = new System.Drawing.Point(97, 345);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
@@ -211,6 +203,7 @@
             this.Controls.Add(this.lbDescription);
             this.Name = "ucEditCourse";
             this.Size = new System.Drawing.Size(989, 754);
+            this.Load += new System.EventHandler(this.ucEditCourse_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

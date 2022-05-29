@@ -38,13 +38,13 @@ namespace BUS
             }
         }
 
-        public void AddClass(string name, string start_day, string end_day, int price, int teacher_id, int course_id)
+        public void AddClass(string name, DateTime start_day, DateTime end_day, int price, int teacher_id, int course_id)
         {
             Class classes = new Class();
             {
                 classes.name = name;
-                classes.start_day = Convert.ToDateTime(start_day);
-                classes.end_day = Convert.ToDateTime(end_day);
+                classes.start_day = start_day;
+                classes.end_day = end_day;
                 classes.price = price;
                 classes.teacher_id = teacher_id;
                 classes.course_id = course_id;
@@ -52,24 +52,33 @@ namespace BUS
             addInstance.AddClass(classes);
         }
 
-        public void AddStudent(string full_name, string gender, string date_birth, string phone, string address, int class_id, int level_id)
+        public void AddStudentToClass(int student_id, int class_id)
+        {
+            Class_student classStudent = new Class_student();
+            {
+                classStudent.student_id = student_id;
+                if (class_id < 0)
+                {
+                    classStudent.class_id = null;
+                }
+                else
+                {
+                    classStudent.class_id = class_id;
+                }
+            }
+            addInstance.AddStudentToClass(classStudent);
+        }
+
+        public void AddStudent(string full_name, string gender, DateTime date_birth, string phone, string address, int level_id)
         {
             Student student = new Student();
             {
                 student.full_name = full_name;
                 student.gender = gender;
-                student.date_birth = Convert.ToDateTime(date_birth);
+                student.date_birth = date_birth;
                 student.phone = phone;
                 student.address = address;
                 student.level_id = level_id;
-                if (class_id < 0)
-                {
-                    student.class_id = null;
-                }
-                else
-                {
-                    student.class_id = class_id;
-                }
             }
             addInstance.AddStudent(student);
         }
@@ -85,13 +94,23 @@ namespace BUS
             addInstance.AddStudentAccount(studentAccount);
         }
 
-        public void AddTeacher(string full_name, string gender, string date_birth, string phone, string address, string description)
+
+        public void AddStudentScore(int student_id)
+        {
+            Score score = new Score();
+            {
+                score.student_id = student_id;
+            }
+            addInstance.AddStudentScore(score);
+        }
+
+        public void AddTeacher(string full_name, string gender, DateTime date_birth, string phone, string address, string description)
         {
             Teacher teacher = new Teacher();
             {
                 teacher.full_name = full_name;
                 teacher.gender = gender;
-                teacher.date_birth = Convert.ToDateTime(date_birth);
+                teacher.date_birth = date_birth;
                 teacher.phone = phone;
                 teacher.address = address;
                 teacher.description = description;
@@ -109,6 +128,18 @@ namespace BUS
                 teacherAccount.password = password;
             }
             addInstance.AddTeacherAccount(teacherAccount);
+        }
+
+        public void AddEvent(string title, string description, DateTime sending_time, int class_id)
+        {
+            Event events = new Event();
+            {
+                events.title = title;
+                events.description = description;
+                events.sending_time = sending_time;
+                events.class_id = class_id;
+            }
+            addInstance.AddEvent(events);
         }
     }
 }

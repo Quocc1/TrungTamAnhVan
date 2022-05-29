@@ -81,6 +81,35 @@ namespace DAL
             return course;
         }
 
+        public List<dynamic> GetAllLevel()
+        {
+            using (var db = new Connection())
+            {
+                var levels = (from lv in db.Levels
+                              select new
+                              {
+                                  level_id = lv.id,
+                                  name = lv.name,
+                                  sign = lv.sign
+                              }).ToList<dynamic>();
+                return levels;
+            }
+        }
+
+        public List<dynamic> GetAllCategory()
+        {
+            using (var db = new Connection())
+            {
+                var categories = (from ct in db.Categories
+                                  select new
+                                  {
+                                      category_id = ct.id,
+                                      name = ct.name
+                                  }).ToList<dynamic>();
+                return categories;
+            }
+        }
+
         public List<Admin> GetAllAdmin()
         {
             using (var db = new Connection())
@@ -144,7 +173,45 @@ namespace DAL
                                     date_birth = st.date_birth,
                                     phone = st.phone,
                                     address = st.address,
-                                    classes = st.Class.name ?? "Chưa có lớp",
+                                    classes = st.Class_student.FirstOrDefault().Class.name ?? "Chưa có lớp",
+                                    level = st.Level.sign
+                                }).ToList<dynamic>();
+                return students;
+            }
+        }
+
+        public List<dynamic> GetScoreStudent(int student_id)
+        {
+            using (var db = new Connection())
+            {
+                var scores = (from sc in db.Scores
+                              where sc.student_id == student_id
+                              select new
+                              {
+                                  listen_score = sc.listening_score,
+                                  speaking_score = sc.speaking_score,
+                                  reading_score = sc.reading_score,
+                                  writing_score = sc.writing_score,
+                                  avg_score = Math.Round(((sc.listening_score ?? 0.0) + (sc.speaking_score ?? 0.0) + (sc.reading_score ?? 0.0) + (sc.writing_score ?? 0.0)) / 4, 2)
+                              }).ToList<dynamic>();
+                return scores;
+            }
+        }
+
+        public List<dynamic> GetAllStudentByClass(string className)
+        {
+            using (var db = new Connection())
+            {
+                var students = (from st in db.Students
+                                where st.Class_student.FirstOrDefault().Class.name == className
+                                select new
+                                {
+                                    id = st.id,
+                                    full_name = st.full_name,
+                                    gender = st.gender,
+                                    date_birth = st.date_birth,
+                                    phone = st.phone,
+                                    address = st.address,
                                     level = st.Level.sign
                                 }).ToList<dynamic>();
                 return students;
@@ -163,7 +230,7 @@ namespace DAL
                 if (gender == "Tất cả" && className != "Tất cả")
                 {
                     var students = (from st in db.Students
-                                    where st.Class.name == className
+                                    where st.Class_student.FirstOrDefault().Class.name == className
                                     select new
                                     {
                                         id = st.id,
@@ -172,7 +239,7 @@ namespace DAL
                                         date_birth = st.date_birth,
                                         phone = st.phone,
                                         address = st.address,
-                                        classes = st.Class.name ?? "Chưa có lớp",
+                                        classes = st.Class_student.FirstOrDefault().Class.name ?? "Chưa có lớp",
                                         level = st.Level.sign
                                     }).ToList<dynamic>();
                     return students;
@@ -189,7 +256,7 @@ namespace DAL
                                         date_birth = st.date_birth,
                                         phone = st.phone,
                                         address = st.address,
-                                        classes = st.Class.name ?? "Chưa có lớp",
+                                        classes = st.Class_student.FirstOrDefault().Class.name ?? "Chưa có lớp",
                                         level = st.Level.sign
                                     }).ToList<dynamic>();
                     return students;
@@ -197,7 +264,7 @@ namespace DAL
                 else
                 {
                     var students = (from st in db.Students
-                                    where st.gender == gender && st.Class.name == className
+                                    where st.gender == gender && st.Class_student.FirstOrDefault().Class.name == className
                                     select new
                                     {
                                         id = st.id,
@@ -206,7 +273,7 @@ namespace DAL
                                         date_birth = st.date_birth,
                                         phone = st.phone,
                                         address = st.address,
-                                        classes = st.Class.name ?? "Chưa có lớp",
+                                        classes = st.Class_student.FirstOrDefault().Class.name ?? "Chưa có lớp",
                                         level = st.Level.sign
                                     }).ToList<dynamic>();
                 return students;
@@ -288,6 +355,7 @@ namespace DAL
         {
             using (var db = new Connection())
             {
+
                 var classes = (from cl in db.Classes
                                select new
                                {
@@ -296,9 +364,9 @@ namespace DAL
                                    start_day = cl.start_day,
                                    end_day = cl.end_day,
                                    price = cl.price,
-                                   quantity = cl.quantity + "/" + cl.max_quantity,
-                                   teacher_id = cl.Teacher.full_name,
-                                   course_id = cl.Course.description
+                                   quantity = (cl.Class_student.Where(ct => ct.class_id == cl.id)).Count() + "/" + cl.max_quantity,
+                                   teacher_id = cl.Teacher.full_name ?? "Chưa có giáo viên",
+                                   course_id = cl.Course.description ?? "Chưa có khóa"
                                }).ToList<dynamic>();
                 return classes;
             }
@@ -317,10 +385,51 @@ namespace DAL
                                    start_day = cl.start_day,
                                    end_day = cl.end_day,
                                    price = cl.price,
-                                   quantity = cl.quantity + "/" + cl.max_quantity,
-                                   teacher_id = cl.Teacher.full_name,
-                                   course_id = cl.Course.description
+                                   quantity = (cl.Class_student.Where(ct => ct.class_id == cl.id)).Count() + "/" + cl.max_quantity,
+                                   teacher_id = cl.Teacher.full_name ?? "Chưa có giáo viên",
+                                   course_id = cl.Course.description ?? "Chưa có khóa"
                                }).ToList<dynamic>();
+                return classes;
+            }
+        }
+
+        public List<dynamic> GetAllClassInCharge(int teacher_id)
+        {
+            using (var db = new Connection())
+            {
+                var weekday = (from cw in db.Class_weekday
+                               where cw.Class.teacher_id == teacher_id
+                               group cw by cw.class_id).ToList();
+
+                Dictionary<int, string> weekdayDic = new Dictionary<int, string>();
+                foreach (var wd in weekday)
+                {
+                    int class_id = wd.Key;
+                    string day = "";
+                    wd.ToList();
+                    foreach (var d in wd)
+                    {
+                        day += d.Weekday.name + " ";
+                    }
+                    weekdayDic.Add(class_id, day);
+                }
+                var classes = (from cl in db.Classes
+                               where cl.teacher_id == teacher_id
+                               select new
+                               {
+                                   id = cl.id,
+                                   name = cl.name,
+                                   start_day = cl.start_day,
+                                   end_day = cl.end_day,
+                                   time =  cl.Class_weekday.Where(cw => cw.class_id == cl.id).FirstOrDefault().start_hour.ToString() + "h - " +cl.Class_weekday.Where(cw => cw.class_id == cl.id).FirstOrDefault().end_hour.ToString() + "h",
+                                   price = cl.price,
+                                   quantity = (cl.Class_student.Where(ct => ct.class_id == cl.id)).Count() + "/" + cl.max_quantity,
+                                   course_id = cl.Course.description ?? "Chưa có khóa"
+                               }).ToList<dynamic>();
+                for (int i = 0; i < classes.Count(); i++)
+                {
+                    classes[i] = new { id = classes[i].id, name = classes[i].name, start_day = classes[i].start_day, end_day = classes[i].end_day, time = weekdayDic.ElementAt(i).Value + classes[i].time, price = classes[i].price, quantity = classes[i].quantity, course_id = classes[i].course_id };
+                }
                 return classes;
             }
         }
@@ -340,9 +449,9 @@ namespace DAL
                                        start_day = cl.start_day,
                                        end_day = cl.end_day,
                                        price = cl.price,
-                                       quantity = cl.quantity + "/" + cl.max_quantity,
-                                       teacher_id = cl.Teacher.full_name,
-                                       course_id = cl.Course.description
+                                       quantity = (cl.Class_student.Where(ct => ct.class_id == cl.id)).Count() + "/" + cl.max_quantity,
+                                       teacher_id = cl.Teacher.full_name ?? "Chưa có giáo viên",
+                                       course_id = cl.Course.description ?? "Chưa có khóa"
                                    }).ToList<dynamic>();
                     return classes;
                 }
@@ -357,9 +466,9 @@ namespace DAL
                                        start_day = cl.start_day,
                                        end_day = cl.end_day,
                                        price = cl.price,
-                                       quantity = cl.quantity + "/" + cl.max_quantity,
-                                       teacher_id = cl.Teacher.full_name,
-                                       course_id = cl.Course.description
+                                       quantity = (cl.Class_student.Where(ct => ct.class_id == cl.id)).Count() + "/" + cl.max_quantity,
+                                       teacher_id = cl.Teacher.full_name ?? "Chưa có giáo viên",
+                                       course_id = cl.Course.description ?? "Chưa có khóa"
                                    }).ToList<dynamic>();
                     return classes;
                 }
@@ -374,11 +483,48 @@ namespace DAL
                                        start_day = cl.start_day,
                                        end_day = cl.end_day,
                                        price = cl.price,
-                                       quantity = cl.quantity + "/" + cl.max_quantity,
-                                       teacher_id = cl.Teacher.full_name,
-                                       course_id = cl.Course.description
+                                       quantity = (cl.Class_student.Where(ct => ct.class_id == cl.id)).Count() + "/" + cl.max_quantity,
+                                       teacher_id = cl.Teacher.full_name ?? "Chưa có giáo viên",
+                                       course_id = cl.Course.description ?? "Chưa có khóa"
                                    }).ToList<dynamic>();
                     return classes;
+                }
+            }
+        }
+
+        public List<dynamic> GetAllEvent(string className, int teacher_id)
+        {
+            using (var db = new Connection())
+            {
+                if(teacher_id == 0)
+                {
+                    var events = (from ev in db.Events
+                                  where ev.Class.name == className
+                                  orderby ev.id descending
+                                  select new
+                                  {
+                                      title = ev.title,
+                                      description = ev.description,
+                                      classes = ev.Class.name,
+                                      teacher = ev.Class.Teacher.full_name,
+                                      time = ev.sending_time
+                                  }).ToList<dynamic>();
+                    return events;
+                }
+                else
+                {
+                    var events = (from ev in db.Events
+                                  where ev.Class.teacher_id == teacher_id
+                                  orderby ev.id descending
+                                  select new
+                                  {
+                                      title = ev.title,
+                                      description = ev.description,
+                                      classes = ev.Class.name,
+                                      teacher = ev.Class.Teacher.full_name,
+                                      time = ev.sending_time
+                                  }).ToList<dynamic>();
+                    return events;
                 }
             }
         }
@@ -417,7 +563,28 @@ namespace DAL
                                     date_birth = st.date_birth,
                                     phone = st.phone,
                                     address = st.address,
-                                    classes = st.Class.name ?? "Chưa có lớp",
+                                    classes = st.Class_student.FirstOrDefault().Class.name ?? "Chưa có lớp",
+                                    level = st.Level.sign
+                                }).ToList<dynamic>();
+                return students;
+            }
+        }
+
+        public List<dynamic> FindStudentByNameOrPhoneInClass(string keyword, string className)
+        {
+            using (var db = new Connection())
+            {
+                var students = (from st in db.Students
+                                where (st.full_name.Contains(keyword) || st.phone.Contains(keyword)) && st.Class_student.FirstOrDefault().Class.name == className
+                                select new
+                                {
+                                    id = st.id,
+                                    full_name = st.full_name,
+                                    gender = st.gender,
+                                    date_birth = st.date_birth,
+                                    phone = st.phone,
+                                    address = st.address,
+                                    classes = st.Class_student.FirstOrDefault().Class.name ?? "Chưa có lớp",
                                     level = st.Level.sign
                                 }).ToList<dynamic>();
                 return students;
@@ -456,10 +623,53 @@ namespace DAL
                                    start_day = cl.start_day,
                                    end_day = cl.end_day,
                                    price = cl.price,
-                                   quantity = cl.quantity + "/" + cl.max_quantity,
-                                   teacher_id = cl.Teacher.full_name,
-                                   course_id = cl.Course.description
+                                   quantity = (cl.Class_student.Where(ct => ct.class_id == cl.id)).Count() + "/" + cl.max_quantity,
+                                   teacher_id = cl.Teacher.full_name ?? "Chưa có giáo viên",
+                                   course_id = cl.Course.description ?? "Chưa có khóa"
                                }).ToList<dynamic>();
+                return classes;
+            }
+        }
+
+        public List<dynamic> FindClassInChargeByName(string keyword, int teacher_id)
+        {
+            using (var db = new Connection())
+            {
+                var weekday = (from cw in db.Class_weekday
+                               where cw.Class.name.Contains(keyword) && cw.Class.teacher_id == teacher_id
+                               group cw by cw.class_id).ToList();
+
+                Dictionary<int, string> weekdayDic = new Dictionary<int, string>();
+                foreach (var wd in weekday)
+                {
+                    int class_id = wd.Key;
+                    string day = "";
+                    wd.ToList();
+                    foreach (var d in wd)
+                    {
+                        day += d.Weekday.name + " ";
+                    }
+                    weekdayDic.Add(class_id, day);
+                }
+                var classes = (from cl in db.Classes
+                               where cl.name.Contains(keyword) && cl.teacher_id == teacher_id
+                               select new
+                               {
+                                   name = cl.name,
+                                   start_day = cl.start_day,
+                                   end_day = cl.end_day,
+                                   time = cl.Class_weekday.Where(cw => cw.class_id == cl.id).FirstOrDefault().start_hour.ToString() + "h - " + cl.Class_weekday.Where(cw => cw.class_id == cl.id).FirstOrDefault().end_hour.ToString() + "h",
+                                   price = cl.price,
+                                   quantity = (cl.Class_student.Where(ct => ct.class_id == cl.id)).Count() + "/" + cl.max_quantity,
+                                   course_id = cl.Course.description ?? "Chưa có khóa"
+                               }).ToList<dynamic>();
+                if (classes.Count > 0)
+                {
+                    for (int i = 0; i < classes.Count(); i++)
+                    {
+                        classes[i] = new { name = classes[i].name, start_day = classes[i].start_day, end_day = classes[i].end_day, time = weekdayDic.ElementAt(i).Value + classes[i].time, price = classes[i].price, quantity = classes[i].quantity, course_id = classes[i].course_id };
+                    }
+                }
                 return classes;
             }
         }

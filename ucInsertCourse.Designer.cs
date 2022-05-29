@@ -34,14 +34,14 @@
             this.lbTerm = new System.Windows.Forms.Label();
             this.lbQuantity = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnInsert = new System.Windows.Forms.Button();
             this.cboLevel = new System.Windows.Forms.ComboBox();
             this.cboCategory = new System.Windows.Forms.ComboBox();
             this.txtTerm = new System.Windows.Forms.TextBox();
             this.txtLessons = new System.Windows.Forms.TextBox();
             this.lbMonth = new System.Windows.Forms.Label();
             this.lbLesson = new System.Windows.Forms.Label();
+            this.btnInsert = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbDescription
@@ -102,34 +102,6 @@
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(681, 196);
             this.txtDescription.TabIndex = 5;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.BackColor = System.Drawing.Color.White;
-            this.btnCancel.FlatAppearance.BorderSize = 0;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(286, 593);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(156, 64);
-            this.btnCancel.TabIndex = 19;
-            this.btnCancel.Text = "Hủy";
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // btnInsert
-            // 
-            this.btnInsert.BackColor = System.Drawing.Color.White;
-            this.btnInsert.FlatAppearance.BorderSize = 0;
-            this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInsert.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInsert.Location = new System.Drawing.Point(97, 593);
-            this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(156, 64);
-            this.btnInsert.TabIndex = 18;
-            this.btnInsert.Text = "Thêm";
-            this.btnInsert.UseVisualStyleBackColor = false;
-            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // cboLevel
             // 
@@ -194,6 +166,34 @@
             this.lbLesson.TabIndex = 25;
             this.lbLesson.Text = "Bài học";
             // 
+            // btnInsert
+            // 
+            this.btnInsert.BackColor = System.Drawing.Color.White;
+            this.btnInsert.FlatAppearance.BorderSize = 0;
+            this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInsert.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInsert.Location = new System.Drawing.Point(97, 593);
+            this.btnInsert.Name = "btnInsert";
+            this.btnInsert.Size = new System.Drawing.Size(156, 64);
+            this.btnInsert.TabIndex = 18;
+            this.btnInsert.Text = "Thêm";
+            this.btnInsert.UseVisualStyleBackColor = false;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.White;
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(286, 593);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(156, 64);
+            this.btnCancel.TabIndex = 19;
+            this.btnCancel.Text = "Hủy";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // ucInsertCourse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -227,13 +227,13 @@
         private System.Windows.Forms.Label lbTerm;
         private System.Windows.Forms.Label lbQuantity;
         private System.Windows.Forms.TextBox txtDescription;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnInsert;
         private System.Windows.Forms.ComboBox cboLevel;
         private System.Windows.Forms.ComboBox cboCategory;
         private System.Windows.Forms.TextBox txtTerm;
         private System.Windows.Forms.TextBox txtLessons;
         private System.Windows.Forms.Label lbMonth;
         private System.Windows.Forms.Label lbLesson;
+        private System.Windows.Forms.Button btnInsert;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

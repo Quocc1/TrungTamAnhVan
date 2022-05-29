@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTeacherMain));
             this.pnNavbar = new System.Windows.Forms.Panel();
+            this.btnInfo = new System.Windows.Forms.Button();
             this.btnSalary = new System.Windows.Forms.Button();
-            this.btnSchedule = new System.Windows.Forms.Button();
             this.btnClass = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.lbRole = new System.Windows.Forms.Label();
@@ -41,10 +41,14 @@
             this.btnLogout = new System.Windows.Forms.Button();
             this.ptbHomeLogo = new System.Windows.Forms.PictureBox();
             this.pnContainer = new System.Windows.Forms.Panel();
-            this.btnInfo = new System.Windows.Forms.Button();
+            this.ucTeacherSalary1 = new TrungTamAnhVan.ucTeacherSalary();
+            this.ucTeacherInfo1 = new TrungTamAnhVan.ucTeacherInfo();
+            this.ucTeacherHome1 = new TrungTamAnhVan.ucTeacherHome();
+            this.ucTeacherClass1 = new TrungTamAnhVan.ucTeacherClass();
             this.pnNavbar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbHomeLogo)).BeginInit();
+            this.pnContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnNavbar
@@ -52,7 +56,6 @@
             this.pnNavbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(86)))), ((int)(((byte)(246)))));
             this.pnNavbar.Controls.Add(this.btnInfo);
             this.pnNavbar.Controls.Add(this.btnSalary);
-            this.pnNavbar.Controls.Add(this.btnSchedule);
             this.pnNavbar.Controls.Add(this.btnClass);
             this.pnNavbar.Controls.Add(this.btnHome);
             this.pnNavbar.Controls.Add(this.lbRole);
@@ -67,6 +70,24 @@
             this.pnNavbar.Size = new System.Drawing.Size(273, 754);
             this.pnNavbar.TabIndex = 2;
             // 
+            // btnInfo
+            // 
+            this.btnInfo.FlatAppearance.BorderSize = 0;
+            this.btnInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInfo.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInfo.ForeColor = System.Drawing.Color.White;
+            this.btnInfo.Image = ((System.Drawing.Image)(resources.GetObject("btnInfo.Image")));
+            this.btnInfo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInfo.Location = new System.Drawing.Point(0, 199);
+            this.btnInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnInfo.Name = "btnInfo";
+            this.btnInfo.Padding = new System.Windows.Forms.Padding(29, 0, 0, 0);
+            this.btnInfo.Size = new System.Drawing.Size(273, 62);
+            this.btnInfo.TabIndex = 7;
+            this.btnInfo.Text = "Thông tin";
+            this.btnInfo.UseVisualStyleBackColor = true;
+            this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
+            // 
             // btnSalary
             // 
             this.btnSalary.FlatAppearance.BorderSize = 0;
@@ -75,7 +96,7 @@
             this.btnSalary.ForeColor = System.Drawing.Color.White;
             this.btnSalary.Image = ((System.Drawing.Image)(resources.GetObject("btnSalary.Image")));
             this.btnSalary.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalary.Location = new System.Drawing.Point(0, 403);
+            this.btnSalary.Location = new System.Drawing.Point(0, 335);
             this.btnSalary.Name = "btnSalary";
             this.btnSalary.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.btnSalary.Size = new System.Drawing.Size(273, 62);
@@ -83,23 +104,6 @@
             this.btnSalary.Text = "Lương";
             this.btnSalary.UseVisualStyleBackColor = true;
             this.btnSalary.Click += new System.EventHandler(this.btnSalary_Click);
-            // 
-            // btnSchedule
-            // 
-            this.btnSchedule.FlatAppearance.BorderSize = 0;
-            this.btnSchedule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSchedule.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSchedule.ForeColor = System.Drawing.Color.White;
-            this.btnSchedule.Image = ((System.Drawing.Image)(resources.GetObject("btnSchedule.Image")));
-            this.btnSchedule.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSchedule.Location = new System.Drawing.Point(0, 335);
-            this.btnSchedule.Name = "btnSchedule";
-            this.btnSchedule.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnSchedule.Size = new System.Drawing.Size(273, 62);
-            this.btnSchedule.TabIndex = 10;
-            this.btnSchedule.Text = "Lịch biểu";
-            this.btnSchedule.UseVisualStyleBackColor = true;
-            this.btnSchedule.Click += new System.EventHandler(this.btnSchedule_Click);
             // 
             // btnClass
             // 
@@ -211,29 +215,47 @@
             // 
             // pnContainer
             // 
-            this.pnContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnContainer.Location = new System.Drawing.Point(0, 0);
+            this.pnContainer.Controls.Add(this.ucTeacherSalary1);
+            this.pnContainer.Controls.Add(this.ucTeacherInfo1);
+            this.pnContainer.Controls.Add(this.ucTeacherHome1);
+            this.pnContainer.Controls.Add(this.ucTeacherClass1);
+            this.pnContainer.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnContainer.Location = new System.Drawing.Point(273, 0);
             this.pnContainer.Name = "pnContainer";
-            this.pnContainer.Size = new System.Drawing.Size(1262, 754);
+            this.pnContainer.Size = new System.Drawing.Size(989, 754);
             this.pnContainer.TabIndex = 3;
             // 
-            // btnInfo
+            // ucTeacherSalary1
             // 
-            this.btnInfo.FlatAppearance.BorderSize = 0;
-            this.btnInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInfo.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInfo.ForeColor = System.Drawing.Color.White;
-            this.btnInfo.Image = ((System.Drawing.Image)(resources.GetObject("btnInfo.Image")));
-            this.btnInfo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInfo.Location = new System.Drawing.Point(0, 199);
-            this.btnInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnInfo.Name = "btnInfo";
-            this.btnInfo.Padding = new System.Windows.Forms.Padding(29, 0, 0, 0);
-            this.btnInfo.Size = new System.Drawing.Size(273, 62);
-            this.btnInfo.TabIndex = 7;
-            this.btnInfo.Text = "Thông tin";
-            this.btnInfo.UseVisualStyleBackColor = true;
-            this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
+            this.ucTeacherSalary1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucTeacherSalary1.Location = new System.Drawing.Point(0, 0);
+            this.ucTeacherSalary1.Name = "ucTeacherSalary1";
+            this.ucTeacherSalary1.Size = new System.Drawing.Size(989, 754);
+            this.ucTeacherSalary1.TabIndex = 3;
+            // 
+            // ucTeacherInfo1
+            // 
+            this.ucTeacherInfo1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucTeacherInfo1.Location = new System.Drawing.Point(0, 0);
+            this.ucTeacherInfo1.Name = "ucTeacherInfo1";
+            this.ucTeacherInfo1.Size = new System.Drawing.Size(989, 754);
+            this.ucTeacherInfo1.TabIndex = 2;
+            // 
+            // ucTeacherHome1
+            // 
+            this.ucTeacherHome1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucTeacherHome1.Location = new System.Drawing.Point(0, 0);
+            this.ucTeacherHome1.Name = "ucTeacherHome1";
+            this.ucTeacherHome1.Size = new System.Drawing.Size(989, 754);
+            this.ucTeacherHome1.TabIndex = 1;
+            // 
+            // ucTeacherClass1
+            // 
+            this.ucTeacherClass1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucTeacherClass1.Location = new System.Drawing.Point(0, 0);
+            this.ucTeacherClass1.Name = "ucTeacherClass1";
+            this.ucTeacherClass1.Size = new System.Drawing.Size(989, 754);
+            this.ucTeacherClass1.TabIndex = 0;
             // 
             // frmTeacherMain
             // 
@@ -246,11 +268,11 @@
             this.Name = "frmTeacherMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmTeacherMain";
-            this.Load += new System.EventHandler(this.frmTeacherMain_Load);
             this.pnNavbar.ResumeLayout(false);
             this.pnNavbar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbHomeLogo)).EndInit();
+            this.pnContainer.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -258,7 +280,6 @@
         #endregion
 
         private System.Windows.Forms.Panel pnNavbar;
-        private System.Windows.Forms.Button btnSchedule;
         private System.Windows.Forms.Button btnClass;
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Label lbRole;
@@ -267,8 +288,12 @@
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.PictureBox ptbHomeLogo;
-        private System.Windows.Forms.Panel pnContainer;
         private System.Windows.Forms.Button btnSalary;
         private System.Windows.Forms.Button btnInfo;
+        private System.Windows.Forms.Panel pnContainer;
+        private ucTeacherSalary ucTeacherSalary1;
+        private ucTeacherInfo ucTeacherInfo1;
+        private ucTeacherHome ucTeacherHome1;
+        private ucTeacherClass ucTeacherClass1;
     }
 }

@@ -40,8 +40,8 @@ namespace TrungTamAnhVan
                 if (!DesignMode)
                 {
                     string name = txtName.Text;
-                    string start_day = dtpStartDay.Value.ToShortDateString();
-                    string end_day = dtpEndDay.Value.ToShortDateString();
+                    DateTime start_day = dtpStartDay.Value;
+                    DateTime end_day = dtpEndDay.Value;
                     int start_hour = Convert.ToInt32(txtTimeStart.Text); ;
                     int end_hour = Convert.ToInt32(txtTimeEnd.Text);
                     int price = Int32.Parse(txtPrice.Text);
@@ -80,7 +80,7 @@ namespace TrungTamAnhVan
 
                     if (!DesignMode)
                     {
-                        string result = infoBUS.CheckAvailableTeacher(teacher_id, listWeekday, start_day, end_day, start_hour, end_hour);
+                        string result = infoBUS.CheckAvailableTeacher(0, teacher_id, listWeekday, start_day, end_day, start_hour, end_hour);
                         if (result != "")
                         {
                             MessageBox.Show(result);
@@ -92,6 +92,7 @@ namespace TrungTamAnhVan
                             addInstance.AddClassWeekday(class_id, listWeekday, start_hour, end_hour);
 
                             ucAdminClass.Instance.Reload();
+                            ucAdminTeacher.Instance.Reload();
                             btnCancel.PerformClick();
                         }
                     }
@@ -111,16 +112,6 @@ namespace TrungTamAnhVan
                 cboTeacher.DisplayMember = "full_name";
                 cboTeacher.ValueMember = "id";
                 getInstance.GetAllTeacher(_, cboTeacher);
-            }
-        }
-
-        private void dtpStartDay_ValueChanged(object sender, EventArgs e)
-        {
-            if (!DesignMode)
-            {
-                int course_id = Convert.ToInt32(cboCourse.SelectedValue.ToString());
-                int month = infoBUS.GetTermCourse(course_id);
-                dtpEndDay.Value = dtpStartDay.Value.AddMonths(month);
             }
         }
     }

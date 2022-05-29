@@ -102,7 +102,7 @@ namespace TrungTamAnhVan
         private void btnFinance_Click(object sender, EventArgs e)
         {
             SetActivePanel(ucAdminFinance1);
-            //ucAdminFinance.Instance.Reload();
+            ucAdminFinance.Instance.Reload();
         }
     }
 }

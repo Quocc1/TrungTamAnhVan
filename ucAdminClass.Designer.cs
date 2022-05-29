@@ -34,7 +34,6 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnInsert = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.cboClassStatus = new System.Windows.Forms.ComboBox();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NameClass = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Start_day = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,6 +42,7 @@
             this.Teacher = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Course = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cboClassStatus = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,6 +92,7 @@
             this.btnEdit.TabIndex = 17;
             this.btnEdit.Text = "Sửa";
             this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnInsert
             // 
@@ -125,18 +126,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(906, 486);
             this.dataGridView1.TabIndex = 15;
-            // 
-            // cboClassStatus
-            // 
-            this.cboClassStatus.FormattingEnabled = true;
-            this.cboClassStatus.Items.AddRange(new object[] {
-            "Tất cả",
-            "Lớp còn trống"});
-            this.cboClassStatus.Location = new System.Drawing.Point(46, 190);
-            this.cboClassStatus.Name = "cboClassStatus";
-            this.cboClassStatus.Size = new System.Drawing.Size(121, 24);
-            this.cboClassStatus.TabIndex = 21;
-            this.cboClassStatus.SelectedIndexChanged += new System.EventHandler(this.cboClassStatus_SelectedIndexChanged);
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // Id
             // 
@@ -201,6 +191,18 @@
             this.Quantity.MinimumWidth = 6;
             this.Quantity.Name = "Quantity";
             this.Quantity.Width = 80;
+            // 
+            // cboClassStatus
+            // 
+            this.cboClassStatus.FormattingEnabled = true;
+            this.cboClassStatus.Items.AddRange(new object[] {
+            "Tất cả",
+            "Lớp còn trống"});
+            this.cboClassStatus.Location = new System.Drawing.Point(46, 190);
+            this.cboClassStatus.Name = "cboClassStatus";
+            this.cboClassStatus.Size = new System.Drawing.Size(121, 24);
+            this.cboClassStatus.TabIndex = 21;
+            this.cboClassStatus.SelectedIndexChanged += new System.EventHandler(this.cboClassStatus_SelectedIndexChanged);
             // 
             // ucAdminClass
             // 

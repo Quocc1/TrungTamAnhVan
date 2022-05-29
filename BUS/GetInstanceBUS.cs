@@ -17,6 +17,16 @@ namespace BUS
             return getInstance.GetCourseFromId(id);
         }
 
+        public void GetAllLevel(ComboBox cbo)
+        {
+            cbo.DataSource = getInstance.GetAllLevel();
+        }
+
+        public void GetAllCategory(ComboBox cbo)
+        {
+            cbo.DataSource = getInstance.GetAllCategory();
+        }
+
         public void GetAllAdmin(DataGridView data)
         {
             data.DataSource = getInstance.GetAllAdmin();
@@ -40,9 +50,19 @@ namespace BUS
             }
         }
 
+        public void GetScoreStudent(DataGridView data, int student_id)
+        {
+            data.DataSource = getInstance.GetScoreStudent(student_id);
+        }
+
         public void GetAllStudent(DataGridView data)
         {
             data.DataSource = getInstance.GetAllStudent();
+        }
+
+        public void GetAllStudentByClass(DataGridView data, string className)
+        {
+            data.DataSource = getInstance.GetAllStudentByClass(className);
         }
 
         public void GetAllStudentByGenderAndClass(DataGridView data, string gender, string className)
@@ -89,10 +109,22 @@ namespace BUS
             }   
         }
 
+        public void GetAllClassInCharge(DataGridView data, ComboBox cbo, int teacher_id)
+        {
+            data.DataSource = getInstance.GetAllClassInCharge(teacher_id);
+            cbo.DataSource = getInstance.GetAllClassInCharge(teacher_id);
+        }
+
         public void GetAllClassByLevelAndCategory(ComboBox cbo, int level_id, int age)
         {
             cbo.DataSource = getInstance.GetAllClassByLevelAndCategory(level_id, age);
         }
+
+        public void GetAllEvent(DataGridView data, string className, int teacher_id)
+        {
+            data.DataSource = getInstance.GetAllEvent(className, teacher_id);
+        }
+
         public void FindTeacherByNameOrPhone(DataGridView data, string keyword)
         {
             data.DataSource = getInstance.FindTeacherByNameOrPhone(keyword);
@@ -103,6 +135,11 @@ namespace BUS
             data.DataSource = getInstance.FindStudentByNameOrPhone(keyword);
         }
 
+        public void FindStudentByNameOrPhoneInClass(DataGridView data, string keyword, string className)
+        {
+            data.DataSource = getInstance.FindStudentByNameOrPhoneInClass(keyword, className);
+        }
+
         public void FindCourseByName(DataGridView data, string keyword)
         {
             data.DataSource = getInstance.FindCourseByName(keyword);
@@ -111,6 +148,11 @@ namespace BUS
         public void FindClassByNameOrTeacher(DataGridView data, string keyword)
         {
             data.DataSource = getInstance.FindClassByNameOrTeacher(keyword);
+        }
+
+        public void FindClassInChargeByName(DataGridView data, string keyword, int teacher_id)
+        {
+            data.DataSource = getInstance.FindClassInChargeByName(keyword, teacher_id);
         }
     }
 }

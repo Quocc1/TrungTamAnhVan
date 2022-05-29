@@ -140,6 +140,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(906, 486);
             this.dataGridView1.TabIndex = 15;
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // Id
             // 
@@ -147,7 +148,7 @@
             this.Id.HeaderText = "Id";
             this.Id.MinimumWidth = 6;
             this.Id.Name = "Id";
-            this.Id.Width = 125;
+            this.Id.Width = 50;
             // 
             // Description
             // 
@@ -171,7 +172,7 @@
             this.Lesssons.HeaderText = "Số lượng bài học";
             this.Lesssons.MinimumWidth = 6;
             this.Lesssons.Name = "Lesssons";
-            this.Lesssons.Width = 125;
+            this.Lesssons.Width = 80;
             // 
             // Level
             // 
@@ -179,7 +180,7 @@
             this.Level.HeaderText = "Cấp độ";
             this.Level.MinimumWidth = 6;
             this.Level.Name = "Level";
-            this.Level.Width = 125;
+            this.Level.Width = 80;
             // 
             // Category
             // 

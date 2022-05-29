@@ -42,9 +42,9 @@ namespace TrungTamAnhVan
                     }
                     else
                     {
-                        gender = "Nu";
+                        gender = "Nữ";
                     }
-                    string date_birth = dtpBirthDate.Value.ToShortDateString();
+                    DateTime date_birth = dtpDateBirth.Value;
 
                     addInstance.AddTeacher(full_name, gender, date_birth, phone, address, description);
 

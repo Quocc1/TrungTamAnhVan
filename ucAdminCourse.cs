@@ -82,10 +82,15 @@ namespace TrungTamAnhVan
         private void btnEdit_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+            string name = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            string term = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            int lessons = Convert.ToInt32(dataGridView1.CurrentRow.Cells[3].Value);
+            string level = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+            string category = dataGridView1.CurrentRow.Cells[5].Value.ToString();
 
             if (!frmAdminMain.Instance.PnContainer.Controls.ContainsKey("ucEditCourse"))
             {
-                ucEditCourse uc = new ucEditCourse(id);
+                ucEditCourse uc = new ucEditCourse(id, name, term, lessons, level, category);
                 uc.Dock = DockStyle.Fill;
                 frmAdminMain.Instance.PnContainer.Controls.Add(uc);
             }
@@ -121,6 +126,11 @@ namespace TrungTamAnhVan
             {
                 this.Reload();
             }
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnEdit.PerformClick();
         }
     }
 }

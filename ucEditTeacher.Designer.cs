@@ -33,8 +33,7 @@
             this.rbtMale = new System.Windows.Forms.RadioButton();
             this.rbtFemale = new System.Windows.Forms.RadioButton();
             this.txtAddress = new System.Windows.Forms.TextBox();
-            this.dtpBirthDate = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbDescription = new System.Windows.Forms.Label();
             this.lbAddress = new System.Windows.Forms.Label();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -43,10 +42,12 @@
             this.lbBirthDate = new System.Windows.Forms.Label();
             this.lbName = new System.Windows.Forms.Label();
             this.lbGender = new System.Windows.Forms.Label();
+            this.dtpDateBirth = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // txtDescription
             // 
+            this.txtDescription.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescription.Location = new System.Drawing.Point(689, 211);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
@@ -55,9 +56,10 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(236, 74);
+            this.txtName.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Location = new System.Drawing.Point(236, 61);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(200, 22);
+            this.txtName.Size = new System.Drawing.Size(200, 39);
             this.txtName.TabIndex = 92;
             // 
             // rbtMale
@@ -86,28 +88,22 @@
             // 
             // txtAddress
             // 
+            this.txtAddress.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAddress.Location = new System.Drawing.Point(236, 211);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(200, 71);
             this.txtAddress.TabIndex = 89;
             // 
-            // dtpBirthDate
+            // lbDescription
             // 
-            this.dtpBirthDate.Location = new System.Drawing.Point(689, 74);
-            this.dtpBirthDate.Name = "dtpBirthDate";
-            this.dtpBirthDate.Size = new System.Drawing.Size(200, 22);
-            this.dtpBirthDate.TabIndex = 88;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Open Sans SemiBold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(538, 220);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(154, 40);
-            this.label1.TabIndex = 87;
-            this.label1.Text = "Chứng chỉ";
+            this.lbDescription.AutoSize = true;
+            this.lbDescription.Font = new System.Drawing.Font("Open Sans SemiBold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDescription.Location = new System.Drawing.Point(538, 220);
+            this.lbDescription.Name = "lbDescription";
+            this.lbDescription.Size = new System.Drawing.Size(154, 40);
+            this.lbDescription.TabIndex = 87;
+            this.lbDescription.Text = "Chứng chỉ";
             // 
             // lbAddress
             // 
@@ -121,9 +117,10 @@
             // 
             // txtPhone
             // 
-            this.txtPhone.Location = new System.Drawing.Point(689, 154);
+            this.txtPhone.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhone.Location = new System.Drawing.Point(689, 141);
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(200, 22);
+            this.txtPhone.Size = new System.Drawing.Size(200, 39);
             this.txtPhone.TabIndex = 85;
             // 
             // btnCancel
@@ -138,6 +135,7 @@
             this.btnCancel.TabIndex = 84;
             this.btnCancel.Text = "Hủy";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnEdit
             // 
@@ -151,6 +149,7 @@
             this.btnEdit.TabIndex = 83;
             this.btnEdit.Text = "Sửa";
             this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // lbPhone
             // 
@@ -192,17 +191,28 @@
             this.lbGender.TabIndex = 79;
             this.lbGender.Text = "Giới tính";
             // 
+            // dtpDateBirth
+            // 
+            this.dtpDateBirth.CalendarFont = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDateBirth.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDateBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDateBirth.Location = new System.Drawing.Point(689, 61);
+            this.dtpDateBirth.Name = "dtpDateBirth";
+            this.dtpDateBirth.Size = new System.Drawing.Size(200, 39);
+            this.dtpDateBirth.TabIndex = 94;
+            this.dtpDateBirth.Value = new System.DateTime(2022, 5, 13, 0, 0, 0, 0);
+            // 
             // ucEditTeacher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.dtpDateBirth);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.rbtMale);
             this.Controls.Add(this.rbtFemale);
             this.Controls.Add(this.txtAddress);
-            this.Controls.Add(this.dtpBirthDate);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbDescription);
             this.Controls.Add(this.lbAddress);
             this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.btnCancel);
@@ -213,6 +223,7 @@
             this.Controls.Add(this.lbGender);
             this.Name = "ucEditTeacher";
             this.Size = new System.Drawing.Size(989, 754);
+            this.Load += new System.EventHandler(this.ucEditTeacher_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -225,8 +236,7 @@
         private System.Windows.Forms.RadioButton rbtMale;
         private System.Windows.Forms.RadioButton rbtFemale;
         private System.Windows.Forms.TextBox txtAddress;
-        private System.Windows.Forms.DateTimePicker dtpBirthDate;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbDescription;
         private System.Windows.Forms.Label lbAddress;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.Button btnCancel;
@@ -235,5 +245,6 @@
         private System.Windows.Forms.Label lbBirthDate;
         private System.Windows.Forms.Label lbName;
         private System.Windows.Forms.Label lbGender;
+        private System.Windows.Forms.DateTimePicker dtpDateBirth;
     }
 }

@@ -13,8 +13,8 @@ namespace TrungTamAnhVan
     public partial class frmTeacherMain : Form
     {
         static frmTeacherMain _obj;
-        static int ID = 0;
-        static string NAME = "";
+        public static int ID = 0;
+        public static string NAME = "";
 
         public static frmTeacherMain Instance
         {
@@ -44,16 +44,15 @@ namespace TrungTamAnhVan
         private void FrmMain_Load(object sender, EventArgs e)
         {
             _obj = this;
-            //SetActivePanel(ucTeacherHome1);
+            SetActivePanel(ucTeacherHome1);
         }
 
         public void SetActivePanel(UserControl control)
         {
-            //ucTeacherHome1.Visible = false;
-            //ucTeacherInfo1.Visible = false;
-            //ucTeacherClass1.Visible = false;
-            //ucTeacherSchedule1.Visible = false;
-            //ucTeacherSalary1.Visible = false;
+            ucTeacherHome1.Visible = false;
+            ucTeacherInfo1.Visible = false;
+            ucTeacherClass1.Visible = false;
+            ucTeacherSalary1.Visible = false;
 
             control.Visible = true;
         }
@@ -72,32 +71,26 @@ namespace TrungTamAnhVan
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-
+            SetActivePanel(ucTeacherHome1);
+            ucTeacherHome.Instance.Reload();
         }
 
         private void btnInfo_Click(object sender, EventArgs e)
         {
-
+            SetActivePanel(ucTeacherInfo1);
+            ucTeacherInfo.Instance.Reload();
         }
 
         private void btnClass_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void btnSchedule_Click(object sender, EventArgs e)
-        {
-
+            SetActivePanel(ucTeacherClass1);
+            ucTeacherClass.Instance.Reload();
         }
 
         private void btnSalary_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void frmTeacherMain_Load(object sender, EventArgs e)
-        {
-
+            SetActivePanel(ucTeacherSalary1);
+            ucTeacherSalary.Instance.Reload();
         }
     }
 }

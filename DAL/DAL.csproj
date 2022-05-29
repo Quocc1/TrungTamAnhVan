@@ -67,6 +67,9 @@
     <Compile Include="Class.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Class_student.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Class_weekday.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

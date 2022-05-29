@@ -29,13 +29,6 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnInsert = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.lbTitle = new System.Windows.Forms.Label();
-            this.cboGender = new System.Windows.Forms.ComboBox();
-            this.cboClass = new System.Windows.Forms.ComboBox();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Full_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,6 +37,13 @@
             this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.classes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Level = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnInsert = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.lbTitle = new System.Windows.Forms.Label();
+            this.cboGender = new System.Windows.Forms.ComboBox();
+            this.cboClass = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,6 +66,72 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(906, 486);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "id";
+            this.Id.FillWeight = 46.82451F;
+            this.Id.HeaderText = "Id";
+            this.Id.MinimumWidth = 6;
+            this.Id.Name = "Id";
+            // 
+            // Full_name
+            // 
+            this.Full_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Full_name.DataPropertyName = "full_name";
+            this.Full_name.FillWeight = 118.3991F;
+            this.Full_name.HeaderText = "Họ và tên";
+            this.Full_name.MinimumWidth = 6;
+            this.Full_name.Name = "Full_name";
+            // 
+            // Gender
+            // 
+            this.Gender.DataPropertyName = "gender";
+            this.Gender.FillWeight = 42.78075F;
+            this.Gender.HeaderText = "Giới tính";
+            this.Gender.MinimumWidth = 6;
+            this.Gender.Name = "Gender";
+            // 
+            // date_birth
+            // 
+            this.date_birth.DataPropertyName = "date_birth";
+            this.date_birth.FillWeight = 118.3991F;
+            this.date_birth.HeaderText = "Năm sinh";
+            this.date_birth.MinimumWidth = 6;
+            this.date_birth.Name = "date_birth";
+            // 
+            // phone
+            // 
+            this.phone.DataPropertyName = "phone";
+            this.phone.FillWeight = 118.3991F;
+            this.phone.HeaderText = "SĐT";
+            this.phone.MinimumWidth = 6;
+            this.phone.Name = "phone";
+            // 
+            // address
+            // 
+            this.address.DataPropertyName = "address";
+            this.address.FillWeight = 118.3991F;
+            this.address.HeaderText = "Địa chỉ";
+            this.address.MinimumWidth = 6;
+            this.address.Name = "address";
+            // 
+            // classes
+            // 
+            this.classes.DataPropertyName = "classes";
+            this.classes.FillWeight = 118.3991F;
+            this.classes.HeaderText = "Lớp đang học";
+            this.classes.MinimumWidth = 6;
+            this.classes.Name = "classes";
+            // 
+            // Level
+            // 
+            this.Level.DataPropertyName = "level";
+            this.Level.FillWeight = 118.3991F;
+            this.Level.HeaderText = "Trình độ";
+            this.Level.MinimumWidth = 6;
+            this.Level.Name = "Level";
             // 
             // btnInsert
             // 
@@ -153,63 +219,6 @@
             this.cboClass.Size = new System.Drawing.Size(121, 24);
             this.cboClass.TabIndex = 7;
             this.cboClass.SelectedIndexChanged += new System.EventHandler(this.cboClass_SelectedIndexChanged);
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "id";
-            this.Id.HeaderText = "Id";
-            this.Id.MinimumWidth = 6;
-            this.Id.Name = "Id";
-            // 
-            // Full_name
-            // 
-            this.Full_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Full_name.DataPropertyName = "full_name";
-            this.Full_name.HeaderText = "Họ và tên";
-            this.Full_name.MinimumWidth = 6;
-            this.Full_name.Name = "Full_name";
-            // 
-            // Gender
-            // 
-            this.Gender.DataPropertyName = "gender";
-            this.Gender.HeaderText = "Giới tính";
-            this.Gender.MinimumWidth = 6;
-            this.Gender.Name = "Gender";
-            // 
-            // date_birth
-            // 
-            this.date_birth.DataPropertyName = "date_birth";
-            this.date_birth.HeaderText = "Năm sinh";
-            this.date_birth.MinimumWidth = 6;
-            this.date_birth.Name = "date_birth";
-            // 
-            // phone
-            // 
-            this.phone.DataPropertyName = "phone";
-            this.phone.HeaderText = "SĐT";
-            this.phone.MinimumWidth = 6;
-            this.phone.Name = "phone";
-            // 
-            // address
-            // 
-            this.address.DataPropertyName = "address";
-            this.address.HeaderText = "Địa chỉ";
-            this.address.MinimumWidth = 6;
-            this.address.Name = "address";
-            // 
-            // classes
-            // 
-            this.classes.DataPropertyName = "classes";
-            this.classes.HeaderText = "Lớp đang học";
-            this.classes.MinimumWidth = 6;
-            this.classes.Name = "classes";
-            // 
-            // Level
-            // 
-            this.Level.DataPropertyName = "level";
-            this.Level.HeaderText = "Trình độ";
-            this.Level.MinimumWidth = 6;
-            this.Level.Name = "Level";
             // 
             // ucAdminStudent
             // 

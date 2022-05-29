@@ -35,6 +35,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup />
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
@@ -49,6 +50,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -122,6 +124,12 @@
     <Compile Include="ucAdminTeacher.Designer.cs">
       <DependentUpon>ucAdminTeacher.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucClassStudent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucClassStudent.Designer.cs">
+      <DependentUpon>ucClassStudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="ucEditClass.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -140,11 +148,41 @@
     <Compile Include="ucEditStudent.Designer.cs">
       <DependentUpon>ucEditStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucEditStudent1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucEditStudent1.Designer.cs">
+      <DependentUpon>ucEditStudent1.cs</DependentUpon>
+    </Compile>
     <Compile Include="ucEditTeacher.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ucEditTeacher.Designer.cs">
       <DependentUpon>ucEditTeacher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucEditTeacher1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucEditTeacher1.Designer.cs">
+      <DependentUpon>ucEditTeacher1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucInsertEvent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucInsertEvent.Designer.cs">
+      <DependentUpon>ucInsertEvent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucInsertScore.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucInsertScore.Designer.cs">
+      <DependentUpon>ucInsertScore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucScoreStudent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucScoreStudent.Designer.cs">
+      <DependentUpon>ucScoreStudent.cs</DependentUpon>
     </Compile>
     <Compile Include="ucInsertClass.cs">
       <SubType>UserControl</SubType>
@@ -169,6 +207,60 @@
     </Compile>
     <Compile Include="ucInsertTeacher.Designer.cs">
       <DependentUpon>ucInsertTeacher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucStudentFee.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucStudentFee.Designer.cs">
+      <DependentUpon>ucStudentFee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucStudentHome.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucStudentHome.Designer.cs">
+      <DependentUpon>ucStudentHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucStudentInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucStudentInfo.Designer.cs">
+      <DependentUpon>ucStudentInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucStudentSchedule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucStudentSchedule.Designer.cs">
+      <DependentUpon>ucStudentSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucStudentScore.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucStudentScore.Designer.cs">
+      <DependentUpon>ucStudentScore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucTeacherClass.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucTeacherClass.Designer.cs">
+      <DependentUpon>ucTeacherClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucTeacherHome.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucTeacherHome.Designer.cs">
+      <DependentUpon>ucTeacherHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucTeacherInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucTeacherInfo.Designer.cs">
+      <DependentUpon>ucTeacherInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucTeacherSalary.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucTeacherSalary.Designer.cs">
+      <DependentUpon>ucTeacherSalary.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
@@ -205,6 +297,9 @@
     <EmbeddedResource Include="ucAdminTeacher.resx">
       <DependentUpon>ucAdminTeacher.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ucClassStudent.resx">
+      <DependentUpon>ucClassStudent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ucEditClass.resx">
       <DependentUpon>ucEditClass.cs</DependentUpon>
     </EmbeddedResource>
@@ -214,8 +309,23 @@
     <EmbeddedResource Include="ucEditStudent.resx">
       <DependentUpon>ucEditStudent.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ucEditStudent1.resx">
+      <DependentUpon>ucEditStudent1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ucEditTeacher.resx">
       <DependentUpon>ucEditTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucEditTeacher1.resx">
+      <DependentUpon>ucEditTeacher1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucInsertEvent.resx">
+      <DependentUpon>ucInsertEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucInsertScore.resx">
+      <DependentUpon>ucInsertScore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucScoreStudent.resx">
+      <DependentUpon>ucScoreStudent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucInsertClass.resx">
       <DependentUpon>ucInsertClass.cs</DependentUpon>
@@ -228,6 +338,33 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ucInsertTeacher.resx">
       <DependentUpon>ucInsertTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucStudentFee.resx">
+      <DependentUpon>ucStudentFee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucStudentHome.resx">
+      <DependentUpon>ucStudentHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucStudentInfo.resx">
+      <DependentUpon>ucStudentInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucStudentSchedule.resx">
+      <DependentUpon>ucStudentSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucStudentScore.resx">
+      <DependentUpon>ucStudentScore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucTeacherClass.resx">
+      <DependentUpon>ucTeacherClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucTeacherHome.resx">
+      <DependentUpon>ucTeacherHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucTeacherInfo.resx">
+      <DependentUpon>ucTeacherInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucTeacherSalary.resx">
+      <DependentUpon>ucTeacherSalary.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.Config" />
     <None Include="app.manifest" />

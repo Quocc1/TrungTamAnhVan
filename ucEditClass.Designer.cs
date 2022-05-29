@@ -29,10 +29,7 @@
         private void InitializeComponent()
         {
             this.lbCurrency = new System.Windows.Forms.Label();
-            this.txtPrice = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtTimeEnd = new System.Windows.Forms.TextBox();
-            this.txtTimeStart = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.chkSunday = new System.Windows.Forms.CheckBox();
             this.chkSaturday = new System.Windows.Forms.CheckBox();
@@ -45,10 +42,7 @@
             this.cboTeacher = new System.Windows.Forms.ComboBox();
             this.lbTeacher = new System.Windows.Forms.Label();
             this.lbPrice = new System.Windows.Forms.Label();
-            this.txtName = new System.Windows.Forms.TextBox();
             this.cboCourse = new System.Windows.Forms.ComboBox();
-            this.dtpEndDay = new System.Windows.Forms.DateTimePicker();
-            this.dtpStartDay = new System.Windows.Forms.DateTimePicker();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.lbEnđay = new System.Windows.Forms.Label();
@@ -56,6 +50,12 @@
             this.lbName = new System.Windows.Forms.Label();
             this.lbCourse = new System.Windows.Forms.Label();
             this.lbWeekday = new System.Windows.Forms.Label();
+            this.txtPrice = new System.Windows.Forms.TextBox();
+            this.txtTimeEnd = new System.Windows.Forms.TextBox();
+            this.txtTimeStart = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.dtpStartDay = new System.Windows.Forms.DateTimePicker();
+            this.dtpEndDay = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // lbCurrency
@@ -68,42 +68,21 @@
             this.lbCurrency.TabIndex = 86;
             this.lbCurrency.Text = "đồng";
             // 
-            // txtPrice
-            // 
-            this.txtPrice.Location = new System.Drawing.Point(236, 234);
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(121, 22);
-            this.txtPrice.TabIndex = 85;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(320, 490);
+            this.label1.Location = new System.Drawing.Point(340, 490);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(30, 33);
             this.label1.TabIndex = 84;
             this.label1.Text = "h";
             // 
-            // txtTimeEnd
-            // 
-            this.txtTimeEnd.Location = new System.Drawing.Point(286, 497);
-            this.txtTimeEnd.Name = "txtTimeEnd";
-            this.txtTimeEnd.Size = new System.Drawing.Size(28, 22);
-            this.txtTimeEnd.TabIndex = 83;
-            // 
-            // txtTimeStart
-            // 
-            this.txtTimeStart.Location = new System.Drawing.Point(220, 497);
-            this.txtTimeStart.Name = "txtTimeStart";
-            this.txtTimeStart.Size = new System.Drawing.Size(28, 22);
-            this.txtTimeStart.TabIndex = 82;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(247, 490);
+            this.label2.Location = new System.Drawing.Point(251, 490);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 33);
             this.label2.TabIndex = 81;
@@ -224,13 +203,6 @@
             this.lbPrice.TabIndex = 70;
             this.lbPrice.Text = "Học phí";
             // 
-            // txtName
-            // 
-            this.txtName.Location = new System.Drawing.Point(236, 74);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(206, 22);
-            this.txtName.TabIndex = 69;
-            // 
             // cboCourse
             // 
             this.cboCourse.FormattingEnabled = true;
@@ -238,20 +210,6 @@
             this.cboCourse.Name = "cboCourse";
             this.cboCourse.Size = new System.Drawing.Size(206, 24);
             this.cboCourse.TabIndex = 68;
-            // 
-            // dtpEndDay
-            // 
-            this.dtpEndDay.Location = new System.Drawing.Point(740, 154);
-            this.dtpEndDay.Name = "dtpEndDay";
-            this.dtpEndDay.Size = new System.Drawing.Size(200, 22);
-            this.dtpEndDay.TabIndex = 67;
-            // 
-            // dtpStartDay
-            // 
-            this.dtpStartDay.Location = new System.Drawing.Point(740, 72);
-            this.dtpStartDay.Name = "dtpStartDay";
-            this.dtpStartDay.Size = new System.Drawing.Size(200, 22);
-            this.dtpStartDay.TabIndex = 66;
             // 
             // btnCancel
             // 
@@ -265,6 +223,7 @@
             this.btnCancel.TabIndex = 65;
             this.btnCancel.Text = "Hủy";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnEdit
             // 
@@ -278,6 +237,7 @@
             this.btnEdit.TabIndex = 64;
             this.btnEdit.Text = "Sửa";
             this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // lbEnđay
             // 
@@ -329,15 +289,72 @@
             this.lbWeekday.TabIndex = 59;
             this.lbWeekday.Text = "Lịch học";
             // 
+            // txtPrice
+            // 
+            this.txtPrice.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrice.Location = new System.Drawing.Point(236, 219);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Size = new System.Drawing.Size(121, 39);
+            this.txtPrice.TabIndex = 90;
+            // 
+            // txtTimeEnd
+            // 
+            this.txtTimeEnd.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTimeEnd.Location = new System.Drawing.Point(296, 484);
+            this.txtTimeEnd.Name = "txtTimeEnd";
+            this.txtTimeEnd.Size = new System.Drawing.Size(38, 39);
+            this.txtTimeEnd.TabIndex = 89;
+            // 
+            // txtTimeStart
+            // 
+            this.txtTimeStart.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTimeStart.Location = new System.Drawing.Point(215, 484);
+            this.txtTimeStart.Name = "txtTimeStart";
+            this.txtTimeStart.Size = new System.Drawing.Size(38, 39);
+            this.txtTimeStart.TabIndex = 88;
+            // 
+            // txtName
+            // 
+            this.txtName.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Location = new System.Drawing.Point(236, 61);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(206, 39);
+            this.txtName.TabIndex = 87;
+            // 
+            // dtpStartDay
+            // 
+            this.dtpStartDay.CalendarFont = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpStartDay.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpStartDay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpStartDay.Location = new System.Drawing.Point(740, 61);
+            this.dtpStartDay.Name = "dtpStartDay";
+            this.dtpStartDay.Size = new System.Drawing.Size(200, 39);
+            this.dtpStartDay.TabIndex = 91;
+            this.dtpStartDay.Value = new System.DateTime(2022, 5, 13, 0, 0, 0, 0);
+            // 
+            // dtpEndDay
+            // 
+            this.dtpEndDay.CalendarFont = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpEndDay.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpEndDay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpEndDay.Location = new System.Drawing.Point(740, 137);
+            this.dtpEndDay.Name = "dtpEndDay";
+            this.dtpEndDay.Size = new System.Drawing.Size(200, 39);
+            this.dtpEndDay.TabIndex = 92;
+            this.dtpEndDay.Value = new System.DateTime(2022, 5, 13, 0, 0, 0, 0);
+            // 
             // ucEditClass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.lbCurrency);
+            this.Controls.Add(this.dtpEndDay);
+            this.Controls.Add(this.dtpStartDay);
             this.Controls.Add(this.txtPrice);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtTimeEnd);
             this.Controls.Add(this.txtTimeStart);
+            this.Controls.Add(this.txtName);
+            this.Controls.Add(this.lbCurrency);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.chkSunday);
             this.Controls.Add(this.chkSaturday);
@@ -350,10 +367,7 @@
             this.Controls.Add(this.cboTeacher);
             this.Controls.Add(this.lbTeacher);
             this.Controls.Add(this.lbPrice);
-            this.Controls.Add(this.txtName);
             this.Controls.Add(this.cboCourse);
-            this.Controls.Add(this.dtpEndDay);
-            this.Controls.Add(this.dtpStartDay);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.lbEnđay);
@@ -363,6 +377,7 @@
             this.Controls.Add(this.lbWeekday);
             this.Name = "ucEditClass";
             this.Size = new System.Drawing.Size(989, 754);
+            this.Load += new System.EventHandler(this.ucEditClass_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -371,10 +386,7 @@
         #endregion
 
         private System.Windows.Forms.Label lbCurrency;
-        private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtTimeEnd;
-        private System.Windows.Forms.TextBox txtTimeStart;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox chkSunday;
         private System.Windows.Forms.CheckBox chkSaturday;
@@ -387,10 +399,7 @@
         private System.Windows.Forms.ComboBox cboTeacher;
         private System.Windows.Forms.Label lbTeacher;
         private System.Windows.Forms.Label lbPrice;
-        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.ComboBox cboCourse;
-        private System.Windows.Forms.DateTimePicker dtpEndDay;
-        private System.Windows.Forms.DateTimePicker dtpStartDay;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Label lbEnđay;
@@ -398,5 +407,11 @@
         private System.Windows.Forms.Label lbName;
         private System.Windows.Forms.Label lbCourse;
         private System.Windows.Forms.Label lbWeekday;
+        private System.Windows.Forms.TextBox txtPrice;
+        private System.Windows.Forms.TextBox txtTimeEnd;
+        private System.Windows.Forms.TextBox txtTimeStart;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.DateTimePicker dtpStartDay;
+        private System.Windows.Forms.DateTimePicker dtpEndDay;
     }
 }
