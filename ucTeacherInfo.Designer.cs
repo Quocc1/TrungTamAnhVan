@@ -41,6 +41,7 @@
             this.lbDateBirthValue = new System.Windows.Forms.Label();
             this.lbNameValue = new System.Windows.Forms.Label();
             this.lbGenderValue = new System.Windows.Forms.Label();
+            this.btnChangePassword = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbDescription
@@ -177,10 +178,25 @@
             this.lbGenderValue.TabIndex = 103;
             this.lbGenderValue.Text = "lable2";
             // 
+            // btnChangePassword
+            // 
+            this.btnChangePassword.BackColor = System.Drawing.Color.White;
+            this.btnChangePassword.FlatAppearance.BorderSize = 0;
+            this.btnChangePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangePassword.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChangePassword.Location = new System.Drawing.Point(286, 593);
+            this.btnChangePassword.Name = "btnChangePassword";
+            this.btnChangePassword.Size = new System.Drawing.Size(174, 64);
+            this.btnChangePassword.TabIndex = 109;
+            this.btnChangePassword.Text = "Đổi Mật Khẩu";
+            this.btnChangePassword.UseVisualStyleBackColor = false;
+            this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
+            // 
             // ucTeacherInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnChangePassword);
             this.Controls.Add(this.lbDescriptionValue);
             this.Controls.Add(this.lbAddressValue);
             this.Controls.Add(this.lbPhoneValue);
@@ -217,5 +233,6 @@
         private System.Windows.Forms.Label lbDateBirthValue;
         private System.Windows.Forms.Label lbNameValue;
         private System.Windows.Forms.Label lbGenderValue;
+        private System.Windows.Forms.Button btnChangePassword;
     }
 }

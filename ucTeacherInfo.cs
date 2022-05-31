@@ -78,5 +78,16 @@ namespace TrungTamAnhVan
             }
             frmTeacherMain.Instance.PnContainer.Controls["ucEditTeacher1"].BringToFront();
         }
+
+        private void btnChangePassword_Click(object sender, EventArgs e)
+        {
+            if (!frmTeacherMain.Instance.PnContainer.Controls.ContainsKey("ucEditTeacherPassword"))
+            {
+                ucEditTeacherPassword uc = new ucEditTeacherPassword();
+                uc.Dock = DockStyle.Fill;
+                frmTeacherMain.Instance.PnContainer.Controls.Add(uc);
+            }
+            frmTeacherMain.Instance.PnContainer.Controls["ucEditTeacherPassword"].BringToFront();
+        }
     }
 }

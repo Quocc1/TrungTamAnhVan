@@ -22,6 +22,11 @@ namespace BUS
             updateInstance.UpdateTeacherInfo(teacher_id, phone, address, description);
         }
 
+        public void UpdateTeacherPassword(int teacher_id, string newPassword)
+        {
+            updateInstance.UpdateTeacherPassword(teacher_id, newPassword);
+        }
+
         public void UpdateStudent(int student_id, string full_name, string gender, DateTime date_birth, string phone, string address, int class_id, int level_id)
         {
             updateInstance.UpdateStudent(student_id, full_name, gender, date_birth, phone, address, level_id);
@@ -30,6 +35,11 @@ namespace BUS
         public void UpdateStudentInfo(int student_id, string phone, string address)
         {
             updateInstance.UpdateStudentInfo(student_id, phone, address);
+        }
+
+        public void UpdateStudentPassword(int student_id, string newPassword)
+        {
+            updateInstance.UpdateStudentPassword(student_id, newPassword);
         }
 
 

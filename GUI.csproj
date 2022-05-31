@@ -142,6 +142,12 @@
     <Compile Include="ucEditCourse.Designer.cs">
       <DependentUpon>ucEditCourse.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucEditStudentPassword.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucEditStudentPassword.Designer.cs">
+      <DependentUpon>ucEditStudentPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="ucEditStudent.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -165,6 +171,12 @@
     </Compile>
     <Compile Include="ucEditTeacher1.Designer.cs">
       <DependentUpon>ucEditTeacher1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucEditTeacherPassword.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucEditTeacherPassword.Designer.cs">
+      <DependentUpon>ucEditTeacherPassword.cs</DependentUpon>
     </Compile>
     <Compile Include="ucInsertEvent.cs">
       <SubType>UserControl</SubType>
@@ -306,6 +318,9 @@
     <EmbeddedResource Include="ucEditCourse.resx">
       <DependentUpon>ucEditCourse.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ucEditStudentPassword.resx">
+      <DependentUpon>ucEditStudentPassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ucEditStudent.resx">
       <DependentUpon>ucEditStudent.cs</DependentUpon>
     </EmbeddedResource>
@@ -317,6 +332,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ucEditTeacher1.resx">
       <DependentUpon>ucEditTeacher1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucEditTeacherPassword.resx">
+      <DependentUpon>ucEditTeacherPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucInsertEvent.resx">
       <DependentUpon>ucInsertEvent.cs</DependentUpon>

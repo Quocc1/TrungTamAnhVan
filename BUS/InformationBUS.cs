@@ -22,6 +22,11 @@ namespace BUS
             return infoDAL.GetNewestTeacherId();
         }
 
+        public string GetTeacherPassword(int teacher_id)
+        {
+            return infoDAL.GetTeacherPassword(teacher_id);
+        }
+
         public List<string> GetInfoStudent(int student_id)
         {
             return infoDAL.GetInfoStudent(student_id);
@@ -30,6 +35,11 @@ namespace BUS
         public int GetNewestStudentId()
         {
             return infoDAL.GetNewestStudentId();
+        }
+
+        public string GetStudentPassword(int student_id)
+        {
+            return infoDAL.GetStudentPassword(student_id);
         }
 
         public int GetNewestClassId()

@@ -43,6 +43,19 @@ namespace DAL
             }
         }
 
+        public void UpdateTeacherPassword(int teacher_id, string newPassword)
+        {
+            using (var db = new Connection())
+            {
+                var teacher = (from tc in db.Teacher_account
+                               where tc.id == teacher_id
+                               select tc).FirstOrDefault();
+                teacher.password = newPassword;
+
+                db.SaveChanges();
+            }
+        }
+
         public void UpdateStudent(int student_id, string full_name, string gender, DateTime date_birth, string phone, string address, int level_id)
         {
             
@@ -72,6 +85,19 @@ namespace DAL
                 student.phone = phone;
                 student.address = address;
 
+                db.SaveChanges();
+            }
+        }
+
+        public void UpdateStudentPassword(int student_id, string newPassword)
+        {
+            using (var db = new Connection())
+            {
+                var student = (from st in db.Student_account
+                               where st.id == student_id
+                               select st).FirstOrDefault();
+                student.password = newPassword;
+                
                 db.SaveChanges();
             }
         }

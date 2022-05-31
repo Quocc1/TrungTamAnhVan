@@ -84,6 +84,17 @@ namespace DAL
             }
         }
 
+        public string GetTeacherPassword(int teacher_id)
+        {
+            using (var db = new Connection())
+            {
+                var teacher = (from tc in db.Teacher_account
+                               where tc.teacher_id == teacher_id
+                               select tc).FirstOrDefault();
+                return teacher.password;
+            }
+        }
+
         public int GetNewestStudentId()
         {
             using (var db = new Connection())
@@ -92,6 +103,17 @@ namespace DAL
                                orderby st.id descending
                                select st).FirstOrDefault();
                 return student.id;
+            }
+        }
+
+        public string GetStudentPassword(int student_id)
+        {
+            using (var db = new Connection())
+            {
+                var student = (from st in db.Student_account
+                               where st.student_id == student_id
+                               select st).FirstOrDefault();
+                return student.password;
             }
         }
 

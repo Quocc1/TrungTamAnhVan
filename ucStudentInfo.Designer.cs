@@ -41,13 +41,14 @@
             this.lbDateBirth = new System.Windows.Forms.Label();
             this.lbName = new System.Windows.Forms.Label();
             this.lbGender = new System.Windows.Forms.Label();
+            this.btnChangePassword = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbLevelValue
             // 
             this.lbLevelValue.AutoSize = true;
             this.lbLevelValue.Font = new System.Drawing.Font("Open Sans", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbLevelValue.Location = new System.Drawing.Point(667, 220);
+            this.lbLevelValue.Location = new System.Drawing.Point(669, 220);
             this.lbLevelValue.Name = "lbLevelValue";
             this.lbLevelValue.Size = new System.Drawing.Size(96, 40);
             this.lbLevelValue.TabIndex = 121;
@@ -67,7 +68,7 @@
             // 
             this.lbPhoneValue.AutoSize = true;
             this.lbPhoneValue.Font = new System.Drawing.Font("Open Sans", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPhoneValue.Location = new System.Drawing.Point(603, 140);
+            this.lbPhoneValue.Location = new System.Drawing.Point(612, 140);
             this.lbPhoneValue.Name = "lbPhoneValue";
             this.lbPhoneValue.Size = new System.Drawing.Size(96, 40);
             this.lbPhoneValue.TabIndex = 119;
@@ -177,10 +178,25 @@
             this.lbGender.TabIndex = 109;
             this.lbGender.Text = "Giới tính:";
             // 
+            // btnChangePassword
+            // 
+            this.btnChangePassword.BackColor = System.Drawing.Color.White;
+            this.btnChangePassword.FlatAppearance.BorderSize = 0;
+            this.btnChangePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangePassword.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChangePassword.Location = new System.Drawing.Point(286, 593);
+            this.btnChangePassword.Name = "btnChangePassword";
+            this.btnChangePassword.Size = new System.Drawing.Size(174, 64);
+            this.btnChangePassword.TabIndex = 122;
+            this.btnChangePassword.Text = "Đổi Mật Khẩu";
+            this.btnChangePassword.UseVisualStyleBackColor = false;
+            this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
+            // 
             // ucStudentInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnChangePassword);
             this.Controls.Add(this.lbLevelValue);
             this.Controls.Add(this.lbAddressValue);
             this.Controls.Add(this.lbPhoneValue);
@@ -217,5 +233,6 @@
         private System.Windows.Forms.Label lbDateBirth;
         private System.Windows.Forms.Label lbName;
         private System.Windows.Forms.Label lbGender;
+        private System.Windows.Forms.Button btnChangePassword;
     }
 }
