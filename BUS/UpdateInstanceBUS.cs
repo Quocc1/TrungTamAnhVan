@@ -11,10 +11,14 @@ namespace BUS
     {
         UpdateInstanceDAL updateInstance = new UpdateInstanceDAL();
 
+        public void UpdateAdminPassword(int admin_id, string newPassword)
+        {
+            updateInstance.UpdateAdminPassword(admin_id, newPassword);
+        }
+
         public void UpdateTeacher(int teacher_id, string full_name, string gender, DateTime date_birth, string phone, string address, string description)
         {
             updateInstance.UpdateTeacher(teacher_id, full_name, gender, date_birth, phone, address, description);
-
         }
 
         public void UpdateTeacherInfo(int teacher_id, string phone, string address, string description)

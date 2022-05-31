@@ -34,10 +34,11 @@ namespace TrungTamAnhVan
             {
                 if (rbtAdmin.Checked)
                 {
-                    string name = loginBUS.CheckLoginAdmin(txtUsername.Text, txtPassword.Text);
+                    string name = loginBUS.CheckLoginAdmin(txtUsername.Text, txtPassword.Text).Item1;
+                    int id = loginBUS.CheckLoginAdmin(txtUsername.Text, txtPassword.Text).Item2;
                     if (name != null)
                     {
-                        frmAdminMain fMain = new frmAdminMain(name);
+                        frmAdminMain fMain = new frmAdminMain(name, id);
                         fMain.Show();
                         this.Hide();
                     }

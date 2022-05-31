@@ -130,6 +130,12 @@
     <Compile Include="ucClassStudent.Designer.cs">
       <DependentUpon>ucClassStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucEditAdminPassword.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucEditAdminPassword.Designer.cs">
+      <DependentUpon>ucEditAdminPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="ucEditClass.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -311,6 +317,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ucClassStudent.resx">
       <DependentUpon>ucClassStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucEditAdminPassword.resx">
+      <DependentUpon>ucEditAdminPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucEditClass.resx">
       <DependentUpon>ucEditClass.cs</DependentUpon>

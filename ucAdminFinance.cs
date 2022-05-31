@@ -51,15 +51,6 @@ namespace TrungTamAnhVan
             _obj = this;
             InitializeComponent();
 
-            if (!DesignMode)
-            {
-                lbIncomeValue.Text = infoBUS.GetIncome().ToString();
-                lbExpensesValue.Text = infoBUS.GetExpenses().ToString();
-
-                cFinance.Series["s1"].Points.AddXY("Lợi nhuận", lbIncomeValue.Text);
-                cFinance.Series["s1"].Points.AddXY("Chi Phí", lbExpensesValue.Text);
-                cFinance.Series["s1"].IsValueShownAsLabel = true;
-            }
         }
 
         private void ucAdminFinance_Load(object sender, EventArgs e)

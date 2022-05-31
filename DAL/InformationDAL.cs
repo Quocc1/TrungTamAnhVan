@@ -8,6 +8,39 @@ namespace DAL
 {
     public class InformationDAL
     {
+        public string GetAdminPassword(int admin_id)
+        {
+            using (var db = new Connection())
+            {
+                var admin = (from ad in db.Admin_account
+                             where ad.id == admin_id
+                             select ad).FirstOrDefault();
+                return admin.password;
+            }
+        }
+
+        public string GetTeacherPassword(int teacher_id)
+        {
+            using (var db = new Connection())
+            {
+                var teacher = (from tc in db.Teacher_account
+                               where tc.teacher_id == teacher_id
+                               select tc).FirstOrDefault();
+                return teacher.password;
+            }
+        }
+
+        public string GetStudentPassword(int student_id)
+        {
+            using (var db = new Connection())
+            {
+                var student = (from st in db.Student_account
+                               where st.student_id == student_id
+                               select st).FirstOrDefault();
+                return student.password;
+            }
+        }
+
         public List<string> GetInfoTeacher(int teacher_id)
         {
             List<string> list = new List<string>();
@@ -84,17 +117,6 @@ namespace DAL
             }
         }
 
-        public string GetTeacherPassword(int teacher_id)
-        {
-            using (var db = new Connection())
-            {
-                var teacher = (from tc in db.Teacher_account
-                               where tc.teacher_id == teacher_id
-                               select tc).FirstOrDefault();
-                return teacher.password;
-            }
-        }
-
         public int GetNewestStudentId()
         {
             using (var db = new Connection())
@@ -103,17 +125,6 @@ namespace DAL
                                orderby st.id descending
                                select st).FirstOrDefault();
                 return student.id;
-            }
-        }
-
-        public string GetStudentPassword(int student_id)
-        {
-            using (var db = new Connection())
-            {
-                var student = (from st in db.Student_account
-                               where st.student_id == student_id
-                               select st).FirstOrDefault();
-                return student.password;
             }
         }
 

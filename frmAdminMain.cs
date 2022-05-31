@@ -13,7 +13,9 @@ namespace TrungTamAnhVan
     public partial class frmAdminMain : Form
     {
         static frmAdminMain _obj;
-        static string NAME = "";
+        public static int ID = 0;
+        public static string NAME = "";
+
 
         public static frmAdminMain Instance
         {
@@ -21,7 +23,7 @@ namespace TrungTamAnhVan
             {
                 if (_obj == null)
                 {
-                    _obj = new frmAdminMain(NAME);
+                    _obj = new frmAdminMain(NAME, ID);
                 }
                 return _obj;
             }
@@ -32,11 +34,12 @@ namespace TrungTamAnhVan
             get { return pnContainer; }
             set { pnContainer = value; }
         }
-        public frmAdminMain(string name)
+        public frmAdminMain(string name, int id)
         {
             InitializeComponent();
             Load += FrmMain_Load;
             lbName.Text = NAME = name;
+            ID = id;
         }
 
         private void FrmMain_Load(object sender, EventArgs e)

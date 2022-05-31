@@ -10,6 +10,19 @@ namespace DAL
     {
         AddInstanceDAL addInstance = new AddInstanceDAL();
 
+        public void UpdateAdminPassword(int admin_id, string newPassword)
+        {
+            using (var db = new Connection())
+            {
+                var admin = (from ad in db.Admin_account
+                               where ad.id == admin_id
+                               select ad).FirstOrDefault();
+                admin.password = newPassword;
+
+                db.SaveChanges();
+            }
+        }
+
         public void UpdateTeacher(int teacher_id, string full_name, string gender, DateTime date_birth, string phone, string address, string description)
         {
             using (var db = new Connection())

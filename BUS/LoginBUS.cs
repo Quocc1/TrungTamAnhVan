@@ -13,7 +13,7 @@ namespace BUS
         GetInstanceDAL instanceDAL = new GetInstanceDAL();
         InformationDAL infoDAL = new InformationDAL();
 
-        public string CheckLoginAdmin(string username, string password)
+        public (string, int) CheckLoginAdmin(string username, string password)
         {
             List<Admin_account> admin_Accounts = new List<Admin_account>();
             admin_Accounts = loginDAL.GetAdminAccounts();
@@ -21,10 +21,10 @@ namespace BUS
             {
                 if (account.login == username && account.password == password)
                 {
-                    return infoDAL.GetNameAdmin(instanceDAL.GetAdminFromId((int)account.admin_id));
+                    return (infoDAL.GetNameAdmin(instanceDAL.GetAdminFromId((int)account.admin_id)), account.admin_id ?? 0);
                 }
             }
-            return null;
+            return (null, -1);
         }
         public (string, int)CheckLoginTeacher(string username, string password)
         {

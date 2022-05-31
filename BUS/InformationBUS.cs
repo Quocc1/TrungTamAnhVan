@@ -12,6 +12,11 @@ namespace BUS
         GetInstanceDAL getInstance = new GetInstanceDAL();
         InformationDAL infoDAL = new InformationDAL();
 
+        public string GetAdminPassword(int admin_id)
+        {
+            return infoDAL.GetAdminPassword(admin_id);
+        }
+
         public List<string> GetInfoTeacher(int teacher_id)
         {
             return infoDAL.GetInfoTeacher(teacher_id);

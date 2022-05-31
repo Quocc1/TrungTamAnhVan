@@ -46,6 +46,7 @@
             this.ptbClass = new System.Windows.Forms.PictureBox();
             this.lbClassDescription = new System.Windows.Forms.Label();
             this.lbClassQuantity = new System.Windows.Forms.Label();
+            this.btnChangePassword = new System.Windows.Forms.Button();
             this.pnStudents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbStudents)).BeginInit();
             this.panel1.SuspendLayout();
@@ -242,10 +243,25 @@
             this.lbClassQuantity.TabIndex = 8;
             this.lbClassQuantity.Text = "label1";
             // 
+            // btnChangePassword
+            // 
+            this.btnChangePassword.BackColor = System.Drawing.Color.White;
+            this.btnChangePassword.FlatAppearance.BorderSize = 0;
+            this.btnChangePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangePassword.Font = new System.Drawing.Font("Open Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChangePassword.Location = new System.Drawing.Point(45, 590);
+            this.btnChangePassword.Name = "btnChangePassword";
+            this.btnChangePassword.Size = new System.Drawing.Size(174, 64);
+            this.btnChangePassword.TabIndex = 111;
+            this.btnChangePassword.Text = "Đổi Mật Khẩu";
+            this.btnChangePassword.UseVisualStyleBackColor = false;
+            this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
+            // 
             // ucAdminHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnChangePassword);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
@@ -290,5 +306,6 @@
         private System.Windows.Forms.PictureBox ptbClass;
         private System.Windows.Forms.Label lbClassDescription;
         private System.Windows.Forms.Label lbClassQuantity;
+        private System.Windows.Forms.Button btnChangePassword;
     }
 }

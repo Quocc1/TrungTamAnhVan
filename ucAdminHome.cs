@@ -55,5 +55,16 @@ namespace TrungTamAnhVan
                 lbClassQuantity.Text = infoBUS.CountClass().ToString();
             }
         }
+
+        private void btnChangePassword_Click(object sender, EventArgs e)
+        {
+            if (!frmAdminMain.Instance.PnContainer.Controls.ContainsKey("ucEditAdminPassword"))
+            {
+                ucEditAdminPassword uc = new ucEditAdminPassword();
+                uc.Dock = DockStyle.Fill;
+                frmAdminMain.Instance.PnContainer.Controls.Add(uc);
+            }
+            frmAdminMain.Instance.PnContainer.Controls["ucEditAdminPassword"].BringToFront();
+        }
     }
 }
